@@ -1,0 +1,133 @@
+
+<p>
+    Start editing to see some magic happen :)
+  </p>
+  
+  <div class="test">
+  <div class="another-test" #p></div>
+  </div>
+  
+  <button type="button" (click)="addElement()">Add</button>
+<div class="container">
+    <article class="card">
+        <header class="card-header"> My Orders / Tracking </header>
+        <div class="card-body">
+            <h6>Order ID: OD45345345435</h6>
+            <article class="card">
+                <div class="card-body row">
+
+
+
+
+
+                    <div class="col"> <strong>Estimated Delivery time:</strong> <br> </div>
+                    <div class="col"> <strong>Shipping BY:</strong> <br> BLUEDART, | <i class="fa fa-phone"></i> +1598675986 </div>
+                    <div class="col"> <strong>Status:</strong> <br> Picked by the courier </div>
+                    <div class="col"> <strong>Tracking #:</strong> <br> BD045903594059 </div>
+                </div>
+            </article>
+            <div class="track">
+
+
+
+             
+                <div *ngFor="let track of datatrack.etatcolis; let i = index">
+
+                    <div class="step  active">
+                                      <span class="icon"> <i class="fa fa-check" ></i>   </span>
+                                      
+                                      
+                                      <span class="text" >
+                  
+                                          {{track.etat_colis}}
+                  
+                                          
+                  
+                                      </span>
+                  
+                                  </div>
+                  
+                          
+                                  </div>
+              
+
+                <div class="step " *ngFor="let k of x">
+
+
+                    <span class="icon"> <i class="fa fa-check" ></i>   </span> 
+                    <span class="text">
+
+                    
+
+                         <p>
+                       
+                           {{k}}
+                        </p>
+
+                        
+                         
+                       
+
+
+                    </span>
+                
+
+                    </div>
+                
+
+
+
+
+  
+
+                   
+
+                
+                   
+            
+               
+
+            </div>
+            <hr>
+            <ul class="row">
+               
+
+                <li class="col-md-4" *ngFor="let track of datatrack.etatcolis">
+                    <figure class="itemside mb-3">
+                        <div class="aside">
+                            <!-- <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1571751108/Ecommerce/laptop-dell-xps-15-computer-monitors-laptops.jpg" class="img-sm border"> -->
+                        
+                              <p class="badge badge-primary">
+                                  {{track.etat_colis}}
+                              </p>
+                        </div>
+                        <figcaption class="info align-self-center">
+                            <p class="title">{{track.createdAt}}<br> {{track.id}}</p> <span class="text-muted">{{track.etat_colis}} </span>
+                        </figcaption>
+                    </figure>
+                </li>
+               
+
+                <li class="col-md-4" *ngFor="let k of x">
+                    <figure class="itemside mb-3">
+                        <div class="aside">
+                            <!-- <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1571751108/Ecommerce/laptop-dell-xps-15-computer-monitors-laptops.jpg" class="img-sm border"> -->
+                        
+                              <p class="badge badge-primary">
+                                 no treaded
+                              </p>
+                        </div>
+                        <figcaption class="info align-self-center">
+                            <p class="title">---<br> </p> <span class="text-muted">-</span>
+                        </figcaption>
+                    </figure>
+                </li>
+
+
+               
+            </ul>
+            <hr>
+            <a href="#" class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to orders</a>
+        </div>
+    </article>
+</div>

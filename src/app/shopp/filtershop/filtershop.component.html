@@ -1,0 +1,11 @@
+<div class="search-input">
+    <input type="text" placeholder="Search For Product" [(ngModel)]="searchname" name="search" />
+    {{searchname}}
+    <!--cancel-btn--->
+    <a href="javascript:void(0);" class="search-cancel">
+        <i class="fas fa-times"></i>
+    </a>
+
+    <input type="submit" (click)="searcht()"   class="btn btn-primary"/>
+
+</div>

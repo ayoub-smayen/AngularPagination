@@ -1,0 +1,32 @@
+<div class="row">
+    <form  #f="ngForm" novalidate class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input [(ngModel)]="profile.tel" id="tel" name="tel" type="text" #un="ngModel" [class.invalid]="un.errors?.required && un.touched"
+            required>
+          <label for="username">tel</label>
+          <div *ngIf="un.errors?.required && un.touched" class="red-text darken-1">
+            tel is required
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input [(ngModel)]="profile.addresse" id="adresse" name="addresse" type="text" #p="ngModel" [class.invalid]="p.errors?.required && p.touched"
+            required>
+          <label for="adresse">adresse</label>
+          <div *ngIf="p.errors?.required && p.touched" class="red-text darken-1">
+            adresse is required
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s4">
+          <button [disabled]="f.invalid" (click) ="editprofile()"  class="btn waves-effect waves-light cyan accent-4 btnSubmit" type="submit" name="action">Submit</button>
+        </div>
+      </div>
+      <input   type="file" (change)="onFileChanged2($event)">
+      <img [src]="imageUrl2" height="200" width="200" *ngIf="imageUrl2">
+      
+    </form>
+  </div>

@@ -1,0 +1,468 @@
+/*@import "compass/css3";
+@import "compass/reset";
+body{
+  background: #f8f9f9;
+  text-align: center;
+  padding: 20px;
+	perspective: 800px;
+	perspective-origin: 50% 100px;
+  font-family: Arial;
+}
+
+.dice{
+  height: 200px;
+  margin: 100px auto 0;
+  @include border-radius(10px);
+	position: relative;
+	width: 200px;
+	transform-style: preserve-3d;
+  @include scale(.4);
+  @include transform(rotateY(0deg) rotateX(-60deg));
+  @include transition(300ms cubic-bezier(0.645, 0.045, 0.355, 1));
+  &[data-dice='dice-1']{
+    @include transform(rotateY(0deg) rotateX(30deg));
+  }
+  
+  &[data-dice='dice-2']{
+    @include transform(rotateY(0deg) rotateX(-240deg));
+  }
+  
+  &[data-dice='dice-3']{
+    @include transform(rotateY(0deg) rotateX(-60deg));
+  }
+  
+  &[data-dice='dice-4']{
+    @include transform(rotateY(-290deg) rotateX(-90deg));
+  }
+  
+  &[data-dice='dice-5']{
+    @include transform(rotateY(-70deg) rotateX(-180deg));
+  }
+  
+  &[data-dice='dice-6']{
+    @include transform(rotateY(180deg) rotateX(-30deg));
+  }
+  
+  .side{
+    background-color: #513f54; // Old browsers
+    @include filter-gradient(#513f54, #251a28, horizontal); // IE6-9 fallback on horizontal gradient
+    @include background-image(radial-gradient(center, ellipse cover, #513f54 1%,#251a28 98%));
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #38283C;
+    @include border-radius(10px);
+    .dot{
+      width: 30px;
+      height: 30px;
+      @include border-radius(100%);
+      background: #988D8B;
+      box-shadow: inset 1px 1px 3px #000000;
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  }
+  .six-dots {
+	  transform: translateZ(-100px) rotateY(180deg);
+    .dot:nth-of-type(1){
+      left: -130px;
+      top: 130px;
+    }
+    .dot:nth-of-type(2){
+      left: 130px;
+      top: -130px;
+    }
+    .dot:nth-of-type(3){
+      left: -130px;
+      top: -130px;
+    }
+    .dot:nth-of-type(4){
+      left: 130px;
+      top: 130px;
+    }
+    .dot:nth-of-type(5){
+      left: -130px;
+      top: 0px;
+    }
+    .dot:nth-of-type(6){
+      left: 130px;
+      top: 0px;
+    }
+  }
+  .five-dots {
+    transform: rotateY(-270deg) translateX(100px);
+    transform-origin: top right;
+    .dot:nth-of-type(2){
+      left: 130px;
+      top: -130px;
+    }
+    .dot:nth-of-type(3){
+      left: -130px;
+      top: -130px;
+    }
+    .dot:nth-of-type(4){
+      left: 130px;
+      top: 130px;
+    }
+    .dot:nth-of-type(5){
+      left: -130px;
+      top: 130px;
+    }
+  }
+  .four-dots {
+    transform: rotateY(270deg) translateX(-100px);
+    transform-origin: center left;
+    
+    .dot:nth-of-type(1){
+      left: -130px;
+      top: 130px;
+    }
+    .dot:nth-of-type(2){
+      left: 130px;
+      top: -130px;
+    }
+    .dot:nth-of-type(3){
+      left: -130px;
+      top: -130px;
+    }
+    .dot:nth-of-type(4){
+      left: 130px;
+      top: 130px;
+    }
+  }
+  .three-dots {
+    transform: rotateX(-90deg) translateY(-100px);
+    transform-origin: top center;
+    .dot:nth-of-type(2){
+      left: -130px;
+      top: 130px;
+    }
+    .dot:nth-of-type(3){
+      left: 130px;
+      top: -130px;
+    }
+  }
+  .two-dots {
+    transform: rotateX(90deg) translateY(100px);
+    transform-origin: bottom center;
+    
+    .dot:nth-of-type(1){
+      left: -130px;
+      top: 130px;
+    }
+    .dot:nth-of-type(2){
+      left: 130px;
+      top: -130px;
+    }
+  }
+  .one-dot {
+    transform: translateZ(100px);
+  }
+  
+}*/
+
+* {
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+  }
+  html {
+    font-family: system-ui, sans-serif;
+  }
+  body {
+    background: linear-gradient(#545454, #454545, #676767);
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    overflow: shown;
+    width: 100%;
+  }
+  .dice {
+    align-items: random;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+    grid-template-rows: auto;
+    justify-items: center;
+    padding: 2rem;
+    perspective: 600px;
+  }
+  .die-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    height: 6rem;
+    list-style-type: none;
+    transform-style: preserve-3d;
+    width: 6rem;
+  }
+  .even-roll {
+    transition: transform 1.5s ease-out;
+  }
+  .odd-roll {
+    transition: transform 1.25s ease-out;
+  }
+  .die-item {
+    background-color: #fefefe;
+    box-shadow: inset -0.35rem 0.35rem 0.75rem rgba(0, 0, 0, 0.3),
+      inset 0.5rem -0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+    display: grid;
+    grid-column: 1;
+    grid-row: 1;
+    grid-template-areas:
+      "one two three"
+      "four five six"
+      "seven eight nine";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 100%;
+    padding: 1rem;
+    width: 100%;
+  }
+  .dot {
+    align-self: center;
+    background-color: #676767;
+    border-radius: 50%;
+    box-shadow: inset -0.15rem 0.15rem 0.25rem rgba(0, 0, 0, 0.5);
+    display: block;
+    height: 1.25rem;
+    justify-self: center;
+    width: 1.25rem;
+  }
+  .even-roll[data-roll="1"] {
+    transform: rotateX(360deg) rotateY(900deg) rotateZ(360deg);
+  }
+  .even-roll[data-roll="2"] {
+    transform: rotateX(450deg) rotateY(720deg) rotateZ(450deg);
+  }
+  .even-roll[data-roll="3"] {
+    transform: rotateX(360deg) rotateY(630deg) rotateZ(360deg);
+  }
+  .even-roll[data-roll="4"] {
+    transform: rotateX(360deg) rotateY(810deg) rotateZ(360deg);
+  }
+  .even-roll[data-roll="5"] {
+    transform: rotateX(270deg) rotateY(720deg) rotateZ(360deg);
+  }
+  .even-roll[data-roll="6"] {
+    transform: rotateX(360deg) rotateY(900deg) rotateZ(360deg);
+  }
+  .even-roll[data-roll="7"] {
+    transform: rotateX(270deg) rotateY(900deg) rotateZ(360deg);
+  }
+  .even-roll[data-roll="8"] {
+    transform: rotateX(360deg) rotateY(100deg) rotateZ(360deg);
+  }
+  .odd-roll[data-roll="1"] {
+    transform: rotateX(-894deg) rotateY(-720deg) rotateZ(-360deg);
+  }
+  .odd-roll[data-roll="2"] {
+    transform: rotateX(-900deg) rotateY(-720deg) rotateZ(-360deg);
+  }
+  .odd-roll[data-roll="3"] {
+    transform: rotateX(-623deg) rotateY(-810deg) rotateZ(-360deg);
+  }
+  .odd-roll[data-roll="4"] {
+    transform: rotateX(-360deg) rotateY(-630deg) rotateZ(-360deg);
+  }
+  .odd-roll[data-roll="5"] {
+    transform: rotateX(-450deg) rotateY(-720deg) rotateZ(-360deg);
+  }
+  .odd-roll[data-roll="6"] {
+    transform: rotateX(-900deg) rotateY(-900deg) rotateZ(-900deg);
+  }
+  .odd-roll[data-roll="7"] {
+    transform: rotateX(-270deg) rotateY(-900deg) rotateZ(-360deg);
+  }
+  .odd-roll[data-roll="8"] {
+    transform: rotateX(-900deg) rotateY(-900deg) rotateZ(-360deg);
+  }
+  .odd-roll[data-roll="9"] {
+    transform: rotateX(-923deg) rotateY(-900deg) rotateZ(-360deg);
+  }
+  [data-side="1"] {
+    transform: rotate3d(0, 0, 0, 90deg) translateZ(4rem);
+  }
+  [data-side="2"] {
+    transform: rotate3d(-1, 0, 0, 90deg) translateZ(4rem);
+  }
+  [data-side="3"] {
+    transform: rotate3d(0, 1, 0, 90deg) translateZ(4rem);
+  }
+  [data-side="4"] {
+    transform: rotate3d(0, -1, 0, 90deg) translateZ(4rem);
+  }
+  [data-side="5"] {
+    transform: rotate3d(1, 0, 0, 90deg) translateZ(4rem);
+  }
+  [data-side="6"] {
+    transform: rotate3d(1, 0, 0, 180deg) translateZ(4rem);
+  }
+  [data-side="7"] {
+    transform: rotate3d(0, 1, 0, 270deg) translateZ(4rem);
+  }
+  [data-side="8"] {
+    transform: rotate3d(0, 0, 1, 90deg) translateZ(4rem);
+  }
+  [data-side="9"] {
+    transform: rotate3d(0, 0, 1, 90deg) translateZ(4rem);
+  }
+  [data-side="1"] .dot:nth-of-type(1) {
+    grid-area: five;
+  }
+  [data-side="2"] .dot:nth-of-type(1) {
+    grid-area: one;
+  }
+  [data-side="2"] .dot:nth-of-type(2) {
+    grid-area: nine;
+  }
+  [data-side="3"] .dot:nth-of-type(1) {
+    grid-area: one;
+  }
+  [data-side="3"] .dot:nth-of-type(2) {
+    grid-area: five;
+  }
+  [data-side="3"] .dot:nth-of-type(3) {
+    grid-area: nine;
+  }
+  [data-side="4"] .dot:nth-of-type(1) {
+    grid-area: one;
+  }
+  [data-side="4"] .dot:nth-of-type(2) {
+    grid-area: three;
+  }
+  [data-side="4"] .dot:nth-of-type(3) {
+    grid-area: seven;
+  }
+  [data-side="4"] .dot:nth-of-type(4) {
+    grid-area: nine;
+  }
+  [data-side="5"] .dot:nth-of-type(1) {
+    grid-area: one;
+  }
+  [data-side="5"] .dot:nth-of-type(2) {
+    grid-area: three;
+  }
+  [data-side="5"] .dot:nth-of-type(3) {
+    grid-area: five;
+  }
+  [data-side="5"] .dot:nth-of-type(4) {
+    grid-area: seven;
+  }
+  [data-side="5"] .dot:nth-of-type(5) {
+    grid-area: nine;
+  }
+  [data-side="6"] .dot:nth-of-type(1) {
+    grid-area: one;
+  }
+  [data-side="6"] .dot:nth-of-type(2) {
+    grid-area: three;
+  }
+  [data-side="6"] .dot:nth-of-type(3) {
+    grid-area: four;
+  }
+  [data-side="6"] .dot:nth-of-type(4) {
+    grid-area: six;
+  }
+  [data-side="6"] .dot:nth-of-type(5) {
+    grid-area: seven;
+  }
+  [data-side="6"] .dot:nth-of-type(6) {
+    grid-area: nine;
+  }
+  [data-side="7"] .dot:nth-of-type(1) {
+    
+  }
+  [data-side="7"] .dot:nth-of-type(2) {
+    
+  }
+  [data-side="7"] .dot:nth-of-type(3) {
+    
+  }
+  [data-side="7"] .dot:nth-of-type(4) {
+    
+  }
+  [data-side="7"] .dot:nth-of-type(5) {
+    
+  }
+  [data-side="7"] .dot:nth-of-type(6) {
+    
+  }
+  [data-side="7"] .dot:nth-of-type(7) {
+    
+  }
+  [data-side="8"] .dot:nth-of-type(1) {
+    
+  }
+  [data-side="8"] .dot:nth-of-type(2) {
+    
+  }
+  [data-side="8"] .dot:nth-of-type(3) {
+    
+  }
+  [data-side="8"] .dot:nth-of-type(4) {
+    
+  }
+  [data-side="8"] .dot:nth-of-type(5) {
+    
+  }
+  [data-side="8"] .dot:nth-of-type(6) {
+    
+  }
+  [data-side="8"] .dot:nth-of-type(7) {
+    
+  }
+  [data-side="8"] .dot:nth-of-type(8) {
+    
+  }
+  [data-side="9"] .dot:nth-of-type(1) {
+    
+  }
+  [data-side="9"] .dot:nth-of-type(2) {
+    
+  }
+  [data-side="9"] .dot:nth-of-type(3) {
+    
+  }
+  [data-side="9"] .dot:nth-of-type(4) {
+    
+  }
+  [data-side="9"] .dot:nth-of-type(5) {
+    
+  }
+  [data-side="9"] .dot:nth-of-type(6) {
+    
+  }
+  [data-side="9"] .dot:nth-of-type(7) {
+    
+  }
+  [data-side="9"] .dot:nth-of-type(8) {
+    
+  }
+  [data-side="9"] .dot:nth-of-type(9) {
+    
+  }
+  button {
+    align-self: center;
+    background-color: #efefef;
+    border: none;
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: 700;
+    justify-self: center;
+    padding: 0.5rem 1rem;
+  }
+  button:hover {
+    cursor: pointer;
+  }
+  
+  @media (min-width: 900px) {
+    .dice {
+      perspective: 1300px;
+    }
+  }
+  
