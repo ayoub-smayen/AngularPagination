@@ -1,0 +1,73 @@
+
+<style type="text/css">
+    .roundedImage{
+        overflow:hidden;
+        -webkit-border-radius:50px;
+        -moz-border-radius:50px;
+        border-radius:50px;
+        width:40px;
+        height:40px;
+    }
+    </style>
+<div class="container bootstrap snippets bootdey">
+    <div class="col-sm-8">
+        <div class="panel panel-white post panel-shadow">
+            <div class="post-heading">
+                <div class="pull-left image">
+                    <img [src]="'data:image/jpeg;base64,'+pub.user.img" class="roundedImage" alt="user profile image">
+                </div>
+                <div class="pull-left meta">
+                    <div class="title h5">
+                        <b>{{pub.user.user_name}} {{pub.user.user_Lastname}}</b>
+                        
+                    </div>
+                    <h6 class="text-muted time">  {{pub.createdAt}}</h6>
+                </div>
+            </div> 
+            <div class="post-description"> 
+                <p>{{pub.publication_txt}}</p><br>
+                <div *ngIf="pub.pic"><img [src]="'data:image/jpeg;base64,'+pub.pic" width="50%" height="50%" style="position: relative;" ></div>
+                <div>
+                    <a (click)="addlike()" class="btn btn-default stat-item" id="stats">
+                        <i class="fa fa-thumbs-up icon" id="1"></i>{{pub.likecount}}
+                    </a>
+                    <a (click)="adddislike()" class="btn btn-default stat-item" id="stats1">
+                        <i class="fa fa-thumbs-down icon" id="2"></i>{{pub.dislikecount}}
+                    </a>
+                    
+                </div>
+            </div>
+            <div class="post-footer">
+                <div class="input-group"> 
+                    <input class="form-control" placeholder="Add a comment" type="text" [(ngModel)]="com">
+                    <span class="input-group-addon">
+                        <button (click)="AddComment()" id="comment" onclick="window.location.reload()"><i class="fa fa-edit"></i></button>  
+                    </span>
+                </div>
+                <div *ngFor="let c of comments" id="com">
+                    <ul class="comments-list">
+                    <li class="comment">
+                        <a class="pull-left" href="#">
+                            <img class="roundedImage" [src]="'data:image/jpeg;base64,'+c.user.img" alt="avatar">
+                        </a>
+                        <div class="comment-body">
+                            <div class="comment-heading">
+                                <h4 class="user">{{c.user.user_Lastname}}</h4>
+                                <h5 class="time">{{c.createdAt}}</h5>
+                            </div>
+                            <p>{{c.comment_field}}</p>
+                            <div class="stats">
+                                <a href="#" class="btn btn-default stat-item">
+                                    <i class="fa fa-thumbs-up icon"></i>{{c.like_count}}
+                                </a>
+                                
+                            </div>
+                        </div>
+                       
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

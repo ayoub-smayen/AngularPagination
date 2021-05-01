@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <style type="text/css">
+            .roundedImage{
+                overflow:hidden;
+                -webkit-border-radius:50px;
+                -moz-border-radius:50px;
+                border-radius:50px;
+                width:40px;
+                height:40px;
+            }
+            </style>
+    </head>
+    <body>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container" >
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="wrapper wrapper-content animated fadeInRight">
+    
+               
+                    
+                
+    
+                <div class="ibox-content forum-container" >
+                    
+                            <i class="fa fa-globe text-navy mid-icon" ><span style="color: currentColor; text-align: right;">Welcome to our forum</span></i>
+                        
+    <div><a routerLink="/addpub"><small>+ AddPublication</small></a></div>
+                    <div class="forum-title">
+                        <div class="pull-right forum-desc">
+                            <small>Total posts: {{nbre}}</small>
+                        </div>
+                        <h3>General subjects</h3>
+                    </div>
+    
+                    
+                    <div class="forum-item" *ngFor="let p of pub">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="forum-icon">
+                                    <img [src]="'data:image/jpeg;base64,'+p.user.img" title="{{p.user.user_name}} {{p.user.user_Lastname}}" width="50" class="roundedImage">
+                                </div>
+                                <a [routerLink]="['/pubDetails',p.id]" class="forum-item-title"  id="pubid">{{p.title}}</a>
+                                <div class="forum-sub-title">{{p.publication_txt}} </div>
+                                <div >
+    
+                                   
+                        
+                                </div>
+                                
+                            </div>
+                            <div class="col-md-1 forum-info">
+                                <span class="views-number">
+                                    {{p.likecount}}
+                                </span>
+                                <div>
+                                    <small>Likes</small>
+                                </div>
+                            </div>
+                            <div class="col-md-1 forum-info">
+                                <span class="views-number">
+                                    {{p.dislikecount}}
+                                </span>
+                                <div>
+                                    <small>Dislikes</small>
+                                </div>
+                            </div>       
+                            <div class="col-md-1 forum-info">
+                                <span class="views-number">
+                                    {{p.commentsNumber}}
+                                </span>
+                                <div>
+                                    <small>comments</small>
+                                </div>
+                                
+                            </div>                       
+                        </div>
+                    </div>
+                    
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </body>
+</html>
