@@ -14,15 +14,18 @@ message:any;
   constructor(private profitserviceService : ProfitserviceService ,private dashboardserviceService : DashboardserviceService ) { }
 
   ngOnInit(): void {
+    this.getProfit1();
    // this.profitserviceService.getProfit().subscribe((data:Profit[]) =>{ this.profit = data;});
 }
 getProfitMonthly(){
+
+    
  // let resp=this.dashboardserviceService.getProfitPerMonth().subscribe((data)=>this.message=data);
  let resp=this.dashboardserviceService.getProfitPerMonth().subscribe((data:Profit[]) =>{ this.profit = data;});
 }
 getProfit1(){
   // let resp=this.dashboardserviceService.getProfitPerMonth().subscribe((data)=>this.message=data);
-  let resp=this.profitserviceService.getProfit().subscribe((data:Profit[]) =>{ this.profit = data;});
+  let resp=this.profitserviceService.getAllProfit().subscribe((data:Profit[]) =>{ this.profit = data;});
  }
 
 }

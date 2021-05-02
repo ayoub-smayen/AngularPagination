@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Euser } from '../models/euser';
 import { EuserserviceService } from '../services/euserservice.service';
 @Component({
   selector: 'app-search',
@@ -11,15 +12,21 @@ export class SearchComponent implements OnInit {
   users:any;
   id:any;
  email:string;
- user_id:any;
+ euser_id:any;
  membre_username:string;
  password:string;
+ euser:Euser;
   constructor(private service:EuserserviceService) { }
 
-public delteUser(id:number){
+public deleteUser(id:number){
  let resp= this.service.delete(id);
  resp.subscribe((data)=>this.users=data);
 }
+
+public updateUser(id:number, euser: Euser){
+  let resp= this.service.update(id,euser);
+  resp.subscribe((data)=>this.users=data);
+ }
 
 public findUserById(){
   let resp= this.service.getById(this.id);

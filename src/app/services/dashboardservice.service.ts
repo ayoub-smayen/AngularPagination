@@ -24,11 +24,11 @@ export class DashboardserviceService {
 }
   
 getGeneralStatic() {
-  return this.http.get("http://localhost:8091/api/agesexecity");
+  return this.http.get("http://localhost:8091/api2/agesexecity");
   
 }
 getTodayRevenueDash() {
-  return this.http.get("http://localhost:8091/api/getTodayRevenueDash");
+  return this.http.get("http://localhost:8091/api2/getTodayRevenueDash");
   
 }
 getVisit() {
