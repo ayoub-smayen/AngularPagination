@@ -17,7 +17,7 @@ export class EuserserviceService {
         return this.http.get<string[]>("http://localhost:8091/api/euser/get");
         }*/
 
-
+       
     getById(id: string) {
         return this.http.get("http://localhost:8091/api/euser/finduserbyid/{user_id}");
         
@@ -26,6 +26,7 @@ export class EuserserviceService {
         return this.http.get("http://localhost:8091/api/euser/get/{user_id}");
     }
 
+    
    // http://localhost:8091/api/uploadimage???
 
     addUser(euser: Euser) {
