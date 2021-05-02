@@ -8,6 +8,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddPublicationComponent } from './add-publication/add-publication.component';
 import { PublicationDetailsComponent } from './publication-details/publication-details.component';
 import { FormsModule } from '@angular/forms';
+import { PickerModule } from '@ctrl/ngx-emoji-mart';
+import { MomentModule } from 'ngx-moment';
+
+
 
 @NgModule({
   declarations: [
@@ -20,7 +24,9 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    PickerModule,
+    MomentModule
   ],
   providers: [],
   bootstrap: [AppComponent]

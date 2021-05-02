@@ -26,7 +26,7 @@
                     
                             <i class="fa fa-globe text-navy mid-icon" ><span style="color: currentColor; text-align: right;">Welcome to our forum</span></i>
                         
-    <div><a routerLink="/addpub"><small>+ AddPublication</small></a></div>
+
                     <div class="forum-title">
                         <div class="pull-right forum-desc">
                             <small>Total posts: {{nbre}}</small>
@@ -55,7 +55,7 @@
                                     {{p.likecount}}
                                 </span>
                                 <div>
-                                    <small>Likes</small>
+                                    <i style="color: green;" class="fas fa-thumbs-up"></i>
                                 </div>
                             </div>
                             <div class="col-md-1 forum-info">
@@ -63,15 +63,15 @@
                                     {{p.dislikecount}}
                                 </span>
                                 <div>
-                                    <small>Dislikes</small>
+                                    <i style="color: red;" class="fas fa-thumbs-down"></i>
                                 </div>
                             </div>       
                             <div class="col-md-1 forum-info">
                                 <span class="views-number">
-                                    {{p.commentsNumber}}
+                                    {{p.commentsNumber}}   
                                 </span>
                                 <div>
-                                    <small>comments</small>
+                                    <i style="color: blue;" class="fas fa-comments"></i>
                                 </div>
                                 
                             </div>                       

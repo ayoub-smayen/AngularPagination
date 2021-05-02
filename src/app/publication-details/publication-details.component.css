@@ -1,3 +1,9 @@
+body{
+  height: 100%;
+  width: 100%;
+  
+}
+
 .panel-shadow {
     box-shadow: rgba(0, 0, 0, 0.3) 7px 7px 7px;
 }
@@ -38,7 +44,7 @@
   color: #999;
 }
 .post .post-image .image {
-  width: 100%;
+  resize: vertical;
   height: auto;
 }
 .post .post-description {
@@ -100,4 +106,16 @@
 }
 .post .post-footer .comments-list .comment > .comments-list {
   margin-left: 50px;
+}
+
+.emoji-mart{
+  z-index: 50;
+  position: absolute;
+  margin-left: 330px;
+  background: #fff;
+  color: #222427;
+
+}
+.comment1{
+  position: relative;
 }

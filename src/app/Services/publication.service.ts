@@ -31,4 +31,10 @@ export class PublicationService {
   public Adddislikepublication(id:number){
     return this.http.put("http://localhost:8080/pi/AdddisLikeposts/"+id,{});
   }
+  public Addlikecomments(id:number){
+    return this.http.put("http://localhost:8080/pi/AddLikecomments/"+id,{});
+  }
+  public deleteComments(id:number){
+    return this.http.delete("http://localhost:8080/pi/deleteComment/"+id);
+  }
 }
