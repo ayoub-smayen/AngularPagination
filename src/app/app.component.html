@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
   <div class="container">
     <a class="navbar-brand" href="#">
           <img src="../assets/img/consomitounsi.png" alt="" width="70">
@@ -16,4 +16,11 @@
     </div>
   </div>
 </nav>
-<router-outlet></router-outlet>
+<router-outlet></router-outlet>-->
+<input class="form-control" type="text" placeholder="message" [(ngModel)]="input">
+<button class="btn btn-success" (click)="sendMessage()">Send</button>
+<div class="content">
+  <div *ngFor="let msg of messageService.msg">
+    {{msg}}
+  </div>
+</div>
