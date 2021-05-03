@@ -10,10 +10,14 @@ export class DashboardserviceService {
  
 
  
-    getDashboard() {
+   /* getDashboard() {
         return this.http.get(" http://localhost:8091/api/dashboard/get/{dashboard_id}");
-    }
+    }*/
 
+    getDashboard(dashboard_id:number) {
+      return this.http.get(`http://localhost:8091/api/profit/get/${dashboard_id}`);
+      
+  }
     getProfitPerMonth() {
       return this.http.get("http://localhost:8091/api/profitpermonth");
       
@@ -24,11 +28,11 @@ export class DashboardserviceService {
 }
   
 getGeneralStatic() {
-  return this.http.get("http://localhost:8091/api2/agesexecity");
+  return this.http.get("http://localhost:8091/api/agesexecity");
   
 }
 getTodayRevenueDash() {
-  return this.http.get("http://localhost:8091/api2/getTodayRevenueDash");
+  return this.http.get("http://localhost:8091/api/getTodayRevenueDash");
   
 }
 getVisit() {

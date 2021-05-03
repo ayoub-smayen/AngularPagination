@@ -18,8 +18,8 @@ export class EuserserviceService {
         }*/
 
        
-    getById(id: string) {
-        return this.http.get("http://localhost:8091/api/euser/finduserbyid/{user_id}");
+    getById(id: number) {
+        return this.http.get("http://localhost:8091/api/euser/finduserbyid/{user_id}"+id);
         
     }
     getUser() {

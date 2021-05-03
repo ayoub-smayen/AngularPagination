@@ -15,20 +15,22 @@ export class ProfitserviceService {
         
     }
     getAllProfit() {
-      return this.http.get("http://localhost:8091/api/profit/get",{
-        headers:{
-          'Content-type':'applicatio/json'
-        }
-      });
+      return this.http.get("http://localhost:8091/api/profit/get");
       
   }
+  /*getAllProfit() {
+    return this.http.get("http://localhost:8091/api/profit/get",{
+      headers:{
+        'Content-type':'applicatio/json'
+      }
+    });*/
 
     add(profit: Profit) {
          return this.http.post("http://localhost:8091/api/profit/add",profit);
     }
 
     update(id: number, profit: Profit) {
-        return this.http.put("http://localhost:8091/api2/profit/update/{profit_id}"+id,profit);
+        return this.http.put("http://localhost:8091/api/profit/update/{profit_id}"+id,profit);
     }
 
     delete(id: number) {

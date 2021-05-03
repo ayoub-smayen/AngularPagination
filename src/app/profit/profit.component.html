@@ -1,5 +1,5 @@
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
@@ -24,8 +24,11 @@
                                     <option value="Income" selected>Income</option>
                                     <option value="Expenses">Outcome</option>
                                     <option value="Profit">Profit</option>
-                                </select></div>      -->                   
-              <h5><label for="Choose Report" style="color:#E74C3C"> Time :</label>
+                                </select></div>      -->   
+                                
+                                
+
+              <!--<h5><label for="Choose Report" style="color:#E74C3C"> Time :</label>
                              
                              <input id="c" type="radio" name="type" value="Monthly">Annual</h5>
                              <div class="customer" >
@@ -34,7 +37,7 @@
                                     <input type="date" class="form-control" placeholder="Date" />
                                 </div>
                             </div>
-            <button type="button" class="btn btn-primary btn-lg btn3d"><span class="glyphicon glyphicon-search"></span> View</button> 
+            <button type="button" (click)="getProfit1()"class="btn btn-primary btn-lg btn3d"><span class="glyphicon glyphicon-search"></span> View</button> 
             <button type="button" (click)="getProfitMonthly()" class="btn btn-primary btn-lg btn3d">Profit</button>
         
         </div>                 
@@ -50,7 +53,7 @@
               </tr>
           </thead>   
           <tbody>
-            <tr *ngFor="let p of profit">
+            <tr *ngFor="let p of profitt | async">
                 
                 <td class="text-center" width="150px">{{p.income}}</td>
                 <td class="text-center" width="150px">{{p.outcome}}</td>
@@ -71,5 +74,5 @@
        
               
   </div>
-       </div>
+       </div>-->
     
