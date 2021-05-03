@@ -19,26 +19,26 @@ export class EuserserviceService {
 
        
     getById(id: number) {
-        return this.http.get("http://localhost:8091/api/euser/finduserbyid/{user_id}"+id);
+        return this.http.get    ("http://localhost:8091/api/euser/finduserbyid/"+id);
         
     }
     getUser() {
-        return this.http.get("http://localhost:8091/api/euser/get/{user_id}");
+        return this.http.get("http://localhost:8091/api/euser/get/");
     }
 
     
    // http://localhost:8091/api/uploadimage???
 
-    addUser(euser: Euser) {
-         return this.http.post("http://localhost:8091/api/euser/add",euser);
+    addUser(user: Euser) {
+         return this.http.post("http://localhost:8091/api/euser/add",user);
     }
 
-    update(id: number, euser: Euser) {
-        return this.http.put("http://localhost:8091/api/euser/update/{user_id}"+id,euser,{responseType:'text' as 'json'});
+    update(id: number, user: Euser) {
+        return this.http.put("http://localhost:8091/api/euser/update"+id,user,{responseType:'text' as 'json'});
     }
 
     delete(id: number) {
-        return this.http.delete("http://localhost:8091/api/euser/delete/{user_id}"+id);
+        return this.http.delete("http://localhost:8091/api/euser/delete"+id);
     }
 
    

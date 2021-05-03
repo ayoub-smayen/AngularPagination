@@ -1,7 +1,7 @@
 import { Role } from './role';
 
 export class Euser {
-    euser_id: number;
+    user_id: number;
     membre_username: string;
     userimg: any;
     password: string;

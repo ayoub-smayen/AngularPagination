@@ -12,10 +12,10 @@ export class SearchComponent implements OnInit {
   users:any;
   id:any;
  email:string;
- euser_id:any;
+ user_id:any;
  membre_username:string;
  password:string;
- euser:Euser;
+ euser:any;
   constructor(private service:EuserserviceService) { }
 
 public deleteUser(id:number){
@@ -23,16 +23,37 @@ public deleteUser(id:number){
  resp.subscribe((data)=>this.users=data);
 }
 
-public updateUser(id:number, euser: Euser){
-  let resp= this.service.update(id,euser);
+public updateUser(id:number, user: Euser){
+  let resp= this.service.update(id,user);
   resp.subscribe((data)=>this.users=data);
  }
 
-public findUserById(/*id:number*/){
-  let resp= this.service.getById(this.id);
-  resp.subscribe((data)=>this.users=data);
- }
+public findUserById(id){
 
+
+   if(id == null){
+
+    let resp=this.service.getAllUsers();
+    resp.subscribe((data)=>this.users=data);
+
+   }
+
+
+  let resp= this.service.getById(id);
+  
+  resp.subscribe((data)=>{this.euser=data  ; this.users = null;     ;  console.table(data)});
+
+    /* this.users =  this.users.forEach(element => {
+
+        
+       
+     });*/
+ }
+ /*public findUserByIdd(){
+  let resp= this.service.getUser();
+  resp.subscribe((data)=>this.users=data);
+ }*/
+ 
  ngOnInit(): void {
   let resp=this.service.getAllUsers();
   resp.subscribe((data)=>this.users=data);

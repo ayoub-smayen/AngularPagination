@@ -9,13 +9,19 @@
     <div class="row">
                <div id="custom-search-input">
                                 <div class="input-group col-md-12" style="text-align: center">
-                                    <input type="text" class="search-query form-control" [(ngModel)]="euser_id" placeholder="Search With UserId"  name="euser_id" />
+                                    <input type="number" class="search-query form-control" [(ngModel)]="user_id" placeholder="Search With UserId"  name="euser_id" />
+                                   
+                                   <br>
+
+                                   <br>
+                                   
                                     <span class="input-group-btn">
-                                        <button class="btn btn-danger" type="button" (click)="findUserById()">
+                                        <button   type="submit" class="btn btn-danger" type="button" (click)="findUserById(user_id)">
                                             <span class=" glyphicon glyphicon-search"></span>
                                         </button>
                  
                                     </span>
+                                    
                                 </div>
                             </div>
     </div>
@@ -33,15 +39,35 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let e of euser">
-            <td>{{e.euser_id}}</td>
-            <td>{{e.membre_username}}</td>
-            <td>{{e.email}}</td>
-            <td>{{e.password}}</td>
+      
+          <tr  *ngIf="users== null  ;else arr">
+
+
+            <td>{{euser.user_id}}</td>
+            <td>{{euser.membre_username}}</td>
+            <td>{{euser.email}}</td>
+            <td>{{euser.password}}</td>
             
-            <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteUser(euser_id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
-        
-        </tr>
+            <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteUser(euser.user_id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+            
+          </tr>
+
+
+           <ng-template  #arr>
+
+            <tr *ngFor="let e of users" >
+                <td>{{e.user_id}}</td>
+                <td>{{e.membre_username}}</td>
+                <td>{{e.email}}</td>
+                <td>{{e.password}}</td>
+                
+                <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteUser(e.user_id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+                
+            </tr>
+            
+           </ng-template>
+       
+      
     </tbody>
     </table>
    </div>
