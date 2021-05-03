@@ -28,8 +28,8 @@ public updateUser(id:number, euser: Euser){
   resp.subscribe((data)=>this.users=data);
  }
 
-public findUserById(id:number){
-  let resp= this.service.getById(id);
+public findUserById(/*id:number*/){
+  let resp= this.service.getById(this.id);
   resp.subscribe((data)=>this.users=data);
  }
 

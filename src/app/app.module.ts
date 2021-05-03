@@ -14,13 +14,19 @@ import { ProfitComponent } from './profit/profit.component';
 import { DashboardserviceService } from './services/dashboardservice.service';
 import { ProfitserviceService } from './services/profitservice.service';
 import { SearchComponent } from './search/search.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
     EuserComponent,
     DashboardComponent,
     ProfitComponent,
-    SearchComponent
+    SearchComponent,
+    SideBarComponent,
+    NavBarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
