@@ -1,124 +1,27 @@
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
-
-
-
-<div class="mainDiv">
-<!--title-->
-	<div class="title">
-	
-		<a href="#">
-         <i class="fa fa-pencil" aria-hidden="true"></i>
-		Create a Post</a>
-	
-		<a href="#">
-		<i class="fa fa-file-image-o" aria-hidden="true"></i>
-		Photo/Video Album</a>
-		<p><i class="fa fa-times" aria-hidden="true"></i>
-</p>
-	</div>
-
-
-
-<div id="body">
-	<!--img and textarea-->
-	<div class="imtcontainer">
-		<div class="img">
-				<img src="http://themarketmogul.com/wp-content/uploads/avatars/3321/cb72c2d6008ea815d74b7f27d1131a26-bpfull-180x180.jpg">
-		</div>
-		<div class="textarea">
-			<textarea onkeyup="InputAdjust(this)" placeholder="what's on you mind?"></textarea>
-		</div>
-
-
-	</div>
-
-	<div class="line">
-
-	<div class="colors">
-      <span style="background-color: #e8eaee"></span>
-      <span style="background-color: #fcd85d"></span>
-      <span style="background-color: #f25467"></span>
-      <span style="background-color: #f25467"></span>
-      <span style="background-color: #10aaff"></span>
-      <span style="background-color: #488ee8"></span>
-      <span style="background-color: #5a3be2"></span>
-      <span style="background-color: #5e6574"></span>
-      </div>
-		<a href='#'><i class="fa fa-smile-o" aria-hidden="true"></i></a>
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1"><b>Title</b></label>
+    <input type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="Enter title">
+  </div>
+  <div class="form-group">
+    <label><b>Text</b></label>
+    <div>
+      <textarea [(ngModel)]="text" cols="30" rows="10" name="text"></textarea>
+    </div>
+  </div>
+<div class="container row">
+    <div class="col-md-6">
+        <input type="file" (change)="onFileChanged($event)">
+    </div>
+    <div class="col-md-6">
+        <input type="button" (click)="onUpload()" value="upload">
+    </div>
 </div>
-
-
-
-<!--icons-->
-<div class="icons">
-	 <div class="photos">
-  	
-  	<a href="#">
-     <i class="fa fa-picture-o" aria-hidden="true"></i>
-  	Photo/Video</a>
-  </div>
-
-  <div class="feeling">
-    <a href='#'>
-      	<i class="fa fa-smile-o" aria-hidden="true"></i>
-        Felling/Activity</a>
-  </div>
-
-  <div class="more">
-  <a href="">
-  	<span></span>
-  	<span></span>
-  	<span></span>
-  	</a>
-  </div>
-
-  <div style="display: none" class="checkin">
-    <a href='#'>
-      	<i style="color: #f42a67;" class="fa fa-map-marker" aria-hidden="true"></i>
-        Check in</a>
-  </div>
-
-  <div style="display: none;" class="tagfriend">
-    <a href='#'>
-    <i style="color: #90c0d5" class="fa fa-user-plus" aria-hidden="true"></i>
-        Tag Friend</a>
-  </div>
-
-   <div style="display: none;" class="live">
-    <a href='#'>
-   <i style="color: #fa3e3e" class="fa fa-video-camera" aria-hidden="true"></i>
-        Live Video</a>
-  </div>
-
-
- <div style="display: none;" class="back">
-    <a href='#'>
-     <i style="color: #f7923c" class="fa fa-fonticons" aria-hidden="true"></i>
-        Background Color</a>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-<div style="display: none;" class="footer">
-    <a href="#">
-    <i class="fa fa-users" aria-hidden="true"></i>
-
-    Add friends except..<i class="fa fa-caret-down"></i>
-</a>
-    
-	<a href="">Post</a>
+<hr />
+<div class="container row">
+    <div class="col-md-12">
+        <div *ngIf=message>{{message}}</div>
+    </div>
 </div>
-
-</div>
-</div>
- 
-</div>
+  <button type="submit" class="btn btn-primary" (click)="addpub()">Submit</button>
+</form>

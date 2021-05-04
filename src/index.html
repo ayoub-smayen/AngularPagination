@@ -9,9 +9,8 @@
 
 
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://kit.fontawesome.com/a32cd8a379.js" crossorigin="anonymous"></script>
  
-  <script src="./assets/js/sockjs.min.js"></script>
-  <script src="./assets/js/stomp.min.js"></script>
   
  
 </head>
@@ -31,6 +30,28 @@ $(document).ready(function(){
     $("#2").css("color", "blue");
   });
 });
+(function($) {
+    $(document).ready(function() {
+        var $chatbox = $('.chatbox'),
+            $chatboxTitle = $('.chatbox__title'),
+            $chatboxTitleClose = $('.chatbox__title__close'),
+            $chatboxCredentials = $('.chatbox__credentials');
+        $chatboxTitle.on('click', function() {
+            $chatbox.toggleClass('chatbox--tray');
+        });
+        $chatboxTitleClose.on('click', function(e) {
+            e.stopPropagation();
+            $chatbox.addClass('chatbox--closed');
+        });
+        $chatbox.on('transitionend', function() {
+            if ($chatbox.hasClass('chatbox--closed')) $chatbox.remove();
+        });
+        
+    });
+
+    
+})(jQuery);
+
 
 
   </script>

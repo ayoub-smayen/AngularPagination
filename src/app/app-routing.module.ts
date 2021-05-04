@@ -7,7 +7,7 @@ import { PublicationComponent } from './publication/publication.component';
 
 const routes: Routes = [
   { path: 'Showpublication', component:  PublicationComponent},
-  {path:'addpub',component: AddPublicationComponent},
+  {path:'addpub/:id',component: AddPublicationComponent},
   {path:'pubDetails/:id',component: PublicationDetailsComponent},
   { path: '**', component:  PublicationComponent}
   

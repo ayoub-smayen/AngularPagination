@@ -10,6 +10,9 @@ import { PublicationDetailsComponent } from './publication-details/publication-d
 import { FormsModule } from '@angular/forms';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { MomentModule } from 'ngx-moment';
+import { GooglemapsComponent } from './googlemaps/googlemaps.component';
+import { AgmCoreModule } from '@agm/core';
+import { ChatComponent } from './chat/chat.component';
 
 
 
@@ -18,7 +21,9 @@ import { MomentModule } from 'ngx-moment';
     AppComponent,
     PublicationComponent,
     AddPublicationComponent,
-    PublicationDetailsComponent
+    PublicationDetailsComponent,
+    GooglemapsComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,10 @@ import { MomentModule } from 'ngx-moment';
     HttpClientModule,
     FormsModule,
     PickerModule,
-    MomentModule
+    MomentModule,
+    AgmCoreModule.forRoot({
+      apiKey:''
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

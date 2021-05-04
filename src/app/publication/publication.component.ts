@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Publication } from '../Model/publication';
 import { PublicationService } from '../Services/publication.service';
 import { Router } from '@angular/router'
+import { User } from '../Model/user';
 
 @Component({
   selector: 'app-publication',
@@ -12,6 +13,7 @@ export class PublicationComponent implements OnInit {
   nbre:number;
   pub!:Publication[];
   retrievedImage: any;
+  user:User[];
   
   base64Data: any;
   constructor(private service : PublicationService,
@@ -20,9 +22,11 @@ export class PublicationComponent implements OnInit {
   ngOnInit(): void {
     this.service.getpubNumber().subscribe((data:number)=>this.nbre=data);
     this.service.getpub().subscribe((data:Publication[]) =>this.pub = data);
+    this.service.getUser().subscribe((res:User[])=> this.user = res);
   }
   go():void {
     this.router.navigate(['addpub']);
   }
+  
 
 }

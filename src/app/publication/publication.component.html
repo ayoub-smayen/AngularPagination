@@ -8,6 +8,7 @@
                 border-radius:50px;
                 width:40px;
                 height:40px;
+                margin-right: 10px;
             }
             </style>
     </head>
@@ -26,20 +27,26 @@
                     
                             <i class="fa fa-globe text-navy mid-icon" ><span style="color: currentColor; text-align: right;">Welcome to our forum</span></i>
                         
-
+<div class="users">
+    <a *ngFor="let u of user" [routerLink]="['/addpub',u.user_id]">
+        <img  [src]="'data:image/jpeg;base64,'+u.img" title="{{u.user_name}} {{u.user_Lastname}}" width="50" class="roundedImage">
+    </a>
+</div>
                     <div class="forum-title">
                         <div class="pull-right forum-desc">
                             <small>Total posts: {{nbre}}</small>
                         </div>
                         <h3>General subjects</h3>
                     </div>
-    
+   
                     
                     <div class="forum-item" *ngFor="let p of pub">
                         <div class="row">
                             <div class="col-md-9">
                                 <div class="forum-icon">
-                                    <img [src]="'data:image/jpeg;base64,'+p.user.img" title="{{p.user.user_name}} {{p.user.user_Lastname}}" width="50" class="roundedImage">
+                                    
+                                        <img [src]="'data:image/jpeg;base64,'+p.user.img" title="{{p.user.user_name}} {{p.user.user_Lastname}}" width="50" class="roundedImage">
+                                   
                                 </div>
                                 <a [routerLink]="['/pubDetails',p.id]" class="forum-item-title"  id="pubid">{{p.title}}</a>
                                 <div class="forum-sub-title">{{p.publication_txt}} </div>

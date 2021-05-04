@@ -208,4 +208,7 @@ body{margin-top:20px;
    .name{
     font-weight:bold;
    }
+   .users{
+     display: block;
+   }
    

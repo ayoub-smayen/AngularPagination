@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import * as Stomp from 'stompjs'
-import * as SockJS from 'sockjs-client';
+/*import * as Stomp from 'stompjs'
+import * as SockJS from 'sockjs-client';*/
 @Injectable({
   providedIn: 'root'
 })
 export class MessageserviceService {
-  public stompClient;
-  public msg = [];
+  /*public stompClient;
+  public msg = [];*/
   constructor() { 
-    this.initializeWebSocketConnection();
+    //this.initializeWebSocketConnection();
   }
-  initializeWebSocketConnection() {
+  /*initializeWebSocketConnection() {
     const serverUrl = 'http://localhost:8080/ws';
     const ws = new SockJS(serverUrl);
     this.stompClient = Stomp.over(ws);
@@ -26,5 +26,5 @@ export class MessageserviceService {
   }
   sendMessage(message) {
     this.stompClient.send('/app/send/message' , {}, message);
-  }
+  }*/
 }

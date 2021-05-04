@@ -10,6 +10,15 @@ import { Publication } from '../Model/publication';
 export class PublicationService {
 
   constructor(private http:HttpClient) { }
+
+  public getUser(){
+    return this.http.get("http://localhost:8080/pi/RetrieveUser");
+  }
+
+  public AddPublication(pub:Publication,id:number){
+    return this.http.post("http://localhost:8080/pi/AddPublication/"+id,pub);
+  }
+
   public getpub(){
     return this.http.get("http://localhost:8080/pi/GetPubAlaune");
   }
