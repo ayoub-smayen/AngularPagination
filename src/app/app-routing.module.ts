@@ -11,8 +11,8 @@ const routes: Routes = [
 {path:"home",component:HomeComponent},
 {path:"euser",component:EuserComponent},
 {path:"search",component:SearchComponent},
-{path:"profit",component:ProfitComponent},
-{path:"dashboard",component:DashboardComponent}
+{path:"dashboard",component:DashboardComponent},
+{path:"profit",component:ProfitComponent}
 
 
 

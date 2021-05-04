@@ -16,6 +16,7 @@ export class SearchComponent implements OnInit {
  membre_username:string;
  password:string;
  euser:any;
+ user:Euser;
   constructor(private service:EuserserviceService) { }
 
 public deleteUser(id:number){

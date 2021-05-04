@@ -33,12 +33,16 @@ export class EuserserviceService {
          return this.http.post("http://localhost:8091/api/euser/add",user);
     }
 
-    update(id: number, user: Euser) {
+   /* update(id: number, user: Euser) {
         return this.http.put("http://localhost:8091/api/euser/update"+id,user,{responseType:'text' as 'json'});
-    }
+    }*/
+    update(id, user) {
+        return this.http.put(`http://localhost:8091/api/euser/update/${id}`, user);
+        
+      }
 
     delete(id: number) {
-        return this.http.delete("http://localhost:8091/api/euser/delete"+id);
+        return this.http.delete("http://localhost:8091/api/euser/delete/"+id);
     }
 
    

@@ -1,7 +1,7 @@
 
-<router-outlet>
-    
-</router-outlet>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 
        
@@ -33,12 +33,13 @@
                              <input id="c" type="radio" name="type" value="Monthly">Annual</h5>
                              <div class="customer" >
                                 <div class="input-group">
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"> </span></span>
                                     <input type="date" class="form-control" placeholder="Date" />
                                 </div>
                             </div>
-            <button type="button" (click)="getProfit1()"class="btn btn-primary btn-lg btn3d"><span class="glyphicon glyphicon-search"></span> View</button> 
-            <button type="button" (click)="getProfitMonthly()" class="btn btn-primary btn-lg btn3d">Profit</button>
+            <!--<button type="button" (click)="getProfit1(profit_id)"class="btn btn-primary btn-lg btn3d"><span class="glyphicon glyphicon-search"></span> View</button> -->
+            
+            <button type="button" (click)="getProfitMonthly()" class="btn btn-primary btn-lg btn3d"><span class="glyphicon glyphicon-search"></span>View</button>
         
         </div>                 
     <div class="panel-body">    
@@ -53,20 +54,27 @@
               </tr>
           </thead>   
           <tbody>
-            <tr *ngFor="let p of profitt | async">
+            <tr *ngFor="let p of profit">
                 
                 <td class="text-center" width="150px">{{p.income}}</td>
                 <td class="text-center" width="150px">{{p.outcome}}</td>
                 <td class="text-center" width="150px">{{p.month}}</td>
                 <td class="text-center" width="150px">{{p.margins}}</td>
+               <!-- <button type="button" (click)="getProfit1(p.profit_id)" class="btn btn-primary btn-lg btn3d"><span class="glyphicon glyphicon-search"></span> View</button> -->
             </tr>
            
               </tbody>
+              
               </table>
      <div class="text-center">
-            <h4> <label style="color:#E74C3C" for="Total">Total Income :</label></h4> 
+        <tr *ngFor="let p of profit">
+           <!-- <button type="button" (click)="getProfit2()" class="btn btn-primary btn-lg btn3d">Profit</button>-->
+           
+           
+            <h4> <label style="color:#E74C3C" for="Total">{{p.totalIncome}}Total Income :</label></h4> 
             <h4> <label style="color:#E74C3C" for="Total">Total Outcome :</label></h4> 
             <h4> <label style="color:#E74C3C" for="Total">Total Margins :</label></h4>
+            
         </div>
         
             
@@ -75,4 +83,67 @@
               
   </div>
        </div>
+
+
+
+
+
+
+
+<!--
+       <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+
+
+<div class="container">
+<div class="container">
+   <div class="row col-md-6 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>Income</th>
+            <th>Outcome</th>
+            <th>Month</th>
+            <th>Margins</th>
+        </tr>
+    </thead>
+    <tbody>
+      
+          <tr  *ngIf="profit== null  ;else arr">
+
+           
+                
+                <td class="text-center" width="150px">{{profit.income}}</td>
+                <td class="text-center" width="150px">{{profit.outcome}}</td>
+                <td class="text-center" width="150px">{{profit.month}}</td>
+                <td class="text-center" width="150px">{{profit.margins}}</td>
+                <td class="text-center"><button class="btn btn-danger btn-xs" (click)="getProfit()"> getprofit</button></td>
+            </tr>
+
+
+           <ng-template  #arr>
+
+            <tr *ngFor="let p of profits" >
+                <td>{{p.income}}</td>
+                <td>{{p.outcome}}</td>
+                <td>{{p.month}}</td>
+                <td>{{p.margins}}</td>
+                
+                <td class="text-center"><button class="btn btn-danger btn-xs" (click)="getProfit()"> getptofit</button></td>
+               
+                
+            </tr>
+            
+           </ng-template>
+       
+      
+    </tbody>
+    </table>
+   </div>
+</div>
+-->
+
     

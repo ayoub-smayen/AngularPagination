@@ -9,15 +9,20 @@ export class ProfitserviceService {
 
   constructor(private http: HttpClient) { }
 
-
     getProfit(profit_id:number) {
         return this.http.get(`http://localhost:8091/api/profit/get/${profit_id}`);
         
     }
     getAllProfit() {
-      return this.http.get("http://localhost:8091/api/profit/get");
+      return this.http.get("http://localhost:8091/api/profit/get/");
       
   }
+
+  getAllProfitt() {
+    return this.http.get(" http://localhost:8091/api/getTodayRevenueDash/");
+    
+}
+ 
   /*getAllProfit() {
     return this.http.get("http://localhost:8091/api/profit/get",{
       headers:{
@@ -30,11 +35,11 @@ export class ProfitserviceService {
     }
 
     update(id: number, profit: Profit) {
-        return this.http.put("http://localhost:8091/api/profit/update/{profit_id}"+id,profit);
+        return this.http.put("http://localhost:8091/api/profit/update/"+id,profit);
     }
 
     delete(id: number) {
-        return this.http.delete("http://localhost:8091/api/profit/delete/{profit_id}"+id);
+        return this.http.delete("http://localhost:8091/api/profit/delete/"+id);
     }
     
 
