@@ -31,6 +31,15 @@ message:any;
       registerNow(){
         let resp=this.euserserviceService.addUser(this.euser).subscribe((data)=>this.message=data);
     }
+
+adduser()
+{
+  //http://localhost:8091/api/euser/uploadimage
+
+
+}
+
+
     }
 
          /*this.id = this.route.snapshot.params['id'];
