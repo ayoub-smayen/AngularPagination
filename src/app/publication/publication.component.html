@@ -40,7 +40,7 @@
                     </div>
    
                     
-                    <div class="forum-item" *ngFor="let p of pub">
+                    <div class="forum-item" *ngFor="let p of pub | paginate:{ itemsPerPage: 4, currentPage: p }">
                         <div class="row">
                             <div class="col-md-9">
                                 <div class="forum-icon">
@@ -84,7 +84,7 @@
                             </div>                       
                         </div>
                     </div>
-                    
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
     
                 </div>
             </div>

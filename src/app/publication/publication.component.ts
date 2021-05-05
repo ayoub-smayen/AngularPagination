@@ -14,6 +14,7 @@ export class PublicationComponent implements OnInit {
   pub!:Publication[];
   retrievedImage: any;
   user:User[];
+  p:number = 1;
   
   base64Data: any;
   constructor(private service : PublicationService,

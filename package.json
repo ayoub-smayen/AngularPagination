@@ -31,6 +31,7 @@
     "jquery": "^1.12.4",
     "net": "^1.0.1",
     "ngx-moment": "^5.0.0",
+    "ngx-pagination": "^5.0.0",
     "rxjs": "~6.5.4",
     "sockjs-client": "^1.5.1",
     "stompjs": "^2.3.3",

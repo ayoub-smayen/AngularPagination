@@ -49,10 +49,15 @@ playsound =  false;
     
     
   }
+  
   AddComment(){
     let comment = new Comments();
     comment.comment_field = this.com;
     this.service.AddComments(this.user[Math.floor(Math.random()*this.user.length)],this.paramurl,comment).subscribe(res=>{  
+      
+        console.log(res);
+        this.ngOnInit();
+      
       /*const p: HTMLElement = this.renderer.createElement('li');
       p.innerHTML = `
       <a class="pull-left" href="#">

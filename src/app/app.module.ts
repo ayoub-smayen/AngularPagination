@@ -13,6 +13,7 @@ import { MomentModule } from 'ngx-moment';
 import { GooglemapsComponent } from './googlemaps/googlemaps.component';
 import { AgmCoreModule } from '@agm/core';
 import { ChatComponent } from './chat/chat.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -34,7 +35,8 @@ import { ChatComponent } from './chat/chat.component';
     MomentModule,
     AgmCoreModule.forRoot({
       apiKey:''
-    })
+    }),
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
