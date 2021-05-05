@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Euser } from '../models/euser';
 import { EuserserviceService } from '../services/euserservice.service';
 @Component({
@@ -17,7 +18,8 @@ export class SearchComponent implements OnInit {
  password:string;
  euser:any;
  user:Euser;
-  constructor(private service:EuserserviceService) { }
+  constructor(private service:EuserserviceService,private route: ActivatedRoute, 
+    private router: Router) { }
 
 public deleteUser(id:number){
  let resp= this.service.delete(id);

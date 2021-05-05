@@ -7,16 +7,13 @@ import { ProfitComponent } from './profit/profit.component';
 import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
-{path:"",redirectTo:"home",pathMatch:"full"},
+
 {path:"home",component:HomeComponent},
 {path:"euser",component:EuserComponent},
 {path:"search",component:SearchComponent},
 {path:"dashboard",component:DashboardComponent},
-{path:"profit",component:ProfitComponent}
-
-
-
-
+{path:"profit",component:ProfitComponent},
+{path:"",redirectTo:"home",pathMatch:"full"}
   
 ];
 

@@ -3,6 +3,7 @@ import { Profit } from '../models/profit';
 import { ProfitserviceService } from '../services/profitservice.service';
 import { DashboardserviceService } from '../services/dashboardservice.service';
 import { Observable } from 'rxjs/internal/Observable';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -23,13 +24,15 @@ margins:number;
 profit:any;
 
 //profitt: Observable<any>;
-  constructor(private profitserviceService : ProfitserviceService ,private dashboardserviceService : DashboardserviceService ) { }
+  constructor(private route: ActivatedRoute, 
+    private router: Router, private profitserviceService : ProfitserviceService ,private dashboardserviceService : DashboardserviceService ) { }
 
   ngOnInit(): void {
     //this.getProfit1();
 //this.getProfitMonthly();
    // this.profitserviceService.getProfit().subscribe((data:Profit[]) =>{ this.profit = data;});
 }
+
 
 getProfitMonthly(){
  let resp=this.profitserviceService.getAllProfit().subscribe((data:Profit) =>{ console.log (data);this.profit = data;});
