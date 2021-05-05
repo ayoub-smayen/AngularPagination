@@ -17,6 +17,7 @@ import { SearchComponent } from './search/search.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { HomeComponent } from './home/home.component';
     SearchComponent,
     SideBarComponent,
     NavBarComponent,
-    HomeComponent
+    HomeComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,

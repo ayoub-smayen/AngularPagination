@@ -18,6 +18,8 @@ export class SearchComponent implements OnInit {
  password:string;
  euser:any;
  user:Euser;
+ message = '';
+ currentTutorial = null;
   constructor(private service:EuserserviceService,private route: ActivatedRoute, 
     private router: Router) { }
 
@@ -60,7 +62,24 @@ public findUserById(id){
  ngOnInit(): void {
   let resp=this.service.getAllUsers();
   resp.subscribe((data)=>this.users=data);
+  //this.getTutorial(this.route.snapshot.paramMap.get('id'));
 }
+
+
+/*getTutorial(id): void {
+  this.catserv.getatbyid(id)
+    .subscribe(
+      data => {
+        const fg = data; 
+        this.category = fg.cv;
+        console.log(data);
+        alert(data);
+      },
+      error => {
+        console.log(error);
+      });
+}*/
+
 
 }
 

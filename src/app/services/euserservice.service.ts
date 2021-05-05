@@ -18,8 +18,8 @@ export class EuserserviceService {
         }*/
 
        
-    getById(id: number) {
-        return this.http.get    ("http://localhost:8091/api/euser/finduserbyid/"+id);
+    getById(id: number): Observable<Euser>  {
+        return this.http.get<Euser>    ("http://localhost:8091/api/euser/finduserbyid/"+id);
         
     }
     getUser() {
