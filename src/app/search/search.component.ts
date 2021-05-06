@@ -28,10 +28,10 @@ public deleteUser(id:number){
  resp.subscribe((data)=>this.users=data);
 }
 
-public updateUser(id:number, user: Euser){
+/*public updateUser(id:number, user: Euser){
   let resp= this.service.update(id,user);
   resp.subscribe((data)=>this.users=data);
- }
+ }*/
 
 public findUserById(id){
 
