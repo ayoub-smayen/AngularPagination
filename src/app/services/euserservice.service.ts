@@ -27,7 +27,7 @@ export class EuserserviceService {
     }
 
     
-   // http://localhost:8091/api/uploadimage???
+   
 
     addUser(user: Euser) {
          return this.http.post("http://localhost:8091/api/euser/add",user);

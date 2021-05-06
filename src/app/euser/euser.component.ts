@@ -4,6 +4,7 @@ import { EuserserviceService } from '../services/euserservice.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-euser',
   templateUrl: './euser.component.html',
@@ -15,14 +16,16 @@ export class EuserComponent implements OnInit {
   isAddMode: boolean;
   loading = false;
   submitted = false*/
-
+  private selectedFile2;
+   
+   imageUrl2: any;
 euser:Euser;
 message:any;
   constructor(
     //private formBuilder: FormBuilder,
     private route: ActivatedRoute, 
       private router: Router, 
-        private euserserviceService: EuserserviceService) { this.euser = new Euser(); }
+        private euserserviceService: EuserserviceService ,private http: HttpClient) { this.euser = new Euser(); }
 
         ngOnInit(): void {
    
@@ -32,13 +35,45 @@ message:any;
         let resp=this.euserserviceService.addUser(this.euser).subscribe((data)=>this.message=data);
     }
 
-adduser()
+add()
 {
-  //http://localhost:8091/api/euser/uploadimage
+  
+  const uploadData = new FormData();
+  uploadData.append('file', this.selectedFile2, this.selectedFile2.name);
 
+
+  this.http.post('http://localhost:8091/api/euser/uploadimage', uploadData, { observe: 'response' })
+  .subscribe((response) => {
+    console.log(response);
+
+    if (response.status === 200) {
+      this.euserserviceService.addUser(this.euser).subscribe(
+        
+        (profile) => {
+          console.table(this.euser);
+          //this.bookAddedEvent.emit();
+      
+window.location.reload();
+          this.router.navigate(['homestore']);
+        }
+      );
+      console.log('Image uploaded successfully');
+    } else {
+      console.log('Image not uploaded successfully');
+    }
+  }
+  );
 
 }
+public onFileChanged2(event) {
+  console.log(event);
+  this.selectedFile2 = event.target.files[0];
 
+  let reader = new FileReader();
+  reader.readAsDataURL(event.target.files[0]);
+  reader.onload = (event2) => {
+    this.imageUrl2 = reader.result;
+  };
 
     }
 
@@ -131,4 +166,4 @@ private updateUser() {
 
 
 
- 
+}
