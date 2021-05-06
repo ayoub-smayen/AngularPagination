@@ -7,6 +7,7 @@ import { ProfitComponent } from './profit/profit.component';
 import { SearchComponent } from './search/search.component';
 import { DiceComponent } from './dice/dice.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { Dice2Component } from './dice2/dice2.component';
 
 const routes: Routes = [
 
@@ -16,6 +17,7 @@ const routes: Routes = [
 {path:"dashboard",component:DashboardComponent},
 {path:"profit",component:ProfitComponent},
 {path:"dice",component:DiceComponent},
+{path:"dice2",component:Dice2Component},
 {path:"euser/:id",component:UpdateUserComponent},
 {path:"",redirectTo:"home",pathMatch:"full"}
   

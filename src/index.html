@@ -7,11 +7,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
-
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
   <app-root></app-root>
+  <script>
+  
+    // Player name
+    var player1 = "Player 1";
+    var player2 = "Player 2";
+  
+    // Function to change the player name
+    function editNames() {
+        player1 = prompt("Change Player1 name");
+        player2 = prompt("Change player2 name");
+  
+        document.querySelector("p.Player1").innerHTML = player1;
+        document.querySelector("p.Player2").innerHTML = player2;
+    }
+  
+    // Function to roll the dice
+    function rollTheDice() {
+        setTimeout(function () {
+            var randomNumber1 = Math.floor(Math.random() * 6) + 1;
+            var randomNumber2 = Math.floor(Math.random() * 6) + 1;
+  
+            document.querySelector(".img1").setAttribute("src",
+                "./assets/dice" + randomNumber1 + ".png");
+  
+            document.querySelector(".img2").setAttribute("src",
+            "./assets/dice" + randomNumber2 + ".png");
+  
+            if (randomNumber1 === randomNumber2) {
+                document.querySelector("h1").innerHTML = "Draw!";
+            }
+  
+            else if (randomNumber1 < randomNumber2) {
+                document.querySelector("h1").innerHTML
+                                = (player2 + " WINS!");
+            }
+  
+            else {
+                document.querySelector("h1").innerHTML
+                                = (player1 + " WINS!");
+            }
+        }, 2500);
+    }
+    // Player name
+    var player1 = "Player 1";
+        var player2 = "Player 2";
+  
+        // Function to change the player name
+        function editNames() {
+            player1 = prompt("Change Player1 name");
+            player2 = prompt("Change player2 name");
+  
+            document.querySelector("p.Player1")
+                            .innerHTML = player1;
+                              
+            document.querySelector("p.Player2")
+                            .innerHTML = player2;
+        }
+  
+        // Function to roll the dice
+        /*function rollTheDice() {
+            setTimeout(function () {
+                var randomNumber1 = Math.floor(Math.random() * 6) + 1;
+                var randomNumber2 = Math.floor(Math.random() * 6) + 1;
+  
+                document.querySelector(".img1").setAttribute("src",
+                    "dice" + randomNumber1 + ".png");
+  
+                document.querySelector(".img2").setAttribute("src",
+                    "dice" + randomNumber2 + ".png");
+  
+                if (randomNumber1 === randomNumber2) {
+                    document.querySelector("h1").innerHTML = "Draw!";
+                }
+  
+                else if (randomNumber1 < randomNumber2) {
+                    document.querySelector("h1").innerHTML
+                        = (player2 + " WINS!");
+                }
+  
+                else {
+                    document.querySelector("h1").innerHTML
+                        = (player1 + " WINS!");
+                }
+            }, 2500);
+        }*/
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script> 
   const diceDiv = document.querySelector('.dice-images');
     const rollButton = document.querySelector('.roll-button');
