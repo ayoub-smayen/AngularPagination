@@ -5,6 +5,7 @@ import { EuserComponent } from './euser/euser.component';
 import { HomeComponent } from './home/home.component';
 import { ProfitComponent } from './profit/profit.component';
 import { SearchComponent } from './search/search.component';
+import { DiceComponent } from './dice/dice.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
 {path:"search",component:SearchComponent},
 {path:"dashboard",component:DashboardComponent},
 {path:"profit",component:ProfitComponent},
+{path:"dice",component:DiceComponent},
 {path:"euser/:id",component:UpdateUserComponent},
 {path:"",redirectTo:"home",pathMatch:"full"}
   

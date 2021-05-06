@@ -1,0 +1,19 @@
+body {
+    display: inline-block;
+}
+.roll-button {
+margin-bottom: 10px;
+}
+.roll-div,
+.reset-div {
+    text-align: center;
+}
+.container {
+    width: 300px;
+    display: inline-block;
+}
+.your-score {
+    width: 300px;
+    float: right;
+    display: inline-block;
+}

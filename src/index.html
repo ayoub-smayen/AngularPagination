@@ -12,6 +12,74 @@
 </head>
 <body>
   <app-root></app-root>
+  <script> 
+  const diceDiv = document.querySelector('.dice-images');
+    const rollButton = document.querySelector('.roll-button');
+    const resetButton = document.querySelector('.reset-button');
+    let totalScore = document.querySelector('.total');
+    const scoreBoard = document.querySelector('.score-board');
+    var total = 0;
+    totalScore.innerHTML = 0;
+    
+    //create array for images
+    var images = [];
+    
+    // // function to create objects. Accepts src and title as args
+    function createImage(src, title) {
+      var img   = new Image();
+      img.src   = src;
+      img.alt   = title;
+      img.title = title;
+      return img; 
+    };
+    
+    // push images into the images array, plus createImage function
+    images.push(createImage('http://www.clker.com/cliparts/a/d/q/R/f/9/blank-dice-md.png', 'Blank Die Face'));
+    images.push(createImage('http://www.clker.com/cliparts/m/v/m/J/4/V/dice-1-md.png', 'Side One of Die'));
+    images.push(createImage('http://www.clker.com/cliparts/l/f/6/l/H/A/dice-2-md.png', 'Side Two of Die'));
+    images.push(createImage('http://www.clker.com/cliparts/M/e/P/O/L/b/dice-3-md.png', 'Side Three of Die'));
+    images.push(createImage('http://www.clker.com/cliparts/r/z/d/a/L/V/dice-4-md.png', 'Side Four of Die'));
+    images.push(createImage('http://www.clker.com/cliparts/e/y/7/h/W/K/dice-5-md.png', 'Side Five of Die'));
+    images.push(createImage('http://www.clker.com/cliparts/l/6/4/3/K/H/dice-6-md.png', 'Side Six of Die'));
+    
+    // append blank die face
+    diceDiv.appendChild(images[0]);
+    
+    // roll the dice event
+    rollButton.addEventListener('click', () => {
+      diceDiv.classList.remove('animated', 'wobble', 'shake');
+      setTimeout(function(){
+        diceDiv.classList.add('animated', 'wobble', 'shake');
+      }, 100);
+      let score = Math.floor((Math.random() * 6) + 1);
+      function printImage() {
+        diceDiv.innerHTML = ''; // this is a no-no
+        diceDiv.appendChild(images[score]);
+      }
+      
+      if (score > 0 && score < 7) {
+        printImage();
+      } 
+    
+      // write score to screen
+      let ul = document.createElement('ul');
+      let li = document.createElement('li');
+      li.innerHTML = score;
+      ul.appendChild(li);
+      scoreBoard.appendChild(ul); // check order
+      total = score + total;
+      totalScore.innerHTML = total;
+    });
+    
+    // reset button event
+    resetButton.addEventListener('click', () => {
+      total = 0;
+      totalScore.innerHTML = '0';
+      diceDiv.innerHTML = ''; // this is a no-no
+      diceDiv.appendChild(images[0]);
+      scoreBoard.innerHTML = ''; // this is a no-no
+    });
+  </script>
 </body>
 </html>
 <!--

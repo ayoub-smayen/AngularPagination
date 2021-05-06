@@ -18,6 +18,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { DiceComponent } from './dice/dice.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { UpdateUserComponent } from './update-user/update-user.component';
     SideBarComponent,
     NavBarComponent,
     HomeComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    DiceComponent
   ],
   imports: [
     BrowserModule,
