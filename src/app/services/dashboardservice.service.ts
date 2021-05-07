@@ -6,12 +6,8 @@ import { HttpClient } from '@angular/common/http';
 export class DashboardserviceService {
 
   constructor(private http: HttpClient) { }
-
- 
-
- 
    /* getDashboard() {
-        return this.http.get(" http://localhost:8091/api/dashboard/get/{dashboard_id}");
+        return this.http.get(`http://localhost:8091/api/dashboard/get/${dashboard_id}`);
     }*/
 
     getDashboard(dashboard_id:number) {
