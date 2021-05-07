@@ -19,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { DiceComponent } from './dice/dice.component';
 import { Dice2Component } from './dice2/dice2.component';
+import { ProfitpermonthComponent } from './profitpermonth/profitpermonth.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { Dice2Component } from './dice2/dice2.component';
     UpdateUserComponent,
     DiceComponent,
     Dice2Component,
+    ProfitpermonthComponent,
     
   ],
   imports: [

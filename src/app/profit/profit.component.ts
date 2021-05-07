@@ -34,7 +34,7 @@ profit:any;
 }
 
 
-getProfitMonthly(){
+getAllProfit1(){
  let resp=this.profitserviceService.getAllProfit().subscribe((data:Profit) =>{ console.log (data);this.profit = data;});
 }
 

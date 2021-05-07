@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Dashboard } from '../models/dashboard';
 import { DashboardserviceService } from '../services/dashboardservice.service';
 
 
@@ -15,6 +16,7 @@ export class DashboardComponent implements OnInit {
 
    
   ngOnInit() {
-
 }
+
+
 }

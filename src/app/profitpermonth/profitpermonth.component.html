@@ -1,0 +1,114 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+       
+        <div id="fullscreen_bg" class="fullscreen_bg">
+ <form class="form-signin">
+<div class="container">
+    <div class="row">
+        <div class="col-md-7 col-md-offset-2">
+        
+        <div class="panel panel-default">
+        
+        <div class="panel panel-primary">
+        
+            
+            <div class="text-center" >
+            
+            <button type="button" (click)="getProfitMonthly()" class="btn btn-primary btn-lg btn3d"><span class="glyphicon glyphicon-search"></span>View</button>
+        
+        </div>                 
+    <div class="panel-body">    
+
+<table class="table table-striped table-condensed">
+              <thead>
+              <tr>
+                  <th class="text-center" width="115px">Profit</th>
+                  <!--<th class="text-center" width="115px">Month</th>-->
+                  
+              </tr>
+          </thead>   
+          <tbody>
+            <button type="button" (click)="getProfitMonthly()" class="btn btn-primary btn-lg btn3d"><span class="glyphicon glyphicon-search"></span>profit</button>
+            <!--<tr *ngFor="let p of profit">
+                
+            
+                <td class="text-center" width="150px">{{p.month}}</td>-->
+               
+               <!-- <button type="button" (click)="getProfit1(p.profit_id)" class="btn btn-primary btn-lg btn3d"><span class="glyphicon glyphicon-search"></span> View</button> -->
+           <!--</tr>-->
+           
+              </tbody>
+              
+              </table>
+    
+            
+  
+  </div>
+       </div>
+
+
+
+
+
+
+
+<!--
+       <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+
+
+<div class="container">
+<div class="container">
+   <div class="row col-md-6 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>Income</th>
+            <th>Outcome</th>
+            <th>Month</th>
+            <th>Margins</th>
+        </tr>
+    </thead>
+    <tbody>
+      
+          <tr  *ngIf="profit== null  ;else arr">
+
+           
+                
+                <td class="text-center" width="150px">{{profit.income}}</td>
+                <td class="text-center" width="150px">{{profit.outcome}}</td>
+                <td class="text-center" width="150px">{{profit.month}}</td>
+                <td class="text-center" width="150px">{{profit.margins}}</td>
+                <td class="text-center"><button class="btn btn-danger btn-xs" (click)="getProfit()"> getprofit</button></td>
+            </tr>
+
+
+           <ng-template  #arr>
+
+            <tr *ngFor="let p of profits" >
+                <td>{{p.income}}</td>
+                <td>{{p.outcome}}</td>
+                <td>{{p.month}}</td>
+                <td>{{p.margins}}</td>
+                
+                <td class="text-center"><button class="btn btn-danger btn-xs" (click)="getProfit()"> getptofit</button></td>
+               
+                
+            </tr>
+            
+           </ng-template>
+       
+      
+    </tbody>
+    </table>
+   </div>
+</div>
+-->
+
+    

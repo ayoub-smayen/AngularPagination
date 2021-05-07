@@ -10,6 +10,7 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 import { Dice2Component } from './dice2/dice2.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProfitpermonthComponent } from './profitpermonth/profitpermonth.component';
 const routes: Routes = [
 
 {path:"home",component:HomeComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
 {path:"search",component:SearchComponent},
 {path:"dashboard",component:DashboardComponent},
 {path:"profit",component:ProfitComponent},
+{path:"profitpermonth",component:ProfitpermonthComponent},
 {path:"dice",component:DiceComponent},
 {path:"dice2",component:Dice2Component},
 {path:"euser/:id",component:UpdateUserComponent},
