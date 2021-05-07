@@ -17,8 +17,7 @@ export class EuserComponent implements OnInit {
   loading = false;
   submitted = false*/
   private selectedFile2;
-   
-   imageUrl2: any;
+imageUrl2: any;
 euser:Euser;
 message:any;
   constructor(
@@ -31,9 +30,9 @@ message:any;
    
         }
     
-      registerNow(){
+     /* registerNow(){
         let resp=this.euserserviceService.addUser(this.euser).subscribe((data)=>this.message=data);
-    }
+    }*/
 
 add()
 {
@@ -54,7 +53,7 @@ add()
           //this.bookAddedEvent.emit();
       
 window.location.reload();
-          this.router.navigate(['homestore']);
+          this.router.navigate(['home']);
         }
       );
       console.log('Image uploaded successfully');

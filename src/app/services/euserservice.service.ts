@@ -30,7 +30,7 @@ export class EuserserviceService {
    
 
     addUser(user: Euser) {
-         return this.http.post("http://localhost:8091/api/euser/add",user);
+         return this.http.post("http://localhost:8091/api/euser/add/",user);
     }
 
    /* update(id: number, user: Euser) {
