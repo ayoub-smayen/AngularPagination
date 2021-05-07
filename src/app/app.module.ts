@@ -14,12 +14,15 @@ import { ProfitComponent } from './profit/profit.component';
 import { DashboardserviceService } from './services/dashboardservice.service';
 import { ProfitserviceService } from './services/profitservice.service';
 import { SearchComponent } from './search/search.component';
-import { SideBarComponent } from './side-bar/side-bar.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
+
 import { HomeComponent } from './home/home.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { DiceComponent } from './dice/dice.component';
 import { Dice2Component } from './dice2/dice2.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { FooterComponent } from './components/footer/footer.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,8 @@ import { Dice2Component } from './dice2/dice2.component';
     HomeComponent,
     UpdateUserComponent,
     DiceComponent,
-    Dice2Component
+    Dice2Component,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
