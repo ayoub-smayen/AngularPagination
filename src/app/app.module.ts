@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,9 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { DiceComponent } from './dice/dice.component';
 import { Dice2Component } from './dice2/dice2.component';
-import { SideBarComponent } from './components/side-bar/side-bar.component';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { FooterComponent } from './components/footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -30,19 +28,19 @@ import { FooterComponent } from './components/footer/footer.component';
     DashboardComponent,
     ProfitComponent,
     SearchComponent,
-    SideBarComponent,
-    NavBarComponent,
     HomeComponent,
     UpdateUserComponent,
     DiceComponent,
     Dice2Component,
-    FooterComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    
+   
     
   ],
   providers: [EuserserviceService,DashboardserviceService,ProfitserviceService],

@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+/*import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../side-bar/side-bar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { Router } from '@angular/router';
@@ -122,4 +122,4 @@ export class NavBarComponent implements OnInit {
       }
       return 'Dashboard';
     }
-}
+}*/
