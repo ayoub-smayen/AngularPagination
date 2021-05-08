@@ -1,0 +1,74 @@
+
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+
+<div class="container">
+    
+            
+                <fieldset>
+<legend class="text-center"> this is the list of claims <span class="req"><small>
+    </small></span></legend>
+
+</fieldset>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                       <div id="custom-search-input">
+                                        <div class="input-group col-md-12" style="text-align: center">
+                                            <input type="text" class="search-query form-control" id="myInput" placeholder="Search With id"  name="id"/>
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-danger" type="button">
+                                                    <span class=" glyphicon glyphicon-search"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+            </div>
+            </div>
+    </div>
+    </div>
+<div class="container">
+    <div class="container">
+        <div class="row col-md-6 col-md-offset-2 custyle">
+        <table class="table table-striped custab"   id="myTable">
+        <thead>
+            <tr>
+            
+
+                <th>id</th>
+                <th>subject</th>
+                <th>desc</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+
+            
+            <tr *ngFor="let claim of listClaim">
+              
+                <td>{{claim.claim_id}}</td>
+                <td>{{claim.subject}}</td>
+                <td>{{claim.desc}}</td>
+                
+            
+                <td class="text-center"><button class="btn btn-danger btn-xs" (click)=" deleteClaim(claim.claim_id)"><span class="glyphicon glyphicon-remove"></span> delete</button></td>
+              </tr>
+        </tbody>
+        </table>
+        </div>
+    </div>
+
+
+
+
+

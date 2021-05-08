@@ -1,0 +1,40 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <fieldset>
+                    <legend class="text-center"> Valid information is required to add a claim <span class="req"><small>
+                                </small></span></legend>
+
+                    <div class="form-group">
+                        <label for=""><span class="req"> </span> Subject </label>
+                        <input class="form-control" required type="text" name="sub" [(ngModel)]="sub "
+                            id="deliveryMan_Name" placeholder="type a name" />
+                        <div class="status" id="txt"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for=""><span class="req"> </span> Description </label>
+                        <input class="form-control" required type="text" name="description" [(ngModel)]="description "
+                            id="lastName" placeholder="type a name" />
+                        <div class="status" id="txt"></div>
+                    </div>
+  
+                    
+                    <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="submit_reg" value="Add" (click)=" addClaim()">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
