@@ -6,12 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./googlemaps.component.css']
 })
 export class GooglemapsComponent implements OnInit {
-  lat: number = 35.506623464745104;
-  lng: number = 11.027577681755126;
+  lat: number ;
+  lng: number ;
   
   constructor() { }
 
   ngOnInit(): void {
+    navigator.geolocation.getCurrentPosition(position=>{
+      this.lat = position.coords.latitude;
+      this.lng = position.coords.longitude;
+    });
   }
+  
 
 }

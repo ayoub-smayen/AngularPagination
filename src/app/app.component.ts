@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { MessageserviceService } from './messageservice.service';
-import { Websocketapi } from './Websocketapi';
+import { MessageserviceService } from './Services/messageservice.service';
+import { Websocketapi } from './Services/websocketapi';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

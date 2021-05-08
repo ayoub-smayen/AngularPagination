@@ -24,6 +24,7 @@ id:any;
 date: String;
 hide = true;
 
+
 @ViewChild('cocomment') comm: ElementRef;
 
 play = false;
@@ -41,11 +42,8 @@ playsound =  false;
     
     this.paramurl = this.activatedroute.snapshot.params.id;
     
-    this.service.getpubdetails(this.paramurl).subscribe((data:Publication)=> {this.pub = data;
-      this.service.getCommentsById(this.paramurl).subscribe((com:Comments[])=> this.comments = com);
-    
-    });
-    
+    this.service.getpubdetails(this.paramurl).subscribe((data:Publication)=> this.pub = data);
+    this.service.getCommentsById(this.paramurl).subscribe((com:Comments[])=> this.comments = com);
     
     
   }
@@ -53,62 +51,47 @@ playsound =  false;
   AddComment(){
     let comment = new Comments();
     comment.comment_field = this.com;
-    this.service.AddComments(this.user[Math.floor(Math.random()*this.user.length)],this.paramurl,comment).subscribe(res=>{  
-      
-        console.log(res);
-        this.ngOnInit();
-      
-      /*const p: HTMLElement = this.renderer.createElement('li');
-      p.innerHTML = `
-      <a class="pull-left" href="#">
-       <img class="roundedImage" [src]="\'data:image/jpeg;base64,\'+c.user.img" alt="avatar"></a>
-      <div class="comment-body">
-          <div class="comment-heading">
-              <h4 class="user">{{c.user.user_Lastname}}</h4>
-              <h5 class="time">{{c.createdAt | amTimeAgo:true}}</h5>
-          </div>
-          <p>`+this.com+`</p>
-          <div class="stats">
-              <a href="#" class="btn btn-default stat-item" (click)="addlikecomments(c.id)" onclick="window.location.reload()">
-                  <i class="fa fa-thumbs-up icon"></i>{{c.like_count}}       
-              </a>
-              <a href="#" class="btn btn-default stat-item" (click)="deleteComment(c.id)">
-                  <i class="fas fa-times-circle"></i>
-              </a>
-              
-          </div>
-      </div>
-     
-  `;
-  this.renderer.appendChild(this.comm.nativeElement,p);*/
-    
-    
-    
-    });
-    this.playsound = ! this.playsound;
+    this.service.AddComments(this.user[Math.floor(Math.random()*this.user.length)],this.paramurl,comment).subscribe( res=>
+
+    {this.playsound = ! this.playsound;
     
     this.com = '';
+    this.paramurl = this.activatedroute.snapshot.params.id;
+    
+    this.service.getpubdetails(this.paramurl).subscribe((data:Publication)=> this.pub = data);
+  this.service.getCommentsById(this.paramurl).subscribe((com:Comments[])=> this.comments = com);
    
 
-    
+});
   }
   addlike(){
-    this.service.Addlikepublication(this.paramurl).subscribe();
-    this.play = !this.play;
-    this.ngOnInit();
-  }
+    this.service.Addlikepublication(this.paramurl).subscribe(res=>{
+      this.play = !this.play;
+      this.service.getpubdetails(this.paramurl).subscribe((data:Publication)=> {this.pub = data;
+        this.service.getCommentsById(this.paramurl).subscribe((com:Comments[])=> this.comments = com);
+    
+    });
+    
+    
+  
+  });}
+    
   adddislike(){
-    this.service.Adddislikepublication(this.paramurl).subscribe();
-    window.location.reload();
-    this.ngOnInit();
+    this.service.Adddislikepublication(this.paramurl).subscribe(res =>{this.service.getpubdetails(this.paramurl).subscribe((data:Publication)=> this.pub = data);
+      this.service.getCommentsById(this.paramurl).subscribe((com:Comments[])=> this.comments = com);});
+    
   }
   addlikecomments(id){
-    this.service.Addlikecomments(id).subscribe();
-    this.ngOnInit();
+    this.service.Addlikecomments(id).subscribe(res =>{this.service.getpubdetails(this.paramurl).subscribe((data:Publication)=> this.pub = data);
+      this.service.getCommentsById(this.paramurl).subscribe((com:Comments[])=> this.comments = com);});
+    
   }
   deleteComment(id){
-    this.service.deleteComments(id).subscribe();
-    this.ngOnInit();
+    this.service.deleteComments(id).subscribe(
+      res =>{this.service.getpubdetails(this.paramurl).subscribe((data:Publication)=> this.pub = data);
+        this.service.getCommentsById(this.paramurl).subscribe((com:Comments[])=> this.comments = com);}
+    );
+    
   }
 
 hidecomment(){

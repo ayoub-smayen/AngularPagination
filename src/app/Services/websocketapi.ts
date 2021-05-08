@@ -2,10 +2,10 @@
 import * as Stomp from 'stompjs';
 import * as SockJS from 'sockjs-client';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from '../app.component';
 export class Websocketapi {
 
-    webSocketEndPoint: string = 'http://localhost:8080/ws';
+    webSocketEndPoint: string = 'http://localhost:8080/ws/';
     topic: string = "/topic/greetings";
     stompClient: any;
     appComponent: AppComponent;
@@ -17,9 +17,9 @@ export class Websocketapi {
         let ws = new SockJS(this.webSocketEndPoint);
         this.stompClient = Stomp.over(ws);
         const _this = this;
-        _this.stompClient.connect({}, function (frame) {
-            _this.stompClient.subscribe(_this.topic, function (sdkEvent) {
-                _this.onMessageReceived(sdkEvent);
+        this.stompClient.connect({}, function (frame) {
+            this.stompClient.subscribe(_this.topic, function (sdkEvent) {
+                this.onMessageReceived(sdkEvent);
             });
             //_this.stompClient.reconnect_delay = 2000;
         }, this.errorCallBack);
