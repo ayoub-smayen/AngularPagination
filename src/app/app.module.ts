@@ -20,6 +20,7 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 import { DiceComponent } from './dice/dice.component';
 import { Dice2Component } from './dice2/dice2.component';
 import { ProfitpermonthComponent } from './profitpermonth/profitpermonth.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { ProfitpermonthComponent } from './profitpermonth/profitpermonth.compone
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    CommonModule
     
    
     

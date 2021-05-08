@@ -31,7 +31,8 @@
 
                     <div class="form-group">
                         <label for="exampleFormControlFile1">Your image</label>
-                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        <input   type="file" class="form-control-file" (change)="onFileChanged2($event)">
+                      <img [src]="imageUrl2" height="200" width="200" *ngIf="imageUrl2">
                       </div>
 
                       

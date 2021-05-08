@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Euser } from '../models/euser';
@@ -11,9 +12,11 @@ import { EuserserviceService } from '../services/euserservice.service';
 export class UpdateUserComponent implements OnInit {
   euser:Euser=null;
   message:string;
+  private selectedFile2;
+  imageUrl2: any;
   constructor(private route: ActivatedRoute, 
     private router: Router, 
-      private euserserviceService: EuserserviceService) { }
+      private euserserviceService: EuserserviceService,private http:HttpClient) { }
 
   ngOnInit(): void {
     this.getTutorial(this.route.snapshot.paramMap.get('id'));
@@ -34,7 +37,7 @@ export class UpdateUserComponent implements OnInit {
   }
 
 
-  updateTutorial(): void {
+  updateTutorial1(): void {
     console.table(this.euser);
     this.euserserviceService.addUser(this.euser)
       .subscribe(
@@ -48,4 +51,53 @@ export class UpdateUserComponent implements OnInit {
           console.log(error);
         });
   }
+
+  updateTutorial()
+  {
+    
+    const uploadData = new FormData();
+    uploadData.append('file', this.selectedFile2, this.selectedFile2.name);
+  
+  
+    this.http.post('http://localhost:8091/api/euser/uploadimage', uploadData, { observe: 'response' })
+    .subscribe((response) => {
+      console.log(response);
+  
+      if (response.status === 200) {
+        this.euserserviceService.addUser(this.euser).subscribe(
+          
+          (profile) => {
+            console.table(this.euser);
+            //this.bookAddedEvent.emit();
+        
+  window.location.reload();
+            this.router.navigate(['home']);
+          }
+        );
+        console.log('Image uploaded successfully');
+      } else {
+        console.log('Image not uploaded successfully');
+      }
+    }
+    );
+  
+  }
+
+
+
+
+
+
+
+  public onFileChanged2(event) {
+    console.log(event);
+    this.selectedFile2 = event.target.files[0];
+  
+    let reader = new FileReader();
+    reader.readAsDataURL(event.target.files[0]);
+    reader.onload = (event2) => {
+      this.imageUrl2 = reader.result;
+    };
+  
+      }
 }
