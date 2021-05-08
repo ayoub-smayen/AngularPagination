@@ -1,0 +1,26 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+<div class="container bootdey">
+    <div class="col-md-3">
+        <section class="panel">
+            <div class="panel-body">
+                <input type="text" placeholder="Keyword Search" class="form-control" />
+            </div>
+        </section>
+        <section class="panel">
+            <header class="panel-heading">
+                Category
+            </header>
+            <div class="panel-body">
+                <ul class="nav prod-cat">
+                    <li *ngFor="let c of cat">
+                        <a href="#" class="active"><i class="fa fa-angle-right"></i> {{c}}</a>                       
+                    </li>
+                   
+                </ul>
+            </div>
+        </section>
+        
+            
+        
+    </div>
+</div>
