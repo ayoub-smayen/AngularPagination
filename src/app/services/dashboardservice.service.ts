@@ -15,27 +15,30 @@ export class DashboardserviceService {
       
   }
     getProfitPerMonth() {
-      return this.http.get("http://localhost:8091/api/profitpermonth");
+      return this.http.get("http://localhost:8091/api/profitpermonth/");
       
   }
   getBestProductLikeDeslike() {
-    return this.http.get("http://localhost:8091/api/dashboard/bestproductlikedeslike");
+    return this.http.get("http://localhost:8091/api/dashboard/bestproductlikedeslike/");
     
 }
   
 getGeneralStatic() {
-  return this.http.get("http://localhost:8091/api/agesexecity");
+  return this.http.get("http://localhost:8091/api/agesexecity/");
   
 }
 getTodayRevenueDash() {
-  return this.http.get("http://localhost:8091/api/getTodayRevenueDash");
+  return this.http.get("http://localhost:8091/api/getTodayRevenueDash/");
   
 }
 getVisit() {
-  return this.http.get("http://localhost:8091/api/lvisit");
+  return this.http.get("http://localhost:8091/api/lvisit/");
   
 }
 
+getProfit3() {
+  return this.http.get("http://localhost:8091/api/profit/");
   
+}
 
 }

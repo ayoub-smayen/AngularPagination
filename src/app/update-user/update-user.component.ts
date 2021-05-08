@@ -43,7 +43,7 @@ export class UpdateUserComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response);
-          this.message = 'The tutorial was updated successfully!';
+          this.message = 'The form was updated successfully!';
           alert(this.message);
           this.router.navigate(['/euser']);
         },

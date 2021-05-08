@@ -21,6 +21,7 @@ import { DiceComponent } from './dice/dice.component';
 import { Dice2Component } from './dice2/dice2.component';
 import { ProfitpermonthComponent } from './profitpermonth/profitpermonth.component';
 import { CommonModule } from '@angular/common';
+import { GeneralstatisticComponent } from './generalstatistic/generalstatistic.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { CommonModule } from '@angular/common';
     DiceComponent,
     Dice2Component,
     ProfitpermonthComponent,
+    GeneralstatisticComponent,
     
   ],
   imports: [

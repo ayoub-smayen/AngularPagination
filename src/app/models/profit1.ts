@@ -1,6 +1,5 @@
 export class Profit1 {
-    income:number;
-    month: string;
+    p:Map<string,number>;
     
    
 }

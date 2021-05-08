@@ -19,6 +19,7 @@
            
             <button type="button" (click)="getProfitMonthly()" class="btn btn-primary btn-lg btn3d"><span class="glyphicon glyphicon-search"></span>View</button>
         
+           
         </div>                 
     <div class="panel-body">    
 
@@ -26,26 +27,17 @@
               <thead>
               <tr>
                   <th class="text-center" width="115px">Profit</th>
-                  <!--<th class="text-center" width="115px">Month</th>-->
+                  <th class="text-center" width="115px">Month</th>
                  
                   
               </tr>
           </thead>   
           <tbody>
-            <div *ngFor="let p of dashboards">
-                <p class="text-center" width="150px">{{p.month}}</p>
-              
+            <div *ngFor="let d of dashboards | keyvalue">
+                <p class="text-center" width="150px">{{d.value | json}}</p>
              
             </div>
-            <!--<button type="button" (click)="getProfitMonthly()" class="btn btn-primary btn-lg btn3d"><span class="glyphicon glyphicon-search"></span>profit</button>-->
-            <!--<tr *ngFor="let p of profit">
-                
             
-                <td class="text-center" width="150px">{{p.month}}</td>-->
-               
-               <!-- <button type="button" (click)="getProfit1(p.profit_id)" class="btn btn-primary btn-lg btn3d"><span class="glyphicon glyphicon-search"></span> View</button> -->
-           <!--</tr>-->
-           
               </tbody>
               
               </table>

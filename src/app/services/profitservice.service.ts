@@ -22,6 +22,8 @@ export class ProfitserviceService {
     return this.http.get(" http://localhost:8091/api/getTodayRevenueDash/");
     
 }
+
+
  
   /*getAllProfit() {
     return this.http.get("http://localhost:8091/api/profit/get",{

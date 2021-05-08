@@ -24,7 +24,7 @@ export class ProfitpermonthComponent implements OnInit {
   profit:any;
   //dashboards:any;
   
-  dashboards:Profit1[];
+  dashboards:Profit[];
   //dashboards: {[key: number]: {[key: string]: number } };
   dashboard:Dashboard;
   profitt:Profit[];
@@ -33,14 +33,22 @@ export class ProfitpermonthComponent implements OnInit {
      ) { }
 
    
-  ngOnInit() {let resp=this.dashboardserviceService.getProfitPerMonth();
-    resp.subscribe((data:Profit1[])=>this.dashboards=data);
+  ngOnInit() {/*let resp=this.dashboardserviceService.getProfitPerMonth();
+    resp.subscribe((data:Profit[])=>this.dashboards=data);*/
   
 }
-getProfitMonthly(){
-  let resp=this.dashboardserviceService.getProfitPerMonth().subscribe((data:Profit1[]) =>{ console.log (data);this.dashboards = data;});
+/*getProfitMonthly(){
+  let resp=this.dashboardserviceService.getProfitPerMonth().subscribe((data:Profit[]) =>{ console.log (data);this.dashboards = data;});
+ }*/
+ getProfitMonthly(){
+  let resp=this.dashboardserviceService.getProfit3().subscribe((data:Profit[]) =>{ console.log (data);this.dashboards = data;});
  }
-
+ 
+ getMonth(){
+  let resp=this.profitserviceService.getAllProfit().subscribe((data:Profit[]) =>{ console.log (data);this.dashboards = data;});
+ }
+ 
+ 
 
 }
 
