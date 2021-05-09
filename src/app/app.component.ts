@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { ExportExcelService } from './services/export-excel.service';
 
 
 
@@ -11,16 +12,19 @@ import { map } from 'rxjs/operators';
 })
 export class AppComponent implements OnInit  {
   title = 'eya';
+ 
 
+
+//map
   lat = 13;
   lng = 80;
-  
+  //weather
   private appId: string;
     private appCode: string;
 
     public weather: any;
 
-    public constructor(private http: HttpClient) {
+    public constructor( private http: HttpClient) {
         this.appId = "devportal-demo-20180625";
         this.appCode = "9v2BkviRwi9Ot26kp2IysQ";
         this.weather = [];
@@ -36,6 +40,7 @@ export class AppComponent implements OnInit  {
     }
      }
 
+   
     public getWeather(coordinates: any) {
       this.http.jsonp("https://weather.cit.api.here.com/weather/1.0/report.json?product=forecast_7days_simple&latitude=" + coordinates.latitude + "&longitude=" + coordinates.longitude + "&app_id=" + this.appId + "&app_code=" + this.appCode, "jsonpCallback")
           .pipe(map(result => (<any>result).dailyForecasts.forecastLocation))
@@ -46,9 +51,9 @@ export class AppComponent implements OnInit  {
           });
   }
 
-
+}
 
   
     //cheminImage:any ="C:/Users/eya/Desktop/Logo.png";
   
-}
+

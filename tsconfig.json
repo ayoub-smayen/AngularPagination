@@ -7,6 +7,11 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
+    "paths": {
+      "exceljs": [
+        "node_modules/exceljs/dist/exceljs.min"
+      ]
+    },
     //"javascript.implicitProjectConfig.experimentalDecorators": true,
     "module": "esnext",
     "moduleResolution": "node",
