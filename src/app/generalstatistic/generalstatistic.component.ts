@@ -38,7 +38,7 @@ users:any;
 
 
  getStat(){
-  let res=this.dashboardserviceService.getGeneralStatic().subscribe((data) =>{ this.users = data;});
+  let res=this.dashboardserviceService.getGeneralStatic().subscribe((data:Euser[]) =>{ this.users = data;});
  }
 
 

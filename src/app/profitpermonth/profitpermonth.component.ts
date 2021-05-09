@@ -48,7 +48,55 @@ export class ProfitpermonthComponent implements OnInit {
   let resp=this.profitserviceService.getAllProfit().subscribe((data:Profit[]) =>{ console.log (data);this.dashboards = data;});
  }
  
- 
-
 }
+
+
+
+ /*import { Component, OnInit } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
+
+
+interface  Euser{
+
+
+
+  age :number,
+  sexe : string ,
+  city:string  
+}
+@Component({
+  selector: 'app-euser',
+  templateUrl: './profitpermonth.component.html',
+  styleUrls: ['./profitpermonth.component.css']
+})
+
+
+export class ProfitpermonthComponent implements OnInit {
+  gh :Euser ;
+  constructor(private http : HttpClient) {  
+    
+  this.gh =   {age: 1, sexe: "femme", city: "tunis"}; 
+  }
+
+  ngOnInit(): void {
+    this.getGeneralStatic();
+  }
+  
+  getGeneralStatic(){
+
+
+    return this.http.get<Euser>("http://localhost:8091/api/agesexecity/").subscribe(res=>{
+      this.gh = res;
+
+     
+console.log(this.gh);
+      
+    })
+
+
+  }
+
+} ta3 abir hedha*/
+
+
 

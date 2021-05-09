@@ -1,4 +1,22 @@
 <!--<app-home></app-home>-->
+
+<div style="background-color: #F0F0F0; width: 75%; padding: 20px; border: 1px solid #CCC; margin: 0; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)">
+        <p *ngIf="weather.length == 0">Searching...</p>
+        <div *ngIf="weather.length > 0">
+            <table style="width: 100%; text-align: center">
+                <thead></thead>
+                <tbody>
+                    <tr>
+                        <td *ngFor="let forecast of weather">
+                            <img [src]="forecast.iconLink" />
+                            <p>{{ forecast.highTemperature }}C / {{ forecast.highTemperature | fahrenheit }}F</p>
+                            <p>{{ forecast.utcTime | moment }}</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 <ul  class="item-group">
     <li  class="item-group-list" ><a routerLink="/home">Home</a></li>
     <li  class="item-group-list"><a routerLink="/euser">Register</a></li>
@@ -11,3 +29,9 @@
     <li  class="item-group-list"><a routerLink="/dice2">Dice2</a></li>
     </ul>
     <router-outlet></router-outlet>
+    
+    <!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>

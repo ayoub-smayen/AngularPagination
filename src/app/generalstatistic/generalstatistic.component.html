@@ -147,6 +147,7 @@
    <div class="row col-md-6 col-md-offset-2 custyle">
     <table class="table table-striped custab">
     <thead>
+        <button class="btn btn-primary btn-xs" (click)="getStat()"> Statistic</button>
         <tr>
             <th>Age</th>
             <th>Sexe</th>
@@ -156,16 +157,16 @@
     </thead>
     <tbody>
 
-            <tr *ngFor="let e of users" >
-                <td>{{e.age}}</td>
-                <td>{{e.sexe}}</td>
-                <td>{{e.city}}</td>
+            <tr *ngFor="let e of users | keyvalue" >
+                <td>{{e.age |json}}</td>
+                <td>{{e.sexe|json}}</td>
+                <td>{{e.city|json}}</td>
                 
-                <td class="text-center"><button class="btn btn-danger btn-xs" (click)="getStat()"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+                
             
             </tr>
             
-           
+            
        
       
     </tbody>

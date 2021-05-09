@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { Component, NgModule } from '@angular/core';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 //////
@@ -22,7 +22,11 @@ import { Dice2Component } from './dice2/dice2.component';
 import { ProfitpermonthComponent } from './profitpermonth/profitpermonth.component';
 import { CommonModule } from '@angular/common';
 import { GeneralstatisticComponent } from './generalstatistic/generalstatistic.component';
-
+import { WeatherComponent } from './weather/weather.component';
+import { FahrenheitPipe } from './fahrenheit.pipe';
+import { MomentPipe } from './moment.pipe';
+import { AgmCoreModule } from '@agm/core';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,10 @@ import { GeneralstatisticComponent } from './generalstatistic/generalstatistic.c
     Dice2Component,
     ProfitpermonthComponent,
     GeneralstatisticComponent,
+    WeatherComponent,
+    FahrenheitPipe,
+    MomentPipe,
+    NavbarComponent,
     
   ],
   imports: [
@@ -44,7 +52,11 @@ import { GeneralstatisticComponent } from './generalstatistic/generalstatistic.c
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    CommonModule
+    HttpClientJsonpModule,
+    CommonModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBisa02R8waL7ork-VnYviBlydjeDdbB7A'
+    })
     
    
     
