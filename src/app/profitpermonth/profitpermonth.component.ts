@@ -19,7 +19,7 @@ export class ProfitpermonthComponent implements OnInit {
   profits:any;
   income:number;
   outcome:number;
-  month:string;
+  month:Profit[];
   margins:number;
   profit:any;
   //dashboards:any;
@@ -35,6 +35,7 @@ export class ProfitpermonthComponent implements OnInit {
    
   ngOnInit() {/*let resp=this.dashboardserviceService.getProfitPerMonth();
     resp.subscribe((data:Profit[])=>this.dashboards=data);*/
+this.getMonth1();
   
 }
 /*getProfitMonthly(){
@@ -44,8 +45,8 @@ export class ProfitpermonthComponent implements OnInit {
   let resp=this.dashboardserviceService.getProfit3().subscribe((data:Profit[]) =>{ console.log (data);this.dashboards = data;});
  }
  
- getMonth(){
-  let resp=this.profitserviceService.getAllProfit().subscribe((data:Profit[]) =>{ console.log (data);this.dashboards = data;});
+ getMonth1(){
+  let resp=this.profitserviceService.getMonth().subscribe((data:Profit[]) =>{ console.log (data);this.month = data;});
  }
  
 }

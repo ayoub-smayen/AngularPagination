@@ -12,6 +12,7 @@ import { Dice2Component } from './dice2/dice2.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfitpermonthComponent } from './profitpermonth/profitpermonth.component';
 import { GeneralstatisticComponent } from './generalstatistic/generalstatistic.component';
+import { NavbarComponent } from './navbar/navbar.component';
 const routes: Routes = [
 
 {path:"home",component:HomeComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
 {path:"dice",component:DiceComponent},
 {path:"dice2",component:Dice2Component},
 {path:"generalstatistic",component:GeneralstatisticComponent},
+//{path:"navbar",component:NavbarComponent},
 {path:"euser/:id",component:UpdateUserComponent},
 {path:"",redirectTo:"home",pathMatch:"full"}
   

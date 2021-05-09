@@ -33,11 +33,17 @@
               </tr>
           </thead>   
           <tbody>
-            <div *ngFor="let d of dashboards | keyvalue">
-                <p class="text-center" width="150px">{{d.value | json}}</p>
-             
-            </div>
+              <tr *ngFor="let d of dashboards | keyvalue">
+                  <td>
+                    <p class="text-center" width="150px">{{d.value | json}}</p>
+                  </td>
+                  <td>
+
+                    <p class="text-center" width="150px">{{d.key | json}}</p>
+                  </td>
+              </tr>
             
+           
               </tbody>
               
               </table>

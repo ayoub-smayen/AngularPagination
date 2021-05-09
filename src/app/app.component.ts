@@ -21,13 +21,13 @@ export class AppComponent implements OnInit  {
     public weather: any;
 
     public constructor(private http: HttpClient) {
-        this.appId = "APP-ID-HERE";
+        /*this.appId = "APP-ID-HERE";
         this.appCode = "APP-CODE-HERE";
-        this.weather = [];
+        this.weather = [];*/
     }
 
     public ngOnInit() {
-      if(navigator.geolocation) {
+      /*if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
             this.getWeather(position.coords);
         });
@@ -44,7 +44,8 @@ export class AppComponent implements OnInit  {
           }, error => {
               console.error(error);
           });
+  }*/
+
+    
   }
-
-
 }
