@@ -10,7 +10,6 @@ import { EuserserviceService } from './services/euserservice.service';
 import { FormsModule } from '@angular/forms';
 import { EuserComponent } from './euser/euser.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProfitComponent } from './profit/profit.component';
 import { DashboardserviceService } from './services/dashboardservice.service';
 import { ProfitserviceService } from './services/profitservice.service';
 import { SearchComponent } from './search/search.component';
@@ -26,13 +25,15 @@ import { FahrenheitPipe } from './fahrenheit.pipe';
 import { MomentPipe } from './moment.pipe';
 import { AgmCoreModule } from '@agm/core';
 import { NavbarComponent } from './navbar/navbar.component';
+import { Home1Component } from './home1/home1.component';
+import { Profit1Component } from './profit1/profit1.component';
+import { BestproductComponent } from './bestproduct/bestproduct.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EuserComponent,
     DashboardComponent,
-    ProfitComponent,
     SearchComponent,
     HomeComponent,
     UpdateUserComponent,
@@ -43,6 +44,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     FahrenheitPipe,
     MomentPipe,
     NavbarComponent,
+    Home1Component,
+    Profit1Component,
+    BestproductComponent,
     
   ],
   imports: [

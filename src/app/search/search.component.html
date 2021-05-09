@@ -7,8 +7,8 @@
 <div class="container">
     <div class="row">
                <div id="custom-search-input">
-                                <div class="input-group col-md-12" style="text-align: center">
-                                    <input type="number" class="search-query form-control" [(ngModel)]="user_id" placeholder="Search With UserId"  name="euser_id" />
+                                <!--<div class="input-group col-md-12" style="text-align: center ">
+                                    <input type="number" class="search-query form-control" [(ngModel)]="user_id" placeholder="Search With Id"  name="euser_id" />
                                    
                                    <br>
 
@@ -21,6 +21,16 @@
                  
                                     </span>
                                     
+                                </div>-->
+                                <div id="custom-search-input">
+                                    <div class="input-group col-md-12" style="text-align: center">
+                                        <input type="text" class="search-query form-control" placeholder="Search With id"  name="euser_id" [(ngModel)]="user_id"/>
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-danger" type="button" (click)="findUserById(user_id)">
+                                                <span class="glyphicon glyphicon-search"></span>
+                                            </button>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
     </div>

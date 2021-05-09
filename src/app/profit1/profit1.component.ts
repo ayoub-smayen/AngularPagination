@@ -7,11 +7,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-profit',
-  templateUrl: './profit.component.html',
-  styleUrls: ['./profit.component.css']
+  selector: 'app-profit1',
+  templateUrl: './profit1.component.html',
+  styleUrls: ['./profit1.component.css']
 })
-export class ProfitComponent implements OnInit {
+export class Profit1Component implements OnInit {
 
  // profit:Profit[];
 message:any;

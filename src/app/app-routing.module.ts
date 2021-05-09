@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { EuserComponent } from './euser/euser.component';
 import { HomeComponent } from './home/home.component';
-import { ProfitComponent } from './profit/profit.component';
 import { SearchComponent } from './search/search.component';
 import { DiceComponent } from './dice/dice.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
@@ -13,19 +12,24 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfitpermonthComponent } from './profitpermonth/profitpermonth.component';
 import { GeneralstatisticComponent } from './generalstatistic/generalstatistic.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { Home1Component } from './home1/home1.component';
+import { Profit1Component } from './profit1/profit1.component';
+import { BestproductComponent } from './bestproduct/bestproduct.component';
 const routes: Routes = [
 
 {path:"home",component:HomeComponent},
+{path:"home1",component:Home1Component},
 {path:"euser",component:EuserComponent},
 {path:"search",component:SearchComponent},
 {path:"dashboard",component:DashboardComponent},
-{path:"profit",component:ProfitComponent},
+{path:"profit1",component:Profit1Component},
 {path:"profitpermonth",component:ProfitpermonthComponent},
 {path:"dice",component:DiceComponent},
 {path:"dice2",component:Dice2Component},
 {path:"generalstatistic",component:GeneralstatisticComponent},
 {path:"navbar",component:NavbarComponent},
 {path:"euser/:id",component:UpdateUserComponent},
+{path:"bestproduct",component:BestproductComponent},
 {path:"",redirectTo:"home",pathMatch:"full"}
   
 ];

@@ -20,6 +20,7 @@ export class EuserComponent implements OnInit {
 imageUrl2: any;
 euser:Euser;
 message:any;
+
   constructor(
     //private formBuilder: FormBuilder,
     private route: ActivatedRoute, 
