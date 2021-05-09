@@ -31,14 +31,13 @@ users:any;
     private router: Router, private profitserviceService : ProfitserviceService ,private dashboardserviceService : DashboardserviceService ) { }
 
   ngOnInit(): void {
-    let resp=this.dashboardserviceService.getGeneralStatic();
-  resp.subscribe((data)=>this.users=data);
+    this.dashboardserviceService.getGeneralStatic().subscribe((data)=>this.users=data);
    
 }
 
 
  getStat(){
-  let res=this.dashboardserviceService.getGeneralStatic().subscribe((data:Euser[]) =>{ this.users = data;});
+  this.dashboardserviceService.getGeneralStatic().subscribe((data:Euser[]) =>{ this.users = data;});
  }
 
 

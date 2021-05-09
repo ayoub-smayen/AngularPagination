@@ -158,10 +158,10 @@
     <div *ngIf="users">
     <tbody>
     
-            <tr *ngFor="let e of users | keyvalue" >
-                <td>{{e.age |json}}</td>
-                <td>{{e.sexe|json}}</td>
-                <td>{{e.city|json}}</td>
+            <tr >
+                <td>{{users.value |json}}</td>
+                <td>{{users.value|json}}</td>
+                <td>{{users.value|json}}</td>
             </tr>
             
             

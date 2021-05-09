@@ -24,7 +24,7 @@ const routes: Routes = [
 {path:"dice",component:DiceComponent},
 {path:"dice2",component:Dice2Component},
 {path:"generalstatistic",component:GeneralstatisticComponent},
-//{path:"navbar",component:NavbarComponent},
+{path:"navbar",component:NavbarComponent},
 {path:"euser/:id",component:UpdateUserComponent},
 {path:"",redirectTo:"home",pathMatch:"full"}
   
