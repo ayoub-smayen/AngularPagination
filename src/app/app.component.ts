@@ -21,8 +21,8 @@ export class AppComponent implements OnInit  {
     public weather: any;
 
     public constructor(private http: HttpClient) {
-        this.appId = "qDAYeUmWT9Zf9yQieqIw";
-        this.appCode = "yp-zueb2tMJuj84DPq7iaDmzT5osAUeuOiFvgRNSsKA";
+        this.appId = "devportal-demo-20180625";
+        this.appCode = "9v2BkviRwi9Ot26kp2IysQ";
         this.weather = [];
     }
 
