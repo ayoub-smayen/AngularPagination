@@ -22,7 +22,6 @@ import { Dice2Component } from './dice2/dice2.component';
 import { ProfitpermonthComponent } from './profitpermonth/profitpermonth.component';
 import { CommonModule } from '@angular/common';
 import { GeneralstatisticComponent } from './generalstatistic/generalstatistic.component';
-import { WeatherComponent } from './weather/weather.component';
 import { FahrenheitPipe } from './fahrenheit.pipe';
 import { MomentPipe } from './moment.pipe';
 import { AgmCoreModule } from '@agm/core';
@@ -41,7 +40,6 @@ import { NavbarComponent } from './navbar/navbar.component';
     Dice2Component,
     ProfitpermonthComponent,
     GeneralstatisticComponent,
-    WeatherComponent,
     FahrenheitPipe,
     MomentPipe,
     NavbarComponent,
