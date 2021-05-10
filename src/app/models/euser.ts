@@ -12,7 +12,7 @@ export class Euser {
     phone_number:number;
     age:number;
     sexe:string;
-    role: Role;
+   
    
 }
 
