@@ -54,6 +54,5 @@ export class AppComponent implements OnInit  {
 }
 
   
-    //cheminImage:any ="C:/Users/eya/Desktop/Logo.png";
   
 

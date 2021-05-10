@@ -1,13 +1,15 @@
+
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ExportExcelService } from '../services/export-excel.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-excel',
+  templateUrl: './excel.component.html',
+  styleUrls: ['./excel.component.css']
 })
-export class HomeComponent implements OnInit {
+export class ExcelComponent implements OnInit {
+ 
   //excel
   dataForExcel = [];
 
@@ -23,36 +25,19 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  exportToExcel() {
+ 
+ exportToExcel() {
 
-    this.empPerformance.forEach((row: any) => {
-      this.dataForExcel.push(Object.values(row))
-    })
-  
-    let reportData = {
-      title: 'Employee Sales Report - Jan 2020',
-      data: this.dataForExcel,
-      headers: Object.keys(this.empPerformance[0])
-    }
-  
-    this.ete.exportExcel(reportData);
+  this.empPerformance.forEach((row: any) => {
+    this.dataForExcel.push(Object.values(row))
+  })
+
+  let reportData = {
+    title: 'Employee Sales Report - Jan 2020',
+    data: this.dataForExcel,
+    headers: Object.keys(this.empPerformance[0])
   }
 
-  num=0;
-  getAppvisit()
-  {
-   const httpOptions = {
-     headers: new HttpHeaders({'Content-Type': 'text/plain'})
-   };
- 
-  return  this.http.get("http://localhost:8091/api/lvisit",httpOptions).subscribe((res:number) =>{
-     
- alert(res);
- this.num = res;
- 
-          
- });
- }
-
-
+  this.ete.exportExcel(reportData);
+}
 }

@@ -1,0 +1,18 @@
+<div style="background-color: #F0F0F0; width: 75%; padding: 20px; border: 1px solid #CCC; margin: 0; position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%)">
+    <!--<div style="background-color: #F0F0F0; width: 75%; padding: 20px; border: 1px solid #CCC; position: absolute; top: 0px; left: 0px;">-->
+    <p *ngIf="weather.length == 0">Searching...</p>
+    <div *ngIf="weather.length > 0">
+        <table style="width: 100%; text-align: center">
+            <thead></thead>
+            <tbody>
+                <tr>
+                    <td *ngFor="let forecast of weather">
+                        <img [src]="forecast.iconLink" />
+                        <p>{{ forecast.highTemperature }}C / {{ forecast.highTemperature | fahrenheit }}F</p>
+                        <p>{{ forecast.utcTime | moment }}</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

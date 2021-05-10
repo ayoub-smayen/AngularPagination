@@ -1,3 +1,4 @@
+
 <div style="background-color: #F0F0F0; width: 75%; padding: 20px; border: 1px solid #CCC; margin: 0; position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%)">
     <!--<div style="background-color: #F0F0F0; width: 75%; padding: 20px; border: 1px solid #CCC; position: absolute; top: 0px; left: 0px;">-->
     <p *ngIf="weather.length == 0">Searching...</p>
@@ -16,6 +17,7 @@
         </table>
     </div>
 </div>
+
 <!--<div style="background-color: #F0F0F0; width: 100%; padding: 20px; border: 1px solid #CCC; margin: 0; position: absolute; top: 20%; left: 70%; transform: translate(-20%, -20%)">
   
       <p *ngIf="weather.length == 0">Searching...</p>
@@ -39,7 +41,17 @@
   
 <router-outlet></router-outlet>
 
-    
+    <br>
+
+
+
+
+
+
+    <br>
+
+
+
     <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
 <agm-map [latitude]="lat" [longitude]="lng">

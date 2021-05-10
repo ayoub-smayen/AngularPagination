@@ -15,6 +15,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { Home1Component } from './home1/home1.component';
 import { Profit1Component } from './profit1/profit1.component';
 import { BestproductComponent } from './bestproduct/bestproduct.component';
+import { WeatherComponent } from './weather/weather.component';
+import { ExcelComponent } from './excel/excel.component';
 const routes: Routes = [
 
 {path:"home",component:HomeComponent},
@@ -30,6 +32,8 @@ const routes: Routes = [
 {path:"navbar",component:NavbarComponent},
 {path:"euser/:id",component:UpdateUserComponent},
 {path:"bestproduct",component:BestproductComponent},
+{path:"weather",component:WeatherComponent},
+{path:"excel",component:ExcelComponent},
 {path:"",redirectTo:"home",pathMatch:"full"}
   
 ];

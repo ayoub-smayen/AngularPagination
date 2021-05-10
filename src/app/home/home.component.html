@@ -12,12 +12,26 @@
             <li  class="item-group-list"><a routerLink="/euser">Register</a></li>
             <li  class="item-group-list"><a routerLink="/search">search User</a></li>
             <li  class="item-group-list"><a routerLink="/dashboard">Dashboard</a></li>
-            <!--<li  class="item-group-list"><a routerLink="/bestproduct">Best Product</a></li>
+            <li  class="item-group-list"><a routerLink="/excel">Excel</a></li>
+            <!--<li  class="item-group-list"><a routerLink="/weather">Weather</a></li>
+            <li  class="item-group-list"><a routerLink="/bestproduct">Best Product</a></li>
             li  class="item-group-list"><a routerLink="/profitpermonth">ProfitPerMonth</a></li>
             <li  class="item-group-list"><a routerLink="/dice">Dice</a></li>
             <li  class="item-group-list"><a routerLink="/generalstatistic">GeneralStatistic</a></li>-->
             <li  class="item-group-list"><a routerLink="/dice2">Dice</a></li>
             <li  class="item-group-list"><a routerLink="/profit1">Profit</a></li>
+            <!--<button (click)="exportToExcel()" >Export The Report</button>-->
+            
+                <button class=pull-right (click)="getAppvisit()" >
+                    Views number
+                     </button>
+                 
+                 
+                       <i class="fa fa-eye">
+                 
+                       </i>
+                    {{num}}
+            
             </ul>
             <!--<button class="btn btn-danger navbar-btn">Button</button>-->
     </nav>

@@ -22,6 +22,37 @@
                                     </span>
                                     
                                 </div>-->
+                                <br>
+
+
+
+
+
+
+
+
+
+                                <br>
+
+
+
+
+
+
+                                <br>
+
+
+
+
+
+
+
+
+                                <br>
+
+                                
+                                
+                            
                                 <div id="custom-search-input">
                                     <div class="input-group col-md-12" style="text-align: center">
                                         <input type="text" class="search-query form-control" placeholder="Search With id"  name="euser_id" [(ngModel)]="user_id"/>
@@ -45,6 +76,8 @@
             <th>Name</th>
             <th>Email</th>
             <th>Password</th>
+            <th>Update</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -57,10 +90,10 @@
             <td>{{euser.email}}</td>
             <td>{{euser.password}}</td>
             
-            <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteUser(euser.user_id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+            <td class="text-center"><button class="btn btn-danger btn-sm" (click)="deleteUser(euser.user_id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
             <!--<td class="text-center"><button class="btn btn-primary " (click)="updateUser(euser.user_id,euser)"><span class="glyphicon glyphicon-update"></span> Update</button></td>-->
            
-            <a  [routerLink] = "['/euser', euser.user_id]">update</a>
+            <a class="btn btn-primary " [routerLink] = "['/euser', euser.user_id]">update</a>
         </tr>
 
 
@@ -72,9 +105,9 @@
                 <td>{{e.email}}</td>
                 <td>{{e.password}}</td>
                 
-                <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteUser(e.user_id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+                <td class="text-center"><button class="btn btn-danger btn-sm" (click)="deleteUser(e.user_id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
                 <!--<td class="text-center"><button class="btn btn-primary btn-xs" (click)="updateUser(e.user_id,e)"><span class="glyphicon glyphicon-update"></span> Update</button></td>-->
-                <a  [routerLink] = "['/euser', e.user_id]">update</a>
+                <a class="btn btn-primary " [routerLink] = "['/euser', e.user_id]">update</a>
             </tr>
             
            </ng-template>

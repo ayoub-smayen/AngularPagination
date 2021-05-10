@@ -36,6 +36,7 @@ export class ProfitpermonthComponent implements OnInit {
   ngOnInit() {/*let resp=this.dashboardserviceService.getProfitPerMonth();
     resp.subscribe((data:Profit[])=>this.dashboards=data);*/
 this.getMonth1();
+this.getProfitMonthly();
   
 }
 /*getProfitMonthly(){

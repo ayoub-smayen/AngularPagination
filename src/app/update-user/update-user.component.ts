@@ -29,7 +29,7 @@ export class UpdateUserComponent implements OnInit {
           const fg = data; 
           this.euser = data;
           console.log(data);
-          alert(data);
+          //alert(data);
         },
         error => {
           console.log(error);
@@ -44,7 +44,7 @@ export class UpdateUserComponent implements OnInit {
         response => {
           console.log(response);
           this.message = 'The form was updated successfully!';
-          alert(this.message);
+          //alert(this.message);
           this.router.navigate(['/euser']);
         },
         error => {
