@@ -30,6 +30,8 @@ import { Profit1Component } from './profit1/profit1.component';
 import { BestproductComponent } from './bestproduct/bestproduct.component';
 import { WeatherComponent } from './weather/weather.component';
 import { ExcelComponent } from './excel/excel.component';
+import { ChartComponent } from './chart/chart.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,7 @@ import { ExcelComponent } from './excel/excel.component';
     BestproductComponent,
     WeatherComponent,
     ExcelComponent,
+    ChartComponent,
     
   ],
   imports: [
@@ -60,6 +63,7 @@ import { ExcelComponent } from './excel/excel.component';
     HttpClientModule,
     HttpClientJsonpModule,
     CommonModule,
+    ChartsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBisa02R8waL7ork-VnYviBlydjeDdbB7A'
     })

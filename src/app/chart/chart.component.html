@@ -1,0 +1,37 @@
+<br>
+<br>
+
+
+
+<br>
+
+
+<br>
+
+
+
+
+
+<div>
+    <div>
+        <div style="display: block">
+            <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [plugins]="barChartPlugins"
+              [legend]="barChartLegend"
+              [chartType]="barChartType">
+            </canvas>
+          </div>
+      <!--<tr *ngFor="let d of dashboards | keyvalue">
+        <td>
+          <p class="text-center" width="150px">{{d.value | json}}</p>
+        </td>
+        <td>
+
+          <p class="text-center" width="150px">{{d.key | json}}</p>
+        </td>
+    </tr>-->
+      <!--<button mat-button mat-raised-button color="primary" (click)="randomize()">Update</button>-->
+    </div>
+  </div>

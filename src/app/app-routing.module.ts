@@ -17,6 +17,7 @@ import { Profit1Component } from './profit1/profit1.component';
 import { BestproductComponent } from './bestproduct/bestproduct.component';
 import { WeatherComponent } from './weather/weather.component';
 import { ExcelComponent } from './excel/excel.component';
+import { ChartComponent } from './chart/chart.component';
 const routes: Routes = [
 
 {path:"home",component:HomeComponent},
@@ -33,6 +34,7 @@ const routes: Routes = [
 {path:"euser/:id",component:UpdateUserComponent},
 {path:"bestproduct",component:BestproductComponent},
 {path:"weather",component:WeatherComponent},
+{path:"chart",component:ChartComponent},
 {path:"excel",component:ExcelComponent},
 {path:"",redirectTo:"home",pathMatch:"full"}
   

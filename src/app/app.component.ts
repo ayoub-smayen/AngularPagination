@@ -34,7 +34,12 @@ export class AppComponent implements OnInit  {
       if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
             this.getWeather(position.coords);
+            this.lat = position.coords.latitude;
+            this.lng = position.coords.longitude;
         });
+
+        
+
     } else {
         console.error("The browser does not support geolocation...");
     }
