@@ -21,17 +21,13 @@
             <li  class="item-group-list"><a routerLink="/dice2">Dice</a></li>
             <li  class="item-group-list"><a routerLink="/profit1">Profit</a></li>
             <!--<button (click)="exportToExcel()" >Export The Report</button>-->
-            
-                <button class=pull-right (click)="getAppvisit()" >
-                    Views number
+            <tr>
+                <button  class="btn btn-light" class="btn btn-light btn-lg" (click)="getAppvisit()" >
+                    Number of Views
                      </button>
-                 
-                 
-                       <i class="fa fa-eye">
-                 
-                       </i>
-                    {{num}}
-            
+                     <i class="fa fa-eye"></i>
+                 {{num}}
+                </tr>
             </ul>
             <!--<button class="btn btn-danger navbar-btn">Button</button>-->
     </nav>

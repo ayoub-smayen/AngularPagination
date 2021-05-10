@@ -76,6 +76,11 @@
             <th>Name</th>
             <th>Email</th>
             <th>Password</th>
+            <th>City</th>
+            <th>Image</th>
+            <th>Address</th>
+            <th>Sexe</th>
+            <th>Age</th>
             <th>Update</th>
             <th>Delete</th>
         </tr>
@@ -89,6 +94,11 @@
             <td>{{euser.membre_username}}</td>
             <td>{{euser.email}}</td>
             <td>{{euser.password}}</td>
+            <td>{{euser.city}}</td>
+            <td>{{euser.userimg}}</td>
+            <td>{{euser.address}}</td>
+            <td>{{euser.sexe}}</td>
+            <td>{{euser.age}}</td>
             
             <td class="text-center"><button class="btn btn-danger btn-sm" (click)="deleteUser(euser.user_id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
             <!--<td class="text-center"><button class="btn btn-primary " (click)="updateUser(euser.user_id,euser)"><span class="glyphicon glyphicon-update"></span> Update</button></td>-->
@@ -104,10 +114,19 @@
                 <td>{{e.membre_username}}</td>
                 <td>{{e.email}}</td>
                 <td>{{e.password}}</td>
+                <td>{{e.city}}</td>
+                <td>{{e.userimg}}</td>
+                <td>{{e.address}}</td>
+                <td>{{e.sexe}}</td>
+                <td>{{e.age}}</td>
                 
-                <td class="text-center"><button class="btn btn-danger btn-sm" (click)="deleteUser(e.user_id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+            
+               
+            }
+                
+                <td class="text-center"><button class="btn btn-danger btn-sm"     (click)="deleteUser(e.user_id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
                 <!--<td class="text-center"><button class="btn btn-primary btn-xs" (click)="updateUser(e.user_id,e)"><span class="glyphicon glyphicon-update"></span> Update</button></td>-->
-                <a class="btn btn-primary " [routerLink] = "['/euser', e.user_id]">update</a>
+                <a class="btn btn-primary" [routerLink] = "['/euser', e.user_id]">update</a>
             </tr>
             
            </ng-template>
