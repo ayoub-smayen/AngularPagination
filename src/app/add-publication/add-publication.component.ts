@@ -30,18 +30,6 @@ text:string = '';
         //Select File
     
         this.selectedFile = event.target.files[0];
-    
-      }
-    
-    
-      //Gets called when the user clicks on submit to upload the image
-    
-      onUpload() {
-    
-        console.log(this.selectedFile);
-    
-        //FormData API provides methods and properties to allow us easily prepare form data to be sent with POST HTTP requests.
-    
         const uploadImageData = new FormData();
     
         uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
@@ -64,8 +52,12 @@ text:string = '';
     
           }
           );
-    
       }
+    
+    
+      //Gets called when the user clicks on submit to upload the image
+    
+      
     
       addpub(){
         let publ = new Publication;

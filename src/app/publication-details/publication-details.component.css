@@ -116,6 +116,19 @@ body{
   color: #222427;
 
 }
+.emoji-martcomment
+{
+  z-index: 50;
+  position: absolute;
+  margin-left: 330px;
+  background: #fff;
+  color: #222427;
+
+}
 .comment1{
   position: relative;
+  
+}
+.student-box {
+  display: none;
 }

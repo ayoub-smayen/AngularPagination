@@ -63,7 +63,7 @@
                             title="Pick your emoji…"></emoji-mart>
                                                 
                             <div *ngIf="hide">
-                                <div class="comment1" *ngFor="let c of comments" id="com" >
+                                <div class="comment1" *ngFor="let c of comments; let i = index" id="com" >
                               
                                     <ul class="comments-list" #cocomment>
                                     <li class="comment" >
@@ -75,7 +75,8 @@
                                                 <h4 class="user">{{c.user.user_Lastname}}</h4>
                                                 <h5 class="time">{{c.createdAt | amTimeAgo:true}}</h5>
                                             </div>
-                                            <p>{{c.comment_field}}</p>
+                                            
+                                            <p #{{c.id}}>{{c.comment_field}}</p>
                                             <div >
                                                 <a  class="btn btn-default stat-item" (click)="addlikecomments(c.id)">
                                                     <i class="fa fa-thumbs-up icon"></i>{{c.like_count}}       
@@ -83,10 +84,20 @@
                                                 <a  class="btn btn-default stat-item" (click)="deleteComment(c.id)">
                                                     <i class="fas fa-times-circle"></i>
                                                 </a>
-                                                
+                                                <a  class="btn btn-default stat-item"  (click)="hideupdates(i,c.id)">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>                     
                                             </div>
-                                        </div>
-                                       
+                                            <div  class="student-box"  #boxes> 
+                                                <input class="form-control" placeholder="Add a comment" [(ngModel)]="com1" type="text"  name="com" (blur)="onBlur()" (focus)="onFocus()">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" (click) ="toggleEmojiPickercomment()" ><i class="far fa-laugh-beam"></i></span>
+                                                  </div>
+                                                  <button (click)="updatecomment(c.id)" id="comment"  class="btn btn-info"><i class="fa fa-edit"></i></button>
+                                                  <audio src="../assets/mp3/264828__cmdrobot__text-message-or-videogame-jump.ogg" autoplay hidden *ngIf="playsound"></audio>
+                                            </div>
+                                            </div>
+                                            
                                     </li>
                                 </ul>
                                 </div>
