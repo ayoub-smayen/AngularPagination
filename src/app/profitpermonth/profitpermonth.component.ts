@@ -4,7 +4,7 @@ import { map } from 'rxjs/operators';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { Dashboard } from '../models/dashboard';
 import { Profit } from '../models/profit';
-import { Profit1 } from '../models/profit1';
+
 import { DashboardserviceService } from '../services/dashboardservice.service';
 import { ProfitserviceService } from '../services/profitservice.service';
 
