@@ -1,5 +1,3 @@
-
-
 export class Euser {
     user_id: number;
     membre_username: string;
