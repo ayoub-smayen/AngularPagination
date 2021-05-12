@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Euser } from '../models/euser';
 import { EuserserviceService } from '../services/euserservice.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 @Component({
@@ -31,6 +31,11 @@ message:any;
    
         }
     
+        Save(f:NgForm)
+{
+//console.log(f);
+console.log(f.value);
+}
      /* registerNow(){
         let resp=this.euserserviceService.addUser(this.euser).subscribe((data)=>this.message=data);
     }*/

@@ -15,7 +15,21 @@ export class Home1Component implements OnInit {
   ngOnInit(): void {
   }
   
+  num=0;
+  getAppvisit()
+  {
+   const httpOptions = {
+     headers: new HttpHeaders({'Content-Type': 'text/plain'})
+   };
  
+  return  this.http.get("http://localhost:8091/api/lvisit",httpOptions).subscribe((res:number) =>{
+     
+ alert(res);
+ this.num = res;
+ 
+          
+ });
+ }
 
 }
 

@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
     this.ete.exportExcel(reportData);
   }
 
-  num=0;
+  /*num=0;
   getAppvisit()
   {
    const httpOptions = {
@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
  
           
  });
- }
+ }*/
 
 
 }
