@@ -1,5 +1,5 @@
 import { Comment } from '@angular/compiler';
-import { error } from '@angular/compiler/src/util';
+import { error, stringify } from '@angular/compiler/src/util';
 import { Component, ElementRef, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { interval } from 'rxjs';
@@ -14,6 +14,7 @@ import { PublicationService } from '../Services/publication.service';
   styleUrls: ['./publication-details.component.css']
 })
 export class PublicationDetailsComponent implements OnInit {
+  p:number = 1;
 paramurl:any;
 pub:Publication;
 comments:Comments[]; 
@@ -25,6 +26,7 @@ id:any;
 date: String;
 hide = true;
 com1 :string='' ;
+cc : string ='';
 hideupdate = false;
 @ViewChildren("boxes") private boxes: QueryList<ElementRef>;
 @ViewChild('cocomment') comm: ElementRef;
@@ -57,7 +59,7 @@ playsound =  false;
 
     {this.playsound = ! this.playsound;
     
-    
+      this.showEmojiPicker = false;
     alert("comment added successfully");
     this.com = '';
     this.paramurl = this.activatedroute.snapshot.params.id;
@@ -109,25 +111,41 @@ hidecomment(){
 }
 hideupdates(index,id){
   let nativeElement = this.boxes.toArray()[index].nativeElement;
-  nativeElement.style.display =
-    nativeElement.style.display === "none" || !nativeElement.style.display
-      ? "table-cell"
-      : "none";
+  nativeElement.style.visibility =
+    nativeElement.style.visibility === "hidden" || !nativeElement.style.visibility
+      ? "visible"
+      : "hidden";
       let updatedndex =  this.comments.findIndex(x => x.id == id);
       this.com1 = this.comments[updatedndex].comment_field;
 }
-updatecomment(id){
+updatecomment(index,id){
   let comment = new Comments();
    
    let updatedndex =  this.comments.findIndex(x => x.id == id);
    this.comments[updatedndex].comment_field = this.com1;
    comment = this.comments[updatedndex];
    console.log(comment);
-    this.service.updatecomment(this.com1,id).subscribe();
+    this.service.updatecomment(comment,id).subscribe(
+      ()=>{
+        this.showEmojiPickercomment = false;
+    let nativeElement = this.boxes.toArray()[index].nativeElement;
+  nativeElement.style.visibility =
+    nativeElement.style.visibility === "hidden" || !nativeElement.style.visibility
+      ? "visible"
+      : "hidden";
+      }
+    );
+    
+    
     
 
 }
-
+deleteLastChar(){
+  
+  
+  this.cc = this.com1.substring(0,this.com1.length - 2);
+  this.com1 = this.cc;
+}
 
 
 
@@ -149,8 +167,8 @@ updatecomment(id){
         this.showEmojiPicker = !this.showEmojiPicker;
   }
   toggleEmojiPickercomment() {
-    console.log(this.showEmojiPicker);
-        this.showEmojiPicker = !this.showEmojiPicker;
+    console.log(this.showEmojiPickercomment);
+        this.showEmojiPickercomment = !this.showEmojiPickercomment;
   }
 
   addEmoji(event) {
@@ -161,7 +179,17 @@ updatecomment(id){
     const text = `${com}${event.emoji.native}`;
 
     this.com = text;
-    // this.showEmojiPicker = false;
+    //this.showEmojiPicker = false;
+  }
+  addEmoji1(event) {
+    console.log(this.com1)
+    const { com1 } = this;
+    console.log(com1);
+    console.log(`${event.emoji.native}`)
+    const text = `${com1}${event.emoji.native}`;
+
+    this.com1 = text;
+    
   }
 
   onFocus() {
@@ -169,6 +197,13 @@ updatecomment(id){
     this.showEmojiPicker = false;
   }
   onBlur() {
+    console.log('onblur')
+  }
+  onFocus1() {
+    console.log('focus');
+    this.showEmojiPickercomment = false;
+  }
+  onBlur1() {
     console.log('onblur')
   }
 

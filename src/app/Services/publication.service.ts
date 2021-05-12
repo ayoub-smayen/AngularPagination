@@ -15,12 +15,15 @@ export class PublicationService {
     return this.http.get("http://localhost:8080/pi/RetrieveUser");
   }
 
-  public AddPublication(pub:Publication,id:number){
+  public AddPublication(pub:Publication,id:any){
     return this.http.post("http://localhost:8080/pi/AddPublication/"+id,pub);
   }
 
-  public getpub(){
+  public getpubALaUne(){
     return this.http.get("http://localhost:8080/pi/GetPubAlaune");
+  }
+  public getLatestpub(){
+    return this.http.get("http://localhost:8080/pi/getLatestpub");
   }
   public getpubNumber(){
     return this.http.get("http://localhost:8080/pi/PubNumber");
@@ -49,7 +52,7 @@ export class PublicationService {
   public getcommentbyid(id:number){
     return this.http.delete("http://localhost:8080/pi/getcommentbyId/"+id);
   }
-  public updatecomment(com: string, id:number){
+  public updatecomment(com: Comments, id:number){
     return this.http.put("http://localhost:8080/pi/updatecomment/"+id,com);
   }
 }

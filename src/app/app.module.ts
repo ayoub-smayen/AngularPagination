@@ -14,7 +14,9 @@ import { GooglemapsComponent } from './googlemaps/googlemaps.component';
 import { AgmCoreModule } from '@agm/core';
 import { ChatComponent } from './chat/chat.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { NotificationComponent } from './notification/notification.component';
+import { MyFilterPipe } from './pipes/my-filter.pipe';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AddPublicationComponent,
     PublicationDetailsComponent,
     GooglemapsComponent,
-    ChatComponent
+    ChatComponent,
+    NotificationComponent,
+    MyFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AgmCoreModule.forRoot({
       apiKey:''
     }),
-    NgxPaginationModule
+    NgxPaginationModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
