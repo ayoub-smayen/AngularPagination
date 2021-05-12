@@ -18,6 +18,7 @@ import { BestproductComponent } from './bestproduct/bestproduct.component';
 import { WeatherComponent } from './weather/weather.component';
 import { ExcelComponent } from './excel/excel.component';
 import { ChartComponent } from './chart/chart.component';
+import { ViewsComponent } from './views/views.component';
 const routes: Routes = [
 
 {path:"home",component:HomeComponent},
@@ -36,6 +37,7 @@ const routes: Routes = [
 {path:"weather",component:WeatherComponent},
 {path:"chart",component:ChartComponent},
 {path:"excel",component:ExcelComponent},
+{path:"views",component:ViewsComponent},
 {path:"",redirectTo:"home",pathMatch:"full"}
   
 ];
