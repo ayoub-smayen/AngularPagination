@@ -14,11 +14,10 @@ export class ExcelComponent implements OnInit {
   dataForExcel = [];
 
   empPerformance = [
-    { ID: 10011, NAME: "A", DEPARTMENT: "Sales", MONTH: "Jan", YEAR: 2020, SALES: 132412, CHANGE: 12, LEADS: 35 },
-    { ID: 10012, NAME: "A", DEPARTMENT: "Sales", MONTH: "Feb", YEAR: 2020, SALES: 232324, CHANGE: 2, LEADS: 443 },
-    { ID: 10013, NAME: "A", DEPARTMENT: "Sales", MONTH: "Mar", YEAR: 2020, SALES: 542234, CHANGE: 45, LEADS: 345 },
-    { ID: 10014, NAME: "A", DEPARTMENT: "Sales", MONTH: "Apr", YEAR: 2020, SALES: 223335, CHANGE: 32, LEADS: 234 },
-    { ID: 10015, NAME: "A", DEPARTMENT: "Sales", MONTH: "May", YEAR: 2020, SALES: 455535, CHANGE: 21, LEADS: 12 },
+    { userid: 26, firstname: "eyaaaaa", password: "123456789", confirmpassword: "123456789", email: "bahria.eya@esprit.tn", city: "tunis", address: "", phonenumber: 95851500 , age: 50, sexe: "femme"},
+    { ID: 23, firstname: "raed", password: "fghjkl", confirmpassword: "fghjkl", email:"bahria.raed@gmail.com", city: "nabeul", address: "rue de la plage", phonenumber: 95874632 , age: 22, sexe: "homme"},
+    { ID: 18, firstname: "yasmine", password: "azerty", confirmpassword: "azerty", email:"yasmine.bahria@gmail.com", city: "nabeul", address: "rue de la plage", phonenumber: 97854123, age: 26, sexe: "femme" },
+    { ID: 25, firstname: "eya", password: "ghjkl", confirmpassword: "fghjk", email: "bahria.eya@esprit.tn", city: "nabeul", address: "rue de la plage", phonenumber: 95851500, age: 22 , sexe: "femme" },
   ];
   constructor(private http:HttpClient,public ete: ExportExcelService) { }
 
@@ -33,7 +32,7 @@ export class ExcelComponent implements OnInit {
   })
 
   let reportData = {
-    title: 'Employee Sales Report - Jan 2020',
+    title: 'Users Report - Mai 2021',
     data: this.dataForExcel,
     headers: Object.keys(this.empPerformance[0])
   }

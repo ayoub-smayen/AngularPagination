@@ -23,7 +23,11 @@ export class ProfitserviceService {
     
 }
 getMonth() {
-  return this.http.get("http://localhost:8091/api/profit/gett/");
+  return this.http.get("http://localhost:8091/api/profit/gett");
+  
+}
+getProfit1() {
+  return this.http.get("http://localhost:8091/api/profit");
   
 }
 

@@ -78,15 +78,15 @@ data.forEach(d => {
 
 
 //Footer Row
-let footerRow = worksheet.addRow(['Employee Sales Report Generated from example.com at ' + date]);
+/*let footerRow = worksheet.addRow(['Employee Sales Report Generated from example.com at ' + date]);
 footerRow.getCell(1).fill = {
   type: 'pattern',
   pattern: 'solid',
   fgColor: { argb: 'FFB050' }
-};
+};*/
 
  //Merge Cells
- worksheet.mergeCells(`A${footerRow.number}:F${footerRow.number}`);
+ /*worksheet.mergeCells(`A${footerRow.number}:F${footerRow.number}`);*/
 
 //Generate & Save Excel File
 workbook.xlsx.writeBuffer().then((data) => {
@@ -96,4 +96,5 @@ workbook.xlsx.writeBuffer().then((data) => {
 
 
   }
+  
 }

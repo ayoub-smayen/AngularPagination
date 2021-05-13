@@ -18,6 +18,13 @@ export class DashboardserviceService {
       return this.http.get("http://localhost:8091/api/profitpermonth");
       
   }
+
+  getMonth() {
+    return this.http.get("http://localhost:8091/api/profit/gett");
+    
+}
+
+  
   getBestProductLikeDeslike() {
     return this.http.get("http://localhost:8091/api/dashboard/bestproductlikedeslike");
     
@@ -38,7 +45,10 @@ getProfit3() {
   
 }
 
-
+getagesexecity() {
+  return this.http.get("http://localhost:8091/api/agesexecity");
+  
+}
 
 getGeneralStatic() {
   return this.http.get("http://localhost:8091/api/sexe");

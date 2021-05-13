@@ -33,6 +33,8 @@ import { ExcelComponent } from './excel/excel.component';
 import { ChartComponent } from './chart/chart.component';
 import { ChartsModule } from 'ng2-charts';
 import { ViewsComponent } from './views/views.component';
+import { ChartpieComponent } from './chartpie/chartpie.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,7 @@ import { ViewsComponent } from './views/views.component';
     ExcelComponent,
     ChartComponent,
     ViewsComponent,
+    ChartpieComponent,
     
   ],
   imports: [
@@ -67,6 +70,7 @@ import { ViewsComponent } from './views/views.component';
     FormsModule,
     CommonModule,
     ChartsModule,
+    NgApexchartsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBisa02R8waL7ork-VnYviBlydjeDdbB7A'
     })
