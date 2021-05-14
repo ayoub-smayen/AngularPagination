@@ -35,6 +35,7 @@ import { ChartsModule } from 'ng2-charts';
 import { ViewsComponent } from './views/views.component';
 import { ChartpieComponent } from './chartpie/chartpie.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { Chartpie1Component } from './chartpie1/chartpie1.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     ChartComponent,
     ViewsComponent,
     ChartpieComponent,
+    Chartpie1Component,
     
   ],
   imports: [

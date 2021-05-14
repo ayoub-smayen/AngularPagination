@@ -214,8 +214,17 @@
                     <div class="row">
                         <div class="col-xs-3"><i class="fa fa-comments fa-5x"></i></div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">26</div>
+                            <tr>
+                                <input type="submit"  class=" btn-lg" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;" (click)="getAppvisit()">
+                                <!--<button  class="btn btn-light" class="btn btn-light btn-sl" (click)="getAppvisit()" >-->
+                                    <!--Number of Views-->
+                                    <!-- </button>-->
+                                     <!--<i class="fa fa-eye"></i>-->
+                                 <!--{{num}}-->
+                                </tr>
+                            <div class="huge">{{num}}</div>
                             <div>Number of views</div>
+                           
                         </div>
                     </div>
                 </div><a href="/views">
@@ -232,12 +241,20 @@
                     <div class="row">
                         <div class="col-xs-3"><i class="fa fa-tasks fa-5x"></i></div>
                         <div class="col-xs-9 text-right">
+                            <tr>
+                                <input type="submit"  class=" btn-lg" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;" (click)="getAppvisit()">
+                                <!--<button  class="btn btn-light" class="btn btn-light btn-sl" (click)="getAppvisit()" >-->
+                                    <!--Number of Views-->
+                                    <!-- </button>-->
+                                     <!--<i class="fa fa-eye"></i>-->
+                                 <!--{{num}}-->
+                                </tr>
                             <div class="huge">12</div>
                             <div>Profit per month</div>
                         </div>
                     </div>
                 </div>
-                <a href="/profitpermonth">
+                <a href="/chart">
                     <div class="panel-footer"><span class="pull-left">View Details</span><span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>
@@ -257,6 +274,14 @@
                     <div class="row">
                         <div class="col-xs-3"><i class="fa fa-shopping-cart fa-5x"></i></div>
                         <div class="col-xs-9 text-right">
+                            <tr>
+                                <input type="submit"  class=" btn-lg" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;" (click)="getAppvisit()">
+                                <!--<button  class="btn btn-light" class="btn btn-light btn-sl" (click)="getAppvisit()" >-->
+                                    <!--Number of Views-->
+                                    <!-- </button>-->
+                                     <!--<i class="fa fa-eye"></i>-->
+                                 <!--{{num}}-->
+                                </tr>
                             <div class="huge">124</div>
                             <div>Best Product</div>
                         </div>
@@ -274,7 +299,15 @@
                     <div class="row">
                         <div class="col-xs-3"><i class="fa fa-support fa-5x"></i></div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">13</div>
+                            <tr>
+                                <input type="submit"  class=" btn-lg" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;" (click)="getAppvisit()">
+                                <!--<button  class="btn btn-light" class="btn btn-light btn-sl" (click)="getAppvisit()" >-->
+                                    <!--Number of Views-->
+                                    <!-- </button>-->
+                                     <!--<i class="fa fa-eye"></i>-->
+                                 <!--{{num}}-->
+                                </tr>
+                            <div class="huge">12</div>
                             <div>General Statistic</div>
                         </div>
                     </div>
@@ -286,12 +319,37 @@
             </div>
         </div>
     </div><!-- /.row-->
+
+    <div class="panel-heading"><i class="fa fa-bar-chart-o fa-fw"></i>
+        Customers
+    <div>
+        <div>
+          <div class="chart">
+            <canvas baseChart
+              [data]="pieChartData"
+              [labels]="pieChartLabels"
+              [chartType]="pieChartType"
+              [options]="pieChartOptions"
+              [plugins]="pieChartPlugins"
+              [colors]="pieChartColors"
+              [legend]="pieChartLegend">
+            </canvas>
+          </div>
+        </div>
+      </div>            
+</div>
+
+
+
+
+
+
     <div class="row">
         <div class="col-lg-8">
             <div class="panel panel-default">
-                <!--<div class="panel-heading"><i class="fa fa-bar-chart-o fa-fw"></i>
-                    Area Chart Example<div class="pull-right">
-                        <div class="btn-group"><button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Actions<span class="caret"></span></button>
+                <div class="panel-heading"><i class="fa fa-bar-chart-o fa-fw"></i>
+                    Mobile Usage<div class="pull-right">
+                        <!--<div class="btn-group"><button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Actions<span class="caret"></span></button>
                             <ul class="dropdown-menu pull-right" role="menu">
                                 <li><a href="#">Action</a></li>
                                 <li><a href="#">Another action</a></li>
@@ -299,16 +357,16 @@
                                 <li class="divider"></li>
                                 <li><a href="#">Separated link</a></li>
                             </ul>
-                        </div>
+                        </div>-->
                     </div>
-                </div>-->
+                </div>
                 <div class="panel-body">
                     <div id="morris-area-chart"></div>
                 </div><!-- /.panel-body-->
             </div><!-- /.panel-->
             <div class="panel panel-default">
                 <div class="panel-heading"><i class="fa fa-bar-chart-o fa-fw"></i>
-                    Bar Chart Example<div class="pull-right">
+                    Sale Report<div class="pull-right">
                         <!--<div class="btn-group"><button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Actions<span class="caret"></span></button>
                             <ul class="dropdown-menu pull-right" role="menu">
                                 <li><a href="#">Action</a></li>
@@ -393,13 +451,10 @@
                 </div><!-- /.panel-body-->
             </div><!-- /.panel-->
             
-                        
-         
-    
-        
+            
             <div class="panel panel-default">
                 <div class="panel-heading"><i class="fa fa-bar-chart-o fa-fw"></i>
-                    Donut Chart Example</div>
+                    External Actions</div>
                 <div class="panel-body">
                     <div id="morris-donut-chart"></div><a class="btn btn-default btn-block" href="#">View Details</a>
                 </div><!-- /.panel-body-->

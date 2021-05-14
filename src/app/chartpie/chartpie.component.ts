@@ -13,7 +13,7 @@ import {
   ApexTooltip,
   ApexXAxis,
 } from 'ng-apexcharts';
-//import { colors } from '.';
+import { colors } from './color';
 import { DashboardserviceService } from '../services/dashboardservice.service';
 
 interface PieChartData {
@@ -48,7 +48,7 @@ export class ChartpieComponent implements OnInit {
   
 }
   public apexPieChartOptions: Partial<ChartOptions>;
- // public colors: typeof colors = colors;
+  public colors: typeof colors = colors;
 
   public ngOnInit(): void {
     this.service.getagesexecity().subscribe((res:any) => {
@@ -66,13 +66,13 @@ export class ChartpieComponent implements OnInit {
         type: 'donut',
         height: 400,
       },
-      /*colors: [
+      colors: [
         colors.BLUE,
         colors.YELLOW,
         colors.PINK,
         colors.GREEN,
         colors.VIOLET,
-      ],*/
+      ],
       legend: {
         position: 'bottom',
         itemMargin: {

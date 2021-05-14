@@ -19,6 +19,8 @@ import { WeatherComponent } from './weather/weather.component';
 import { ExcelComponent } from './excel/excel.component';
 import { ChartComponent } from './chart/chart.component';
 import { ViewsComponent } from './views/views.component';
+import { ChartpieComponent } from './chartpie/chartpie.component';
+import { Chartpie1Component } from './chartpie1/chartpie1.component';
 const routes: Routes = [
 
 {path:"home",component:HomeComponent},
@@ -38,6 +40,8 @@ const routes: Routes = [
 {path:"chart",component:ChartComponent},
 {path:"excel",component:ExcelComponent},
 {path:"views",component:ViewsComponent},
+{path:"chartpie",component:ChartpieComponent},
+{path:"chartpie1",component:Chartpie1Component},
 {path:"",redirectTo:"home",pathMatch:"full"}
   
 ];
