@@ -19,6 +19,49 @@ export class CategoryService {
     return this.http.get<Category[]>("http://localhost:8091/api/cat",httpOptions);
   }
 
+  putcategory(id:number, cat : Category){
+   
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': localStorage.getItem('jwt') !== null ? 'Bearer ' + localStorage.getItem('jwt') : ''
+      })
+    };
+    return this.http.put("http://localhost:8091/api/putcat/" +id,Category,httpOptions);
+  }
+
+ deletecat(id:number){
+
+
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': localStorage.getItem('jwt') !== null ? 'Bearer ' + localStorage.getItem('jwt') : ''
+    })
+  };
+
+    return  this.http.delete("http://localhost:8091/api/cat" + id,httpOptions);
+}
+    
+  getatbyid2(id:number):Observable<Category>{
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': localStorage.getItem('jwt') !== null ? 'Bearer ' + localStorage.getItem('jwt') : ''
+      })
+    };
+    return this.http.get<Category>("http://localhost:8091/api/cat/" +id,httpOptions);
+  }
+
+  getatbyid(id:number):any{
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': localStorage.getItem('jwt') !== null ? 'Bearer ' + localStorage.getItem('jwt') : ''
+      })
+    };
+    return this.http.get<any>("http://localhost:8091/api/cat/" +id,httpOptions);
+  }
 
   addCategory(cat : Category){
 

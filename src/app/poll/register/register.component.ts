@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
 
   register(f) {
     this.authService.register(this.username,this.email, this.password).subscribe(success => {
-      this.router.navigate(['/']);
+      this.router.navigate(['/login']);
       // tslint:disable-next-line:max-line-length
       this.flashMessage.show('You are successfully registered! You can now login.', { cssClass: 'card-panel green lighten-4', timeout: 3000 });
     }, error => {

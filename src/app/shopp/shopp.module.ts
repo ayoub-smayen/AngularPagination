@@ -68,11 +68,12 @@ import { NotifchildComponent } from './notifchild/notifchild.component';
 import { NotifpereComponent } from './notifpere/notifpere.component';
 import { FiltershopComponent } from './filtershop/filtershop.component';
 import { Filtershop2Component } from './filtershop2/filtershop2.component';
+import { ProdcatComponent } from './prodcat/prodcat.component';
 @NgModule({
   declarations: [HomepageComponent, ShoppageComponent, ClothespageComponent, CompareprodspageComponent, ChatshopComponent, CommentforumComponent, MessagedeliveryComponent, BookComponent, EditprofileComponent, ShopchattingComponent, Rayon1Component, Paypal1Component, Cartshopping1Component, WishlistshoppingComponent, PublicationComponent, ShopmenuComponent, Shopnotif2Component, Template1Component, Template2Component, ShoppmapComponent, Shoppmap2Component, ShopppublicityComponent, AdsencesComponent, ShopsettingsComponent, ShoppslotmachineComponent, SimulatorgameComponent, MydiceComponent, 
     
     
-    FilterprodPipe, TrackingComponent, Tracking2Component, PayementshopComponent, ChildshopComponent, Childshop2Component, Chartshop0Component, Chartshop1Component, Chartshop2Component, AddprodshoppComponent, AddcatshoppComponent, NotifshoppingComponent, NotifchildComponent, NotifpereComponent, FiltershopComponent, Filtershop2Component
+    FilterprodPipe, TrackingComponent, Tracking2Component, PayementshopComponent, ChildshopComponent, Childshop2Component, Chartshop0Component, Chartshop1Component, Chartshop2Component, AddprodshoppComponent, AddcatshoppComponent, NotifshoppingComponent, NotifchildComponent, NotifpereComponent, FiltershopComponent, Filtershop2Component, ProdcatComponent
   ],
   imports: [
     CommonModule,
@@ -104,7 +105,7 @@ import { Filtershop2Component } from './filtershop2/filtershop2.component';
   exports: [
     Shopnotif2Component,
     HomepageComponent, ShoppageComponent, ClothespageComponent, CompareprodspageComponent, ChatshopComponent,MessagedeliveryComponent,
-    ShoppmapComponent,ShopppublicityComponent
+    ShoppmapComponent,ShopppublicityComponent,Chartshop0Component
 
     ,
     //FilterprodPipe

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import * as Stomp from "stompjs";
 import {HttpClient,HttpHeaders  }   from  "@angular/common/http";
 import * as SockJs  from "sockjs-client";
-
+ import { environment } from "../environments/environment.prod";
 @Injectable({
   providedIn: 'root'
 })
@@ -15,6 +15,9 @@ export class AuthService {
     let socket = new SockJs(`http://localhost:8091/socket`);
   
     let stompClient = Stomp.over(socket);
+
+
+    alert("coonerted");
 
     return stompClient;
 

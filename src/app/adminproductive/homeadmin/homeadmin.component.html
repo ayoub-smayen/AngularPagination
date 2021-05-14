@@ -1,0 +1,39 @@
+  <div>
+
+    <button (click)="getAppvisit()"  class="btn btn-primary">
+   sd
+    </button>
+
+
+      <i class="fa fa-eye">
+
+      </i>
+   {{num}}
+
+      
+ {{profits | json}}
+  
+       <div>
+       <table>
+                 
+               <tr>
+                   <th>  month </th>
+                   <th   >  gain </th>
+               </tr>
+
+
+               <tr  *ngFor="let  v  of profits">
+                   <td> 
+                        {{v.month  }}
+                   </td>
+                   <td>
+                       {{v.income  -  v.outcome}}
+                   </td>
+               </tr>
+
+          
+       </table>
+       </div>
+
+     
+  </div>

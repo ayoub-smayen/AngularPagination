@@ -1,0 +1,29 @@
+<div class="row">
+    <!-- Product main img -->
+    <div class="col-md-5 col-md-push-2" *ngFor="let ray of rayons">
+        <div id="product-main-img">
+            <div class="product-preview">
+                  <p>
+                      {{ray.rayname}}
+                  </p>
+            </div>
+
+            <div class="product-preview">
+                 {{ray.ray_id}}
+            </div>
+
+            <div class="product-preview">
+              <span class="badge badge-primary">
+   {{ray.raytag}}
+              </span>
+            </div>
+
+            <div class="product-preview">
+                <p class="text text-success">
+                    {{ray.rayvision}}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    </div>

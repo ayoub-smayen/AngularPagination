@@ -104,9 +104,13 @@
     <a href="#">
         <i class="fas fa-shopping-cart" style="color:red">
             <span class="num-cart-product"> {{nbrFav}}</span>
-            <p>
-                {{favourite | json}}
-            </p>
+            
+               <div *ngFor="let f of favourite">
+                      <p>
+                          {{f.favourite_id}}
+                      </p>
+               </div>
+            
         </i>
     </a>
  </div>

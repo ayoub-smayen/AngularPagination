@@ -1,0 +1,47 @@
+<mat-nav-list>
+    <div class="profile-card">
+        <div class="header">
+            <p>
+                {{username}}
+            </p>
+
+            <button click="logout()" class="btn btn-danger"> 
+  logout
+            </button>
+            <div  *ngIf="profs && profs.lprofile ">
+                <h2> {{profs.lprofile.tel}}</h2>
+                <h4> {{profs.lprofile.adreese}}</h4>
+            </div>
+            <img [src]="'data:image/jpeg;base64,'+ profs.lprofile.picprofile" alt="ayub smayen">
+            </div>
+          
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <h2 matSubheader>Pages</h2>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/ayub">Dashboard</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/shared">shared</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/editprofile">editprofile</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/ayoubadmin">
+    <i class="fa fa-home">
+
+    </i>
+    </a>
+
+    <mat-divider></mat-divider>
+
+    <h2 matSubheader>Tools</h2>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+        <mat-icon>import_contacts</mat-icon>
+        Contacts
+    </a>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+        <mat-icon>contact_phone</mat-icon>
+        Leads
+    </a>
+
+</mat-nav-list>

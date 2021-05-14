@@ -25,7 +25,8 @@ export class Shopnotif2Component implements OnInit {
   // Subscribe to notification topic (click)="location.reload();"
         stompClient.subscribe('/topic/notification', notifications => {
  
-
+  
+          alert("jer");
           this.alnot1 = true ;
           console.log("here");
 
@@ -40,7 +41,7 @@ export class Shopnotif2Component implements OnInit {
 
           console.log("here");
           this.alert2not = true;
-
+alert("couner");
           alert("see you email please 😀 ");
 
     // Update notifications attribute with the recent messsage sent from the server

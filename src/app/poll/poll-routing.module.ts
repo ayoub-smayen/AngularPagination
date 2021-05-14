@@ -14,7 +14,9 @@ import { AdminGuard } from '../guards/admin.guard';
 import { AddpollComponent } from './addpoll/addpoll.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/welcome', pathMatch: 'full' },
+  //{ path: '', redirectTo: '/welcome', pathMatch: 'full' },
+
+  { path: 'poll', redirectTo: '/welcome', pathMatch: 'full' },
   { path: 'welcome', component: WelcomeComponent },
   { path: 'my-polls', canActivate: [AuthGuard], component: MypollsComponent },
   { path: 'add-poll', canActivate: [AuthGuard], component: AddpollComponent },

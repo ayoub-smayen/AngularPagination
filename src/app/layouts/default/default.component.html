@@ -1,0 +1,12 @@
+<app-ayoubheader (toggleSideBarForMe)="sideBarToggler()"></app-ayoubheader>
+
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+        <app-ayoubsiedbar></app-ayoubsiedbar>
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>
+
+<app-ayoubfooter></app-ayoubfooter>

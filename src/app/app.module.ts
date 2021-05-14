@@ -21,18 +21,38 @@ import {  MyadminModule} from "./myadmin/myadmin.module";
 import { DialogsModule } from '@progress/kendo-angular-dialog';
 import { SortableModule } from '@progress/kendo-angular-sortable';
 import { NotificationModule } from '@progress/kendo-angular-notification';
+import { ConsomitunsishopModule } from "./consomitunsishop/consomitunsishop.module";
+import { AppnavigationshoppingComponent } from './appnavigationshopping/appnavigationshopping.component';
 
+    
+ import { Eyaadmin1Module } from "./eyaadmin1/eyaadmin1.module";
 
+ 
 
+ 
+        
+
+       
+import {  LayoutsModule} from "./layouts/layouts.module";
+import { AyoubadminModule } from "./ayoubadmin/ayoubadmin.module";
+
+import { AdminproductiveModule } from "./adminproductive/adminproductive.module";
+import { AdminGuard } from './guards/admin.guard';
 //import { PushNotificationsModule } from 'ng-push';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppnavigationshoppingComponent
   ],
   imports: [
     BrowserModule,
+    LayoutsModule,
+    AyoubadminModule,
     PollModule,
     ShoppModule,
+    ConsomitunsishopModule,
+    AdminproductiveModule,
+    Eyaadmin1Module  ,
   //  PushNotificationsModule,
     FlashMessagesModule.forRoot(),
     AppRoutingModule,
@@ -49,7 +69,7 @@ import { NotificationModule } from '@progress/kendo-angular-notification';
     SortableModule,
     NotificationModule
   ],
-  providers: [],
+  providers: [AdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

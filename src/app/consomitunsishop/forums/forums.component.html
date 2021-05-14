@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+
+<form>
+
+<input class="form-control" type="text" placeholder="message" id="kj" name="input" [(ngModel)]="input">
+<button class="btn btn-success" (click)="sendMessage()">Send</button>
+
+</form>
+<div class="content">
+  <div *ngFor="let ms of msg">
+   <span>
+       <p class="badge badge-primary">
+        {{username}} 
+       </p>
+   </span>  :    
+        
+   {{ms}} 
+       <time>
+           {{date}}
+       </time>
+  </div>
+</div>

@@ -12,7 +12,8 @@ export class Product {
     publicity_id:number;
     order_id:number;
     category_id:number;
-
+    productWieght  : number;
+    remise_price:number;
     comments :any ;
 
     like :number;

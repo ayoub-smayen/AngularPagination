@@ -1,0 +1,119 @@
+
+  <div class="row justify-content-center">
+    <button  onclick="window.location.reload()" class="btn btn-primary">
+        all
+    </button>
+
+      <div class="col-sm-6">
+
+
+
+        
+           
+         <div *ngFor="let  cat of categories "> 
+               <div class="col col-md-4">
+                        {{cat.category_id}}
+
+                        <p>
+                            {{cat.categoryName}}
+                        </p>
+
+                        <span class="badge badge-primary">
+                               {{cat.tags}}
+                        </span> 
+
+
+                        <p>
+                            {{cat.categoryType}}
+                        </p>
+
+                         <button  (click)="getCatgeoryId(cat.category_id)" class="btn btn-primary">
+                             filter
+                         </button>
+
+
+               </div>
+         </div>
+      </div>
+
+
+
+        <div  *ngIf="!category ; else  rt">
+            <div>
+                <div *ngFor ="let pro of products"> 
+
+                    <div>
+                          <div>  
+           
+         
+                               <span>
+                                   {{pro.remise_price}}
+                               </span>
+                               <p>
+                                   {{pro.name}}
+                               </p>
+                               <div>
+                                   {{pro.price}}
+                               </div>
+         
+                                   <div>
+                                        <del>
+                                            {{pro.price  -  pro.price_finale}}
+                                        </del>
+                                   </div>
+         
+         
+         
+                                     <p>
+                                         {{pro.brand}}
+                                     </p>
+         
+         
+                                       <img   [src]="'data:image/jpeg;base64,' +   pro.image"  class="img  rounded"   height="80"  width="80"  />
+         
+                          </div>
+                    </div>
+                    
+               </div>
+            </div>
+        </div>
+
+         <ng-template #rt>
+
+            <p>
+                products from 
+            </p>
+
+            <div  *ngFor="let pro  of category.pr">
+                    <div>
+
+                        here 
+                        {{pro.productname}}
+                    </div>
+
+
+                    <div>
+                        {{pro.productdescription}}
+                    </div>
+
+
+                     <p>
+                         {{pro.productWieght}}
+                     </p>
+
+                     <span>
+                          #{{pro.codebar}}
+                     </span>
+             <span>
+                <img   [src]="'data:image/jpeg;base64,' +   pro.productImg"  class="img  rounded"   height="80"  width="80"  />
+             </span>
+<p>
+      {{pro.productViews}}
+</p>
+                       
+            </div>
+
+         </ng-template>
+    
+
+  </div>

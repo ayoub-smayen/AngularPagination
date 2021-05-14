@@ -1,0 +1,125 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <div class="note">
+                    <p>Add User</p>
+                </div>
+            
+                <fieldset>
+                    
+
+                    <div class="form-group">
+                        <label for="Name"><span class="req">* </span> Name:  </label>
+                        <input required type="text" [(ngModel)]="euser.membre_username" name="name" id="name"
+                            class="form-control phone" maxlength="28" placeholder="Enter your fullname..." />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Your image</label>
+                       <!-- <input type="file" class="form-control-file" id="exampleFormControlFile1">-->
+                       <input   type="file" class="form-control-file" (change)="onFileChanged2($event)">
+                      <img [src]="imageUrl2" height="200" width="200" *ngIf="imageUrl2">
+                      </div>
+                      
+                      
+                    <div class="form-group">
+                        <label for="email"><span class="req">* </span> Email: </label>
+                        <input class="form-control" type="email" [(ngModel)]="euser.email" name="email" id="txt" required
+                            placeholder="name@example.com" />
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <div id="errFirst"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password"><span class="req">* </span> Password : </label>
+                        <input class="form-control" type="password" [(ngModel)]="euser.password" name="password" id="txt"
+                            placeholder="Password must be at least 8 characters" required />
+                        <div id="errLast"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password"><span class="req">* </span> Confirm Password : </label>
+                        <input class="form-control" type="password" [(ngModel)]="euser.confirm_password" name="confirmpassword" id="txt"
+                            placeholder="Password must be at least 8 characters" required />
+                        <div id="errLast"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city"><span class="req">* </span> City : </label>
+                        <input class="form-control" type="text" [(ngModel)]="euser.city" name="city" id="txt"
+                            placeholder="City or Town" required />
+                        <div id="errLast"></div>
+                    </div>
+                 
+                    <div class="form-group">
+                        <label for="address"><span class="req">* </span> Address : </label>
+                        <input class="form-control" type="text" [(ngModel)]="euser.address" name="city" id="txt"
+                            placeholder="rue de liberte" required />
+                        <div id="errLast"></div>
+                    </div>
+
+                   
+                    <div class="form-group">
+                        <label for="phonenumber"><span class="req">* </span> Phone Number : </label>
+                        <input class="form-control" type="tel" value="1        "  name="phonenumber" id="txt"
+                            placeholder="phonenumber must be 8 numbers" required />
+                        <div id="errLast"></div>
+                    </div>
+<!----[(ngModel)]="euser.phone_number"-->
+                    <div class="form-group">
+                        <label for="password"><span class="req">* </span> Age : </label>
+                        <input class="form-control" type="text" [(ngModel)]="euser.age" name="age" id="txt"
+                            placeholder="Age" required />
+                        <div id="errLast"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address"><span class="req">* </span> Sexe : </label>
+
+                      
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [(ngModel)]="euser.sexe" name="sexe" id="gridCheck1">
+                            <label class="form-check-label" for="gridCheck1">
+                              Female
+                            </label>
+                        </div>
+                    
+                            <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="sexe"  [(ngModel)]="euser.sexe" id="gridCheck2">
+                            <label class="form-check-label" for="gridCheck1">
+                              Male  {{euser.sexe}}
+                              </label>
+                          </div>
+                        </div>
+                    <input  type="submit"  (click)="add()" value="register"  type="button" class="btnSubmit" />
+                     
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+
+                      
+                </fieldset>
+            
+            </form>
+            
+      </div>
+
+    </div>
+</div>
+

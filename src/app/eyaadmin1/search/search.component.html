@@ -1,0 +1,131 @@
+<div class="container">
+    <div class="row">
+               <div id="custom-search-input">
+                                <!--<div class="input-group col-md-12" style="text-align: center ">
+                                    <input type="number" class="search-query form-control" [(ngModel)]="user_id" placeholder="Search With Id"  name="euser_id" />
+                                   
+                                   <br>
+                                   <br>
+                                   
+                                    <span class="input-group-btn">
+                                        <button   type="submit" class="btn btn-danger" type="button" (click)="findUserById(user_id)">
+                                            <span class=" glyphicon glyphicon-search"></span>
+                                        </button>
+                 
+                                    </span>
+                                    
+                                </div>-->
+                                <br>
+
+
+
+
+
+
+
+
+
+                                <br>
+
+
+
+
+
+
+                                <br>
+
+
+
+
+
+
+
+
+                                <br>
+
+                                
+                                
+                            
+                                <div id="custom-search-input">
+                                    <div class="input-group col-md-12" style="text-align: center">
+                                        <input type="text" class="search-query form-control" placeholder="Search With id"  name="euser_id" [(ngModel)]="user_id"/>
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-danger" type="button" (click)="findUserById(user_id)">
+                                                <span class="glyphicon glyphicon-search"></span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+    </div>
+    </div>
+<div class="container">
+<div class="container">
+   <div class="row col-md-6 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>City</th>
+            <th>Image</th>
+            <th>Address</th>
+            <th>Sexe</th>
+            <th>Age</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+      
+          <tr  *ngIf="users== null  ;else arr">
+
+
+            <td>{{euser.user_id}}</td>
+            <td>{{euser.membre_username}}</td>
+            <td>{{euser.email}}</td>
+            <td>{{euser.password}}</td>
+            <td>{{euser.city}}</td>
+            <td>{{euser.userimg}}</td>
+            <td>{{euser.address}}</td>
+            <td>{{euser.sexe}}</td>
+            <td>{{euser.age}}</td>
+            
+            <td class="text-center"><button class="btn btn-danger btn-sm" (click)="deleteUser(euser.user_id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+            <!--<td class="text-center"><button class="btn btn-primary " (click)="updateUser(euser.user_id,euser)"><span class="glyphicon glyphicon-update"></span> Update</button></td>-->
+           
+            <a class="btn btn-primary " [routerLink] = "['/euser', euser.user_id]">update</a>
+        </tr>
+
+
+           <ng-template  #arr>
+
+            <tr *ngFor="let e of users" >
+                <td>{{e.user_id}}</td>
+                <td>{{e.membre_username}}</td>
+                <td>{{e.email}}</td>
+                <td>{{e.password}}</td>
+                <td>{{e.city}}</td>
+                <td> <img  src="e.userimg"  alt="profile image"/></td>
+                <td>{{e.address}}</td>
+                <td>{{e.sexe}}</td>
+                <td>{{e.age}}</td>
+                
+            
+               
+            }
+                
+                <td class="text-center"><button class="btn btn-danger btn-sm"     (click)="deleteUser(e.user_id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+                <!--<td class="text-center"><button class="btn btn-primary btn-xs" (click)="updateUser(e.user_id,e)"><span class="glyphicon glyphicon-update"></span> Update</button></td>-->
+                <a class="btn btn-primary" [routerLink] = "['/euser', e.user_id]">update</a>
+            </tr>
+            
+           </ng-template>
+       
+      
+    </tbody>
+    </table>
+   </div>
+</div>

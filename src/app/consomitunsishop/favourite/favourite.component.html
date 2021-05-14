@@ -1,0 +1,98 @@
+
+<app-navbar></app-navbar>
+<div>
+
+
+    <div class="col-md-4 col-xs-6" *ngFor="let prod of favourites.products ">
+        <div class="product">
+            <div class="product-img">
+                <img src="{{'data:image/jpeg;base64,' + prod.productImg}}" alt="">
+                <div class="product-label">
+                    <span class="sale">-30%</span>
+                    <span class="new">NEW</span>
+                    <p>{{prod.brand}}</p>
+
+                    <small>
+                        {{prod.product_id}}
+                    </small>
+                </div>
+            </div>
+            <div class="product-body">
+                <p class="product-category">#{{prod.codebar}}</p>
+                <h3 class="product-name"><a [routerLink]="['/product', prod.product_id]" >{{prod.productname}}</a></h3>
+                <!-- <details>
+                    <div *ngFor="let comm of prod.comments">
+      
+                      <span>
+                        <p class="text text-success">
+                          by:   {{comm.user.username}}
+                        </p>
+      
+                        <p style="color: gold;">
+                          {{comm.user.coins}}  
+                          <i class="fas fa-coins">
+      
+                          </i>
+                        </p>
+      
+                        <div class="container">
+                          <h3>{{comm.user.tel}}</h3>
+                          <a href="#"  data-toggle="popover" data-img="http://placehold.it/400x200" title="{{comm.user.username}}" >Toggle this </a>
+                        </div>
+                       
+      
+                        <img  class="img-circle"  [src]="'data:image/jpeg;base64,'+ comm.user.lprofile.picprofile" height="85px" width="85px"/>
+                   </span>
+                     
+                      <time>
+                          {{comm.createdAt | date }}
+                      </time>
+                       
+                        <span class="badge badge-primary">
+                            {{comm.title}}
+                        </span>
+                        <span class="bade badge-success">
+                            {{comm.bodyComment}}
+                        </span>
+                    </div>
+                </details>
+ -->
+
+                <p>{{prod.quantity}}</p>
+                <h4 class="product-price">{{prod.price}} <del class="product-old-price">${{prod.price_finale}}.00</del></h4>
+                <div class="product-rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <img  src="http://localhost:8091/api/qr-code/{{prod.product_id}}"   />
+                <div class="product-btns">
+                    <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+                   
+                   
+                 
+                    <button class="quick-view">
+                        <a 
+
+                        
+                        [routerLink]="['/product', prod.id]">
+                       
+                        <i class="fa fa-eye"></i><span class="tooltipp">quick view</span>
+                    
+                    </a>
+                    </button>
+             
+                </div>
+            </div>
+            <div class="add-to-cart">
+                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+
+               
+            </div>
+        </div>
+    </div>
+
+</div>

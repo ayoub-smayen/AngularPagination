@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   roles: string[];
 fg1 : any;
   fg :number;
-
+term :string ;
   getNotif(){
     this.proser.getColisenattend().subscribe(res=>{
                this.fg1 =res;

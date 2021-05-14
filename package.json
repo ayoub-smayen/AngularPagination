@@ -11,12 +11,12 @@
   },
   "private": true,
   "dependencies": {
-    
     "@angular/animations": "~9.0.3",
     "@angular/cdk": "^11.2.3",
     "@angular/common": "~9.0.3",
     "@angular/compiler": "~9.0.3",
     "@angular/core": "~9.0.3",
+    "@angular/flex-layout": "^11.0.0-beta.33",
     "@angular/forms": "~9.0.3",
     "@angular/localize": "~9.0.3",
     "@angular/material": "^11.2.3",
@@ -38,6 +38,8 @@
     "angular2-flash-messages": "^3.0.1",
     "bootstrap": "4.1.1",
     "chart.js": "2.9.3",
+    "highcharts": "^9.1.0",
+    "highcharts-angular": "^2.10.0",
     "howler": "^2.2.1",
     "jquery": "^3.6.0",
     "net": "^1.0.2",
@@ -60,7 +62,6 @@
     "@angular/compiler-cli": "~9.0.3",
     "@angular/language-service": "~9.0.3",
     "@types/chartjs": "^0.0.31",
-   
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",

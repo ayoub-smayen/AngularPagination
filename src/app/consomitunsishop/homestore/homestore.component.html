@@ -1,0 +1,61 @@
+<div *ngIf="isLoggedIn ;else rt" >
+
+
+<app-navbar></app-navbar>
+<app-header></app-header>
+
+
+
+
+
+<router-outlet></router-outlet>
+
+<app-breadcumb></app-breadcumb>
+<app-stock></app-stock>
+<app-ray></app-ray>
+<app-store [term] ='term'></app-store>
+<app-products></app-products>
+
+<app-footer></app-footer>
+
+</div>
+
+
+
+<ng-template   #rt>
+
+  <a mat-button *ngIf="!isLoggedIn" routerLink="/login">Login</a>
+
+
+
+
+
+<a mat-button *ngIf="!isLoggedIn" routerLink="/register">Register</a>
+
+</ng-template>
+
+<!-- <ng-template> 
+
+    <div>
+        <app-navbar></app-navbar>
+        you should login 
+    </div>
+
+</ng-template> -->
+
+
+<!-- <div *ngIf ="isLoggedIn else gh ;">
+  <a mat-button *ngIf="isLoggedIn" (click)="logout()">Logout  {{term}} ({{username}})</a>
+  {{term}}
+  <app-homestore  [username] = 'username' [isLogging] ='isLoggedIn' [term]='term'  ></app-homestore>
+</div> 
+
+
+<div *ngIf="isLogging else  rt;">
+    {{term}}
+    
+</div>
+
+
+ 
+-->

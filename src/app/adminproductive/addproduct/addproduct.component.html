@@ -1,0 +1,155 @@
+<div class="row  jumbotron">
+
+    <input type="text"   id="myInput"  />
+
+   <table>
+
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>price</th>
+        <th> code bar </th>
+        <th>image</th>
+    </tr>
+
+    <tr *ngFor="let pro of products ">
+          <td>  {{    pro.id }}</td>
+          <td>  {{pro.name }} </td>
+          <td>{{pro.price}} </td>
+          <td> {{pro.codebar}}</td>
+
+          <td>
+            <img src="{{'data:image/jpeg;base64,' + pro.image}}" alt="" height="80" width="80"  class="img-fluid"  >
+          </td>
+    </tr>
+   </table>
+
+
+     <!--
+         product_id : number;
+    productname :string;
+    productdescription:string;
+    quantity:number;
+    price: number;
+    brand :string;
+    codebar:string;
+     -->
+     
+    <form  #f="ngForm" novalidate class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input [(ngModel)]="product.productname" id="productname" name="productname" type="text" #un="ngModel" [class.invalid]="un.errors?.required && un.touched"
+            required>
+          <label for="productname">productname</label>
+          <div *ngIf="un.errors?.required && un.touched" class="red-text darken-1">
+            tel is required
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input [(ngModel)]="product.productdescription" id="productdescription" name="productdescription" type="text" #p="ngModel" [class.invalid]="p.errors?.required && p.touched"
+            required>
+          <label for="adresse">productdescription</label>
+          <div *ngIf="p.errors?.required && p.touched" class="red-text darken-1">
+            productdescription is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <input [(ngModel)]="product.quantity" id="quantity" name="quantity" type="number" #p2="ngModel" [class.invalid]="p2.errors?.required && p2.touched"
+            required>
+          <label for="adresse">quantity</label>
+          <div *ngIf="p.errors?.required && p.touched" class="red-text darken-1">
+            quantity is required
+          </div>
+        </div>
+      </div>
+
+      
+
+
+      <div class="row">
+        <div class="input-field col s6">
+          <input [(ngModel)]="product.price" id="price" name="price" type="number" #p3="ngModel" [class.invalid]="p3.errors?.required && p3.touched"
+            required>
+          <label for="price">price</label>
+          <div *ngIf="p3.errors?.required && p3.touched" class="red-text darken-1">
+            price is required
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="row">
+        <div class="input-field col s6">
+          <input [(ngModel)]="product.productWieght" id="productWieght" name="productWieght" type="number" #p32="ngModel" [class.invalid]="p32.errors?.required && p32.touched"
+            required>
+          <label for="price">productWieght</label>
+          <div *ngIf="p3.errors?.required && p3.touched" class="red-text darken-1">
+            weight is required
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="input-field col s6">
+          <input [(ngModel)]="product.remise_price" id="remise_price" name="remise_price" type="number" #p31="ngModel" [class.invalid]="p31.errors?.required && p31.touched"
+            required>
+          <label for="price">remise_price</label>
+          <div *ngIf="p31.errors?.required && p31.touched" class="red-text darken-1">
+            remise_price is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <input [(ngModel)]="product.brand" id="brand" name="brand" type="text" #p4="ngModel" [class.invalid]="p4.errors?.required && p4.touched"
+            required>
+          <label for="brand">brand</label>
+          <div *ngIf="p4.errors?.required && p4.touched" class="red-text darken-1">
+            brand is required
+          </div>
+        </div>
+      </div>
+     
+
+      <div class="row">
+        <div class="input-field col s6">
+          <input [(ngModel)]="product.codebar" id="codebar" name="codebar" type="text" #p5="ngModel" [class.invalid]="p5.errors?.required && p5.touched"
+            required>
+          <label for="brand">codebar</label>
+          <div *ngIf="p5.errors?.required && p5.touched" class="red-text darken-1">
+            codebar is required
+          </div>
+        </div>
+      </div>
+     
+     
+     
+     
+     
+     
+     
+     
+     
+      <div class="row">
+        <div class="input-field col s4">
+          <button [disabled]="f.invalid" (click) ="addproducts()"  class="btn waves-effect waves-light cyan accent-4 btnSubmit" type="submit" name="action">Submit</button>
+        </div>
+      </div>
+      
+      
+      
+      
+      <input   type="file" (change)="onFileChanged2($event)">
+      <img [src]="imageUrl2" height="200" width="200" *ngIf="imageUrl2">
+      
+    </form>
+  </div>

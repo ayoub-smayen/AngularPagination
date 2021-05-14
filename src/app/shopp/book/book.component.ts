@@ -267,7 +267,7 @@ this.getAllProducts();
   logout() {
     this.authService.logout();
     this.authService.loginSubject.next(null);
-    this.router.navigate(['welcome']);
+    this.router.navigate(['login']);
   }
   login(f) {
     this.authService.login(this.username, this.password)
