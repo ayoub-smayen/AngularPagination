@@ -8,15 +8,17 @@ import { HomeComponent } from './home/home.component';
 import { ChartDelivComponent } from './chart-deliv/chart-deliv.component';
 import { MapsComponent } from './maps/maps.component';
 import { AddClaimComponent } from './add-claim/add-claim.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 const routes: Routes = [
   { path: 'Statistics', component: ChartDelivComponent },
-  { path: 'List of delivery man', component: DisplaySearchComponent },
-  { path: 'List of claims', component: ClaimComponent },
+  { path: 'Listdeliveryman', component: DisplaySearchComponent },
+  { path: 'Listclaims', component: ClaimComponent },
   { path: 'adddeliv', component: AddDelivComponent },
   { path: 'showmaps', component: MapsComponent },
-  { path: 'addclaim', component: AddClaimComponent }
+  { path: 'addclaim', component: AddClaimComponent },
+  { path: 'profile', component: ProfileComponent }
 ];
 
 @NgModule({

@@ -19,12 +19,12 @@ export class AddClaimComponent implements OnInit {
 public addClaim(){
 
   let cl= new Claim; 
-cl.desc=this.sub;
+cl.desc=this.description;
 cl.subject=this.sub;
   let resp= this.servicee.add(cl);
   resp.subscribe();
   
-    this.router.navigateByUrl('List of claims');
+    this.router.navigateByUrl('Listclaims');
 
   
  }

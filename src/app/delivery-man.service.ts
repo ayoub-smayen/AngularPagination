@@ -11,7 +11,7 @@ export class DeliveryManService {
   constructor(private http: HttpClient) {}
 
   public addDeliveryMan(deliveryMan: DeliveryMan): Observable<DeliveryMan> {
-    return this.http.post<DeliveryMan>(`${this.apiServerUrl}/api/adddeliv`, deliveryMan);
+    return this.http.post<DeliveryMan>(`${this.apiServerUrl}/api/adddeliveryman`, deliveryMan);
   }
   public getListDeliveryMan(): Observable<DeliveryMan[]>{
     return this.http.get<DeliveryMan[]>(`${this.apiServerUrl}/api/showListDeliv`);
@@ -25,9 +25,7 @@ public deleteDeliveryMan(delivId: number): Observable<DeliveryMan> {
   return this.http.delete<DeliveryMan>(`${this.apiServerUrl}/api/delete/${delivId}`);
 }
 
-public affectDeliveryMan(delivId: number): Observable<DeliveryMan> {
-  return this.http.get<DeliveryMan>(`${this.apiServerUrl}/api/findDelivery/${delivId}`);
-}
+
 
 public delivofmonth(): Observable<DeliveryMan[]>{
   return this.http.get<DeliveryMan[]>(`${this.apiServerUrl}/api/delivofmonth`);
@@ -39,6 +37,8 @@ public searchbylastname(lastname: string) {
  public findDeliveryManbyId(id: number){
    return this.http.get(`${this.apiServerUrl}/api/findDeliveryManbyId/${id}`);
  }
+
+
 
 
 

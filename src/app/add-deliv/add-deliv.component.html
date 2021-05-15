@@ -11,7 +11,12 @@
                 <fieldset>
                     <legend class="text-center"> Valid information is required to register <span class="req"><small>
                                 </small></span></legend>
-
+                                <div class="container row">
+                                    <div class="col-md-6">
+                                        <input type="file" (change)="onFileChanged($event)">
+                                    </div>
+                                    
+                                </div>
                     <div class="form-group">
                         <label for=""><span class="req"> </span> Name: </label>
                         <input class="form-control" required type="text" name="name" [(ngModel)]="name "
@@ -68,14 +73,27 @@
                             </select>
                         </div>
                     </div>
-
-
+                    
 
 
 
                     <div class="form-group">
+                        <label for=""><span class="req"> </span> Phone number</label>
+                        <input class="form-control" required type="text" name="phone" [(ngModel)]="phone"
+                            id="work" placeholder="type..." />
+                        <div class="status" id="txt"></div>
+                    </div>
+
+                    <div class="form-group">
                         <label for=""><span class="req"> </span> workload </label>
                         <input class="form-control" required type="text" name="workload" [(ngModel)]="workLoad"
+                            id="work" placeholder="type..." />
+                        <div class="status" id="txt"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for=""><span class="req"> </span> Facebook link </label>
+                        <input class="form-control" required type="text" name="facebook" [(ngModel)]="facebook"
                             id="work" placeholder="type..." />
                         <div class="status" id="txt"></div>
                     </div>
@@ -88,6 +106,7 @@
         </div>
 
     </div>
+    
 </div>
 
 

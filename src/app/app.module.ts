@@ -17,6 +17,9 @@ import { ChartsModule } from 'ng2-charts';
 import { MapsComponent } from './maps/maps.component';
 import { AgmCoreModule } from '@agm/core';
 import { AddClaimComponent } from './add-claim/add-claim.component';
+import { FilterPipePipe } from './pipes/filter-pipe.pipe';
+import { ProfileComponent } from './profile/profile.component';
+import { DeliveryutilComponent } from './deliveryutil/deliveryutil.component';
 //import { HaversineService } from "ng2-haversine";
  
 
@@ -32,6 +35,9 @@ import { AddClaimComponent } from './add-claim/add-claim.component';
     ChartDelivComponent,
     MapsComponent,
     AddClaimComponent,
+    FilterPipePipe,
+    ProfileComponent,
+    DeliveryutilComponent,
  
   ],
   imports: [

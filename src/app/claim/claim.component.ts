@@ -9,9 +9,11 @@ import { ClaimService } from '../claim.service';
   styleUrls: ['./claim.component.css']
 })
 export class ClaimComponent implements OnInit {
+  name='';
 id: number;
 message: string;
   listClaim: Claim[];
+  list:Claim;
   claim: Claim;
   constructor(private service: ClaimService) { }
 

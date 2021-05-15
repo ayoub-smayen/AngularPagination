@@ -13,8 +13,9 @@ export class DeliveryMan {
     workLoad: any;
     lati: number;
     lngi: number;
-    
-
+    phoneNumber: any;
+rating: any;
+facebook: any;
     
     
     }
