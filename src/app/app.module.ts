@@ -17,6 +17,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { NotificationComponent } from './notification/notification.component';
 import { MyFilterPipe } from './pipes/my-filter.pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AuthComponent } from './auth/auth.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     GooglemapsComponent,
     ChatComponent,
     NotificationComponent,
-    MyFilterPipe
+    MyFilterPipe,
+    AuthComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

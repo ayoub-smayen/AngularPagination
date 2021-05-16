@@ -39,7 +39,8 @@
 		<script src="./assets/javascript/nouislider.min.js"></script>
 		<script src="./assets/javascript/jquery.zoom.min.js"></script>
 		<script src="./assets/javascript/main.js"></script>
-  
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>    
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  
 </head>
 <body>
@@ -56,23 +57,14 @@
         $chatboxTitle.on('click', function() {
             $chatbox.toggleClass('chatbox--tray');
         });
-        $chatboxTitleClose.on('click', function(e) {
-            e.stopPropagation();
-            $chatbox.addClass('chatbox--closed');
-        });
-        $chatbox.on('transitionend', function() {
-            if ($chatbox.hasClass('chatbox--closed')) $chatbox.remove();
-        });
+        
+        
         
     });
 
     
 })(jQuery);
-function deleteLastChar() { 
-            var str = "WayToLearnX"; 
-            var newStr = str.substring(0, str.length - 1);
-            document.getElementById("char").innerHTML = newStr; 
-        } 
+
 
 
   </script>

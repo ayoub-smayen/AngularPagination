@@ -14,6 +14,12 @@ export class PublicationService {
   public getUser(){
     return this.http.get("http://localhost:8080/pi/RetrieveUser");
   }
+  public getUserByID(id:any){
+    return this.http.get("http://localhost:8080/pi/getuserById/"+id);
+  }
+  public getUserByname(name:string){
+    return this.http.get("http://localhost:8080/pi/getuserbyname/"+name);
+  }
 
   public AddPublication(pub:Publication,id:any){
     return this.http.post("http://localhost:8080/pi/AddPublication/"+id,pub);

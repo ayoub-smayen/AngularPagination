@@ -4,6 +4,8 @@ import { PublicationService } from '../Services/publication.service';
 import { Router } from '@angular/router'
 import { User } from '../Model/user';
 import { HttpClient } from '@angular/common/http';
+import { interval } from 'rxjs';
+import { switchMap,mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-publication',
@@ -23,7 +25,10 @@ export class PublicationComponent implements OnInit {
 text:string = '';
   constructor(private httpClient:HttpClient,
     private service : PublicationService,
-    private router: Router) { }
+    private router: Router) { 
+      
+   
+    }
 
   ngOnInit(): void {
     this.service.getpubNumber().subscribe((data:number)=>this.nbre=data);

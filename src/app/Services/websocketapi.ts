@@ -1,12 +1,13 @@
 
-import * as Stomp from 'stompjs';
-import * as SockJS from 'sockjs-client';
+
 
 import { AppComponent } from '../app.component';
+import * as Stomp from 'stompjs';
+import * as SockJS from 'sockjs-client';
 export class Websocketapi {
 
-    webSocketEndPoint: string = 'http://localhost:8080/ws/';
-    topic: string = "/topic/greetings";
+    webSocketEndPoint: string = 'http://localhost:8080/ws';
+    topic: string = "topic/greetings";
     stompClient: any;
     appComponent: AppComponent;
     constructor(appComponent: AppComponent){
@@ -51,7 +52,7 @@ export class Websocketapi {
 
     onMessageReceived(message) {
         console.log("Message Recieved from Server :: " + message);
-        this.appComponent.handleMessage(JSON.stringify(message.body));
+        //this.appComponent.handleMessage(JSON.stringify(message.body));
     }
 
 }

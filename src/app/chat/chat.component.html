@@ -1,7 +1,42 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<!--<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Chat app</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarsExample04">
+          <ul class="navbar-nav mr-auto">
+          </ul>
+        </div>
+      </nav>
+</header>
+
+<main class="chat">
+    <div class="container">
+        <div class="chat-content">
+            <div class="card">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngFor="let chatMessage of webSocketService.chatMessages">
+                        <strong>{{chatMessage.user}}: </strong>
+                        <span>{{chatMessage.message}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <form (ngSubmit)="sendMessage(sendForm)" #sendForm="ngForm">
+            <div class="chat-send row">
+                <div class="col-8">
+                    <input type="text" class="form-control" name="message" id="input-message" ngModel>
+                </div>
+                <div class="col-2">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</main>-->
 
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />   
 
@@ -11,153 +46,50 @@
 	<div class="row">
 	    <div class="chatbox chatbox22 chatbox--tray">
     <div class="chatbox__title">
-        <h5><a href="javascript:void()">Leave a message</a></h5>
+        <h5><a>Leave a message</a></h5>
         <!--<button class="chatbox__title__tray">
             <span></span>
         </button>-->
-        <button class="chatbox__title__close">
-            <span>
-                <svg viewBox="0 0 12 12" width="12px" height="12px">
-                    <line stroke="#FFFFFF" x1="11.75" y1="0.25" x2="0.25" y2="11.75"></line>
-                    <line stroke="#FFFFFF" x1="11.75" y1="11.75" x2="0.25" y2="0.25"></line>
-                </svg>
-            </span>
-        </button>
+        
     </div>
+    
     <div class="chatbox__body">
-        <div class="chatbox__body__message chatbox__body__message--left">
-		
-		<div class="chatbox_timing">
-		<ul>
-		<li><a href="#"><i class="fa fa-calendar"></i> 22/11/2018</a></li>
-			<li><a href="#"><i class="fa fa-clock-o"></i> 7:00 PM</a></li>
-		</ul>
-		</div>
-            <img src="https://www.gstatic.com/webp/gallery/2.jpg" alt="Picture">
-			<div class="clearfix"></div>
+
+         <div class="chatbox__body__message chatbox__body__message--left" *ngFor="let chatMessage of webSocketService.chatMessages">
+            <div class="chatbox_timing">
+            
+                <div><i class="fa fa-clock"></i>   {{ chatMessage.date | amTimeAgo}}</div>
+                   
+                 
+                 </div>
+		 
+            <img [src]="'data:image/jpeg;base64,'+chatMessage.img" title="{{chatMessage.user_name}}" alt="Picture">
+			
 			<div class="ul_section_full">
-			<ul class="ul_msg">
-			<li><strong>Person Name</strong></li>
-			<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </li>
-			</ul>
+			
+			{{chatMessage.message}} 
+			<br>
 			<div class="clearfix"></div>
-			<ul class="ul_msg2">
-			<li><a href="#"><i class="fa fa-pencil"></i> </a></li>
-			<li><a href="#"><i class="fa fa-trash chat-trash"></i></a></li>
-			</ul>
-			</div>
-			 
+			
+            </div>
+            
         </div>
-        <div class="chatbox__body__message chatbox__body__message--right">
-		
-		<div class="chatbox_timing">
-		<ul>
-		<li><a href="#"><i class="fa fa-calendar"></i> 22/11/2018</a></li>
-			<li><a href="#"><i class="fa fa-clock-o"></i> 7:00 PM</a></li>
-		</ul>
-		</div>
-	
-            <img src="https://www.gstatic.com/webp/gallery/2.jpg" alt="Picture">
-			<div class="clearfix"></div>
-			<div class="ul_section_full">
-			<ul class="ul_msg">
-			<li><strong>Person Name</strong></li>
-			<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </li>
-			</ul>
-			<div class="clearfix"></div>
-			<ul class="ul_msg2">
-			<li><a href="#"><i class="fa fa-pencil"></i> </a></li>
-			<li><a href="#"><i class="fa fa-trash chat-trash"></i></a></li>
-			</ul>
-			</div>
-			 
-        </div>
-        <div class="chatbox__body__message chatbox__body__message--left">
-		
-		<div class="chatbox_timing">
-		<ul>
-		<li><a href="#"><i class="fa fa-calendar"></i> 22/11/2018</a></li>
-			<li><a href="#"><i class="fa fa-clock-o"></i> 7:00 PM</a></li>
-		</ul>
-		</div>
-	
-            <img src="https://www.gstatic.com/webp/gallery/2.jpg" alt="Picture">
-			<div class="clearfix"></div>
-			<div class="ul_section_full">
-			<ul class="ul_msg">
-			<li><strong>Person Name</strong></li>
-			<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </li>
-			</ul>
-			<div class="clearfix"></div>
-			<ul class="ul_msg2">
-			<li><a href="#"><i class="fa fa-pencil"></i> </a></li>
-			<li><a href="#"><i class="fa fa-trash chat-trash"></i></a></li>
-			</ul>
-			</div>
-			 
-        </div>
-        <div class="chatbox__body__message chatbox__body__message--right">
-		
-		<div class="chatbox_timing">
-		<ul>
-		<li><a href="#"><i class="fa fa-calendar"></i> 22/11/2018</a></li>
-			<li><a href="#"><i class="fa fa-clock-o"></i> 7:00 PM</a></li>
-		</ul>
-		</div>
-	
-            <img src="https://www.gstatic.com/webp/gallery/2.jpg" alt="Picture">
-			<div class="clearfix"></div>
-			<div class="ul_section_full">
-			<ul class="ul_msg">
-			<li><strong>Person Name</strong></li>
-			<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </li>
-			</ul>
-			<div class="clearfix"></div>
-			<ul class="ul_msg2">
-			<li><a href="#"><i class="fa fa-pencil"></i> </a></li>
-			<li><a href="#"><i class="fa fa-trash chat-trash"></i></a></li>
-			</ul>
-			</div>
-			 
-        </div>
-        <div class="chatbox__body__message chatbox__body__message--left">
-		
-		<div class="chatbox_timing">
-		<ul>
-		<li><a href="#"><i class="fa fa-calendar"></i> 22/11/2018</a></li>
-			<li><a href="#"><i class="fa fa-clock-o"></i> 7:00 PM</a></li>
-		</ul>
-		</div>
-	
-            <img src="https://www.gstatic.com/webp/gallery/2.jpg" alt="Picture">
-			<div class="clearfix"></div>
-			<div class="ul_section_full">
-			<ul class="ul_msg">
-			<li><strong>Person Name</strong></li>
-			<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </li>
-			</ul>
-			<div class="clearfix"></div>
-			<ul class="ul_msg2">
-			<li><a href="#"><i class="fa fa-pencil"></i> </a></li>
-			<li><a href="#"><i class="fa fa-trash chat-trash"></i></a></li>
-			</ul>
-			</div>
-			 
-        </div>
+        
     </div>
-    <div class="panel-footer">
-                    <div class="input-group">
-                        <input id="btn-input" type="text" class="form-control input-sm chat_set_height" placeholder="Type your message here..." tabindex="0" dir="ltr" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" contenteditable="true" />
-						
-                        <span class="input-group-btn">
-                            <button class="btn bt_bg btn-sm" id="btn-chat">
-                                Send</button>
-                        </span>
-                    </div>
-                </div>
+    
+        <div class="panel-footer">
+            <div class="input-group">
+                <textarea  id="btn-input" name="messages" [(ngModel)]="messages" type="text" class="form-control input-sm chat_set_height" placeholder="Type your message here..." tabindex="0" dir="ltr" spellcheck="false" autocomplete="on" autocorrect="off" autocapitalize="off" contenteditable="true" cols="20" rows="20"></textarea>
+                
+                <span class="input-group-btn">
+                    <button (click)="sendMessage()" class="btn bt_bg btn-sm" id="btn-chat">
+                        Send</button>
+                </span>
+            </div>
+        </div>
+    
 </div>
 	    
 	</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>    
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	

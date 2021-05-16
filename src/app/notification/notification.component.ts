@@ -8,19 +8,20 @@ import { WebsocketService } from '../websocket.service';
 })
 export class NotificationComponent  {
 
-  public notifications = 0;
+  public notifications = '';
 
     constructor(private webSocketService: WebsocketService) {
 
 		// Open connection with server socket
         let stompClient = this.webSocketService.connect();
         stompClient.connect({}, frame => {
+          let messageElement = document.createElement('li');
 
 			// Subscribe to notification topic
             stompClient.subscribe('/topic/notification', notifications => {
-
+              messageElement.classList.add('event-message');
 				// Update notifications attribute with the recent messsage sent from the server
-                this.notifications = JSON.parse(notifications.body).count;
+                this.notifications = JSON.stringify(notifications.body);
             })
         });
     }
