@@ -38,7 +38,9 @@ export class PublicationService {
     return this.http.get("http://localhost:8080/pi/RetrievePublication/"+id);
   }
   public getCommentsById(id:number){
-    return this.http.get("http://localhost:8080/pi/RetrieveComments/"+id);
+    let headers = new HttpHeaders();
+    headers = headers.set('Content-Type', 'application/json');
+    return this.http.get("http://localhost:8080/pi/RetrieveComments/"+id,{headers: headers});
   }
   public AddComments(user_id:number,pub_id:number,com:Comments){
     return this.http.post<Comments>("http://localhost:8080/pi/AddComments/"+user_id+"/"+pub_id,com);

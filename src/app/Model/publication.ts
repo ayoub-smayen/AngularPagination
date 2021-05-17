@@ -7,7 +7,7 @@ export class Publication {
     user:User;
     likecount!: number;
     dislikecount!:number;
-    commentsNumber!:number;
+    commentsNumber!:number;  
     createdAt:Date;
     pic:any;
 }

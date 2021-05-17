@@ -63,7 +63,7 @@
                             title="Pick your emoji…"></emoji-mart>
                                                 
                             <div *ngIf="hide">
-                                <div class="comment1" *ngFor="let c of comments | paginate:{ itemsPerPage: 4, currentPage: p } ; let i = index " id="com" >
+                                <div class="comment1" *ngFor="let c of commentss | paginate:{ itemsPerPage: 4, currentPage: p } ; let i = index "  >
                               
                                     <ul class="comments-list" #cocomment>
                                     <li class="comment" >
@@ -73,10 +73,10 @@
                                         <div class="comment-body">
                                             <div class="comment-heading">
                                                 <h4 class="user">{{c.user.user_Lastname}}</h4>
-                                                <h5 class="time">{{c.createdAt | amTimeAgo:true}}</h5>
+                                                <h5 class="time">{{c.updatedAt | amTimeAgo:true}}</h5>
                                             </div>
                                             
-                                            <p #{{c.id}}>{{c.comment_field}}</p>
+                                            <p>{{c.comment_field}}</p>
                                             <div >
                                                 <a  class="btn btn-default stat-item" (click)="addlikecomments(c.id)">
                                                     <i class="fa fa-thumbs-up icon"></i>{{c.like_count}}       

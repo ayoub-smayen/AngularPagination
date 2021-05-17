@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Comment } from '@angular/compiler';
 import { error, stringify } from '@angular/compiler/src/util';
 import { Component, ElementRef, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
@@ -17,7 +18,7 @@ export class PublicationDetailsComponent implements OnInit {
   p:number = 1;
 paramurl:any;
 pub:Publication;
-comments:Comments[]; 
+commentss:Comments[]; 
 user:number[] = [1,2,3,4];
 com:string ='';
 timediff:any = new Date();
@@ -37,9 +38,10 @@ playsound =  false;
   constructor(private activatedroute: ActivatedRoute,
     private service: PublicationService,
     private route: Router,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private http : HttpClient
     ) { 
-      this.paramurl = this.activatedroute.snapshot.params.id;
+      this.paramurl = this.activatedroute.snapshot.params.id2;
     }
 
   ngOnInit(): void {
@@ -47,7 +49,7 @@ playsound =  false;
     
     
     this.service.getpubdetails(this.paramurl).subscribe((data:Publication)=> this.pub = data);
-    this.service.getCommentsById(this.paramurl).subscribe((com:Comments[])=> this.comments = com);
+    this.http.get("http://localhost:8080/pi/RetrieveComments/"+this.paramurl).subscribe((commm:Comments[])=> this.commentss = commm);
     
     
   }
@@ -62,10 +64,10 @@ playsound =  false;
       this.showEmojiPicker = false;
     alert("comment added successfully");
     this.com = '';
-    this.paramurl = this.activatedroute.snapshot.params.id;
+    
     
     this.service.getpubdetails(this.paramurl).subscribe((data:Publication)=> this.pub = data);
-  this.service.getCommentsById(this.paramurl).subscribe((com:Comments[])=> this.comments = com);
+  this.service.getCommentsById(this.paramurl).subscribe((com:Comments[])=> this.commentss = com);
    
 
 },
@@ -79,7 +81,7 @@ this.com = '';}
     this.service.Addlikepublication(this.paramurl).subscribe(res=>{
       this.play = !this.play;
       this.service.getpubdetails(this.paramurl).subscribe((data:Publication)=> {this.pub = data;
-        this.service.getCommentsById(this.paramurl).subscribe((com:Comments[])=> this.comments = com);
+        this.service.getCommentsById(this.paramurl).subscribe((com:Comments[])=> this.commentss = com);
     
     });
     
@@ -89,18 +91,18 @@ this.com = '';}
     
   adddislike(){
     this.service.Adddislikepublication(this.paramurl).subscribe(res =>{this.service.getpubdetails(this.paramurl).subscribe((data:Publication)=> this.pub = data);
-      this.service.getCommentsById(this.paramurl).subscribe((com:Comments[])=> this.comments = com);});
+      this.service.getCommentsById(this.paramurl).subscribe((com:Comments[])=> this.commentss = com);});
     
   }
   addlikecomments(id){
     this.service.Addlikecomments(id).subscribe(res =>{this.service.getpubdetails(this.paramurl).subscribe((data:Publication)=> this.pub = data);
-      this.service.getCommentsById(this.paramurl).subscribe((com:Comments[])=> this.comments = com);});
+      this.service.getCommentsById(this.paramurl).subscribe((com:Comments[])=> this.commentss = com);});
     
   }
   deleteComment(id){
     this.service.deleteComments(id).subscribe(
       res =>{this.service.getpubdetails(this.paramurl).subscribe((data:Publication)=> this.pub = data);
-        this.service.getCommentsById(this.paramurl).subscribe((com:Comments[])=> this.comments = com);}
+        this.service.getCommentsById(this.paramurl).subscribe((com:Comments[])=> this.commentss = com);}
     );
     
   }
@@ -115,15 +117,15 @@ hideupdates(index,id){
     nativeElement.style.visibility === "hidden" || !nativeElement.style.visibility
       ? "visible"
       : "hidden";
-      let updatedndex =  this.comments.findIndex(x => x.id == id);
-      this.com1 = this.comments[updatedndex].comment_field;
+      let updatedndex =  this.commentss.findIndex(x => x.id == id);
+      this.com1 = this.commentss[updatedndex].comment_field;
 }
 updatecomment(index,id){
   let comment = new Comments();
    
-   let updatedndex =  this.comments.findIndex(x => x.id == id);
-   this.comments[updatedndex].comment_field = this.com1;
-   comment = this.comments[updatedndex];
+   let updatedndex =  this.commentss.findIndex(x => x.id == id);
+   this.commentss[updatedndex].comment_field = this.com1;
+   comment = this.commentss[updatedndex];
    console.log(comment);
     this.service.updatecomment(comment,id).subscribe(
       ()=>{
