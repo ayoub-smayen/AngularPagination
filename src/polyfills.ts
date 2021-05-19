@@ -58,6 +58,10 @@
 import 'zone.js/dist/zone';  // Included with Angular CLI.
 import '@angular/localize/init';
 (window as any).global = window;
+
+(window as any).process = {
+    env: { DEBUG: undefined },
+  };
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */

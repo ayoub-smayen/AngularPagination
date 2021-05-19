@@ -38,6 +38,7 @@ import { AyoubadminModule } from "./ayoubadmin/ayoubadmin.module";
 
 import { AdminproductiveModule } from "./adminproductive/adminproductive.module";
 import { AdminGuard } from './guards/admin.guard';
+import { ShoppfinaleModule } from './shoppfinale/shoppfinale.module';
 //import { PushNotificationsModule } from 'ng-push';
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { AdminGuard } from './guards/admin.guard';
     MyadminModule,
     DialogsModule,
     SortableModule,
+    ShoppfinaleModule ,
     NotificationModule
   ],
   providers: [AdminGuard],

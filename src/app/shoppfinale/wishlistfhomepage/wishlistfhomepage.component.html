@@ -1,0 +1,19 @@
+
+
+
+
+
+<div class="box">
+    <div class="notifications">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="num">{{products.length}}</span>
+            
+           
+          
+      
+        <h1> ({{calcTotal()}})</h1>
+        <app-cartprodpage *ngFor="let product of products" [product]="product" (productRemoved)="removeProduct($event)"></app-cartprodpage>
+    </div>
+</div>
+
+

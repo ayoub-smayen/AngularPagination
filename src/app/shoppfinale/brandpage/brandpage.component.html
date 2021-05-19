@@ -1,0 +1,146 @@
+          <div class="brand">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="titlepage">
+                    <h2>Our Brand</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+               
+  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 margin" *ngFor="let prod of products | filter:term ">
+                    <div class="brand_box">
+                        <img src="{{'data:image/jpeg;base64,' + prod.productImg}}"alt="img" class="img-responsive rounded img " height="180" width="185" />
+                        <h3>dt<strong class="red"></strong>{{prod.price}}</h3>
+                        <span> {{prod.remise_price}}  <small>
+                            {{prod.product_id}}
+                        </small>
+                        <p> # {{prod.brand}} </p>
+                        <a [routerLink]="['/finalshop/productdet', prod.product_id]"    class="p-name">{{prod.productname}}</a>
+                        <span class="p-price"></span>
+                        <h3>#{{prod.codebar}}</h3>
+                         <p class="text text-success">
+                             {{prod.quantity}}
+                         </p
+                         
+                        >
+                        <img  src="http://localhost:8091/api/qr-code/{{prod.product_id}}" height="100" width="100"   />
+                    </span>
+
+                         <span class="badge badge-primary" style="color:aliceblue">
+                            <i class="fa fa-thumbs-up" aria-hidden="true"  (click)="addLikes(prod.product_id)"></i>
+                            <small>
+                                {{prod.like}}
+                            </small>
+                     
+                     
+                            <i class="fa fa-eye" aria-hidden="true" (click)="addViews(prod.product_id)"></i>
+                            <small>
+                                {{prod.productViews}}
+                            </small>
+                     
+                            
+                            <i class="fa fa-thumbs-down" aria-hidden="true"  (click)="addDeslikes(prod.product_id)"></i>
+                            <small>
+                                {{prod.deslike}}
+                            </small>
+
+
+
+                            <span class="badge badge-danger" (click)="putFavourite(prod.product_id)">
+                                   <i class="fa fa-heart">
+      
+                                   </i>
+                            </span>
+                        </span>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                    </div>
+                    <div class="col-sm-6">
+                     
+                    </div>
+                    
+
+
+                       
+                </div>
+      <!--           <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 margin">
+                    <div class="brand_box">
+                        <img src="../../../assets/finalshopp/images/2.png" alt="img" />
+                        <h3>$<strong class="red">100</strong></h3>
+                        <span>Mobile Phone</span>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 margin">
+                    <div class="brand_box">
+                        <img src="../../../assets/finalshopp/images/3.png" alt="img" />
+                        <h3>$<strong class="red">100</strong></h3>
+                        <span>Mobile Phone</span>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                    </div>
+                </div> -->
+            <!--     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                    <div class="brand_box">
+                        <img src="../../../assets/finalshopp/images/4.png" alt="img" />
+                        <h3>$<strong class="red">100</strong></h3>
+                        <span>Mobile Phone</span>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 mrgn">
+                    <div class="brand_box">
+                        <img src="../../../assets/finalshopp/mages/5.png" alt="img" />
+                        <h3>$<strong class="red">100</strong></h3>
+                        <span>Mobile Phone</span>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 mrgn">
+                    <div class="brand_box">
+                        <img src="../../../assets/finalshopp/images/6.png" alt="img" />
+                        <h3>$<strong class="red">100</strong></h3>
+                        <span>Mobile Phone</span>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+                    </div>
+                        </div>
+                         </div>
+</div>
+                </div> -->
+
+
+                <br/>
+
+                <hr/>
+                <br/>
+
+                <div class="col-md-12">
+                    <a class="read-more">See More</a>
+                </div>
+
+
+
+           
+        </div>
+

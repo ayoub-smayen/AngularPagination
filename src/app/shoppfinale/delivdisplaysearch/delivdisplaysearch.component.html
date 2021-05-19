@@ -1,0 +1,81 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+
+<div class="container">
+   
+                <fieldset>
+<legend class="text-center"> This is the list of delivery man <span class="req"><small>
+    </small></span></legend>
+
+</fieldset>
+
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                       <div id="custom-search-input">
+                                        <div class="input-group col-md-12" style="text-align: center">
+                                            <input type="text" class="search-query form-control" id="myInput" placeholder="Search With id"  name="id"/>
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-danger" type="button">
+                                                    <span class=" glyphicon glyphicon-search"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+            </div>
+            </div>
+    </div>
+    </div>
+
+
+
+    
+    
+<div class="container">
+    <div class="container">
+        <div class="row col-md-6 col-md-offset-2 custyle">
+        <table class="table table-striped custab">
+        <thead>
+            <tr>
+            
+
+                <th>id</th>
+                <th>photo</th>
+                <th>name</th>
+                <th>lastname</th>
+                <th>email</th>
+                <th>salaire</th>
+                <th>transport</th>
+                <th>workload</th>
+                <th>Phone</th>
+                <th>disponibility</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let deliveryMan of listDeliveryMan">
+              
+                <td>{{deliveryMan.deliveryMan_id}}</td>
+                <td>
+                    <img [src]="'data:image/jpeg;base64,'+deliveryMan.delivery_phot" title="{{deliveryMan.deliveryMan_Name}} {{deliveryMan.deliveryMan_lastName}}" width="50" class="roundedImage">
+                </td>
+                <td>{{deliveryMan.deliveryMan_Name}}</td>
+                <td>{{deliveryMan.deliveryMan_lastName}}</td>
+                <td>{{deliveryMan.email}}</td>
+                <td>{{deliveryMan.salaire}}</td>
+                <td>{{deliveryMan.transport}}</td>
+                <td>{{deliveryMan.workLoad}}</td>
+                <td>{{deliveryMan.phoneNumber}}</td>
+                <td>{{deliveryMan.dispoDeliv}}</td>
+            
+                <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deletedeliv(deliveryMan.deliveryMan_id)"><span class="glyphicon glyphicon-remove"></span> delete</button></td>
+              </tr>
+        </tbody>
+        </table>
+        <div class="form-group">
+            <a routerLink="/adddeliv"><button class="btn btn-success " > Add a delivery man</button></a>
+        </div>
+        </div>
+    </div>

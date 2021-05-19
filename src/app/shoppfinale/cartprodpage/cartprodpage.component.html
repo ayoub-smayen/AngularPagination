@@ -1,0 +1,9 @@
+<div *ngIf="product">
+    <div>{{product.productname}}</div>
+    <div>{{product.codebar}}</div>
+    <div>{{product.price}}</div>
+    <div>
+        <img class="card-img-top" src="{{'data:image/jpeg;base64,' + product.productImg}}">
+    </div>
+    <input type="number" [(ngModel)]="product.num" min="0" (ngModelChange)="modelChanged($event)"/>
+  </div>

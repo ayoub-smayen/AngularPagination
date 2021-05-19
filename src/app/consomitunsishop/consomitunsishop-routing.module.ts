@@ -68,7 +68,7 @@ path :'product/:id' ,  component :ProductsComponent
 
 
 
-{ path: '',   redirectTo: '/homestore', pathMatch: 'full' },
+//{ path: 'h',   redirectTo: '/homestore', pathMatch: 'full' },
  ];
 
 @NgModule({

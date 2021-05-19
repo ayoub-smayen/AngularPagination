@@ -22,6 +22,13 @@ export class Product {
 
     deslike : number ;
 
+    /*title:  string ;
+    bodyComment : string;
+*/
+    constructor(){
+
+    }
+
 
 
 

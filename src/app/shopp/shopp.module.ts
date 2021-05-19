@@ -103,7 +103,9 @@ import { ProdcatComponent } from './prodcat/prodcat.component';
     FlashMessagesModule.forRoot(),
   ],
   exports: [
-    Shopnotif2Component,
+    ChildshopComponent,
+    BookComponent,
+    Shopnotif2Component,FiltershopComponent,
     HomepageComponent, ShoppageComponent, ClothespageComponent, CompareprodspageComponent, ChatshopComponent,MessagedeliveryComponent,
     ShoppmapComponent,ShopppublicityComponent,Chartshop0Component
 
@@ -111,6 +113,7 @@ import { ProdcatComponent } from './prodcat/prodcat.component';
     //FilterprodPipe
   ],
 
+   
   bootstrap: [ 
     HomepageComponent,BookComponent
   ]

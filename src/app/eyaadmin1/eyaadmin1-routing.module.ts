@@ -29,7 +29,7 @@ const routes: Routes = [
 {path:"weather",component:WeatherComponent},
 {path:"chart",component:ChartComponent},
 {path:"excel",component:ExcelComponent},
-{path:"",redirectTo:"home",pathMatch:"full"}
+//{path:"",redirectTo:"home",pathMatch:"full"}
 ];
 
 @NgModule({

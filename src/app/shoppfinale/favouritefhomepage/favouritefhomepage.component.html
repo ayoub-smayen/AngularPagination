@@ -1,0 +1,51 @@
+             
+  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 margin" *ngFor="let prod of products  ">
+    <div class="brand_box">
+        <img src="{{'data:image/jpeg;base64,' + prod.productImg}}"alt="img" class="img-responsive rounded img " height="180" width="185" />
+        <h3>dt<strong class="red"></strong>{{prod.price}}</h3>
+        <span> {{prod.remise_price}}  <small>
+            {{prod.product_id}}
+        </small>
+        <p> # {{prod.brand}} </p>
+        <a [routerLink]="['/finalshop/productdet', prod.product_id]"    class="p-name">{{prod.productname}}</a>
+        <span class="p-price"></span>
+        <h3>#{{prod.codebar}}</h3>
+         <p class="text text-success">
+             {{prod.quantity}}
+         </p
+         
+        >
+        <img  src="http://localhost:8091/api/qr-code/{{prod.product_id}}" height="100" width="100"   />
+    </span>
+
+         <span class="badge badge-primary" style="color:aliceblue">
+            <i class="fa fa-thumbs-up" aria-hidden="true"  (click)="addLikes(prod.product_id)"></i>
+            <small>
+                {{prod.like}}
+            </small>
+     
+     
+            <i class="fa fa-eye" aria-hidden="true" (click)="addViews(prod.product_id)"></i>
+            <small>
+                {{prod.productViews}}
+            </small>
+     
+            
+            <i class="fa fa-thumbs-down" aria-hidden="true"  (click)="addDeslikes(prod.product_id)"></i>
+            <small>
+                {{prod.deslike}}
+            </small>
+        </span>
+        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+        <i><img src="../../../assets/finalshopp/images/star.png"/></i>
+    </div>
+    <div class="col-sm-6">
+     
+    </div>
+    
+
+
+       
+</div>

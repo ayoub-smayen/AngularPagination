@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
         switchMap((success) => this.authService.storeToken(success))
       ).subscribe(() => {
         this.authService.loginSubject.next(null);
-        this.router.navigate(['/']);
+        this.router.navigate(['']);
         this.flashMessage.show('You were successfully logged in!', { cssClass: 'card-panel green lighten-4', timeout: 3000 });
       }, error => {
         this.flashMessage.show('Wrong email/password', { cssClass: 'card-panel red lighten-3', timeout: 3000 });

@@ -1,0 +1,40 @@
+ <!-- loader  -->
+ <div class="loader_bg">
+    <div class="loader"><img src="../../../assets/finalshopp/images/loading.gif" alt="#" />{{fg}}</div>
+</div>
+
+<app-navbarthomepage></app-navbarthomepage>
+
+<br/>
+<br/>
+<br/>
+<hr/>
+<br/>
+
+
+<router-outlet></router-outlet>
+
+
+<app-aboutpage></app-aboutpage>
+
+
+
+<app-brandpage></app-brandpage>
+<app-clientpage></app-clientpage>
+<app-book></app-book>
+<app-contactpage></app-contactpage>
+
+<app-footerfhomepage></app-footerfhomepage>
+
+
+<ng-template   #rt>
+
+    <a mat-button *ngIf="!isLoggedIn" routerLink="/login">Login</a>
+  
+  
+  
+  
+  
+  <a mat-button *ngIf="!isLoggedIn" routerLink="/register">Register</a>
+  
+  </ng-template>

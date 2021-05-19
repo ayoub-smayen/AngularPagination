@@ -1,0 +1,50 @@
+<p class="text text-success">
+    You  
+    <a href="/editprofile">
+    editprofile
+    </a>
+   </p>
+
+coins  <p *ngIf="profs"> {{profs.coins}}   
+    
+  mail : {{profs.email}}
+ </p>
+<div *ngIf="profs.lprofile.edited">
+
+
+
+ <div class="container">
+     <div class="d-flex justify-content-center h-100">
+         <div class="image_outer_container">
+             <div class="green_icon"></div>
+             <div class="image_inner_container">
+                 <img  class="img-circle"  [src]="'data:image/jpeg;base64,'+ profs.lprofile.picprofile" height="85px" width="85px"/>
+             </div>
+         </div>
+     </div>
+ </div>
+ <p>
+     {{profs.lprofile.tel}}   ;  coins {{profs.coins}}
+ </p>
+
+ <p>
+     {{profs.lprofile.adreese}}
+ </p>
+
+ <p  *ngIf="profs.fav">
+      you have  a  favourites
+ </p>
+
+ <div class="row ">
+     <div class="col-lg-12">
+         <div class="badge badge-success">
+             <span class="text text-success">
+                 <div style="color: gold;">
+                     <p style="color: gold;">
+                         <i class="fas fa-coins"></i> {{profs.coins}}
+                     </p>
+                 </div>
+             </span>
+         </div>
+     </div>
+ </div>

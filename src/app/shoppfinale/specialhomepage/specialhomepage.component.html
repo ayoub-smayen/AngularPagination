@@ -1,0 +1,268 @@
+<section class="slider_section">
+    <div id="myCarousel" class="carousel slide banner-main" data-ride="carousel">
+       <div class="carousel-inner">
+          <div class="carousel-item active">
+             <img class="first-slide" src="../../../assets/images/banner.jpg" alt="First slide">
+             <div class="container">
+                <div class="carousel-caption relative">
+                   <span>All New Phones </span>
+                   <h1>up to 25% Flat Sale</h1>
+                   <p>It is a long established fact that a reader will be distracted by the readable content
+                      <br> of a page when looking at its layout. The point of using Lorem Ipsum is that</p>
+                   <a class="buynow" href="#">Buy Now</a>
+                   
+                </div>
+             </div>
+          </div>
+          <div class="carousel-item">
+             <img class="second-slide" src="../../../assets/images/banner1.png" alt="Second slide">
+             <div class="container">
+                <div class="carousel-caption relative">
+                   <span>All New Phones </span>
+                   <h1>up to 50% Flat Sale</h1>
+                   <p>It is a long established fact that a reader will be distracted by the readable content
+                      <br> of a page when looking at its layout. The point of using Lorem Ipsum is that</p>
+                   <a class="buynow" href="#">Buy Now</a>
+                   
+                </div>
+             </div>
+          </div>
+          
+       </div>
+       <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+       <i class='fa fa-angle-left'></i>
+       </a>
+       <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+       <i class='fa fa-angle-right'></i>
+       </a>
+    </div>
+ </section>
+
+ <div class="container bootstrap snipets">
+
+    <!-- <div class="container px-1 px-md-4 py-5 mx-auto">
+      <div class="card">
+          <div class="row d-flex justify-content-between px-3 top">
+              <div class="d-flex">
+                  <h5>ORDER <span class="text-primary font-weight-bold">#Y34XDHR</span></h5>
+              </div>
+              <div class="d-flex flex-column text-sm-right">
+                  <p class="mb-0">Expected Arrival <span>01/12/19</span></p>
+                  <p>USPS <span class="font-weight-bold">234094567242423422898</span></p>
+              </div>
+          </div> 
+          <div class="row d-flex justify-content-center">
+              <div class="col-sm-6">
+                  <ul id="progressbar" class="text-center">
+                      <li class="active step0"></li>
+                      <li class="active step0"></li>
+                      <li class="active step0"></li>
+                       <li class="active step0"></li>
+                        <li class="active step0"></li>
+                         <li class="active step0"></li>
+                         <li class="active step0"></li>
+                         <li class="active step0"></li>
+                      <li class="step0"></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="row justify-content-between top">
+              <div class="row d-flex icon-content"> <img class="icon" src="https://i.imgur.com/9nnc9Et.png">
+                  <div class="d-flex flex-column">
+                      <p class="font-weight-bold">Order<br>Processed</p>
+                  </div>
+              </div>
+              <div class="row d-flex icon-content"> <img class="icon" src="https://i.imgur.com/u1AzR7w.png">
+                  <div class="d-flex flex-column">
+                      <p class="font-weight-bold">Order<br>Shipped</p>
+                  </div>
+              </div>
+              <div class="row d-flex icon-content"> <img class="icon" src="https://i.imgur.com/TkPm63y.png">
+                  <div class="d-flex flex-column">
+                      <p class="font-weight-bold">Order<br>En Route</p>
+                  </div>
+              </div>
+              <div class="row d-flex icon-content"> <img class="icon" src="https://i.imgur.com/HdsziHP.png">
+                  <div class="d-flex flex-column">
+                      <p class="font-weight-bold">Order<br>Arrived</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+   -->
+  
+    <div style="text-align:center; margin-top: 150px;">
+      <pdf-viewer [src]="pdfSrc"
+      [render-text]="true"
+      style="display: block;"
+  ></pdf-viewer>
+      <h1 style="font-size: 4em;">
+  
+  
+  
+  
+         
+          Notifications : <span style="color: red;">+{{ notifications }}</span>
+  
+      </h1>
+  
+  
+  
+      <div id="greet"></div>
+  
+  </div>
+      <h1 class="text-center text-muted">Product catalog</h1>
+  <div class="ibox-title">
+      keydown Event - <input type="text" [(value)]="searchprod" (keydown)="getSearchable($event)" />
+      <span><strong class="txt-color">Resut-</strong>{{searchprod}}</span>
+  </div>
+  
+  
+      <div class="example-config">
+        <h6>Items: special products </h6>
+    </div>
+    <div class="container-fluid">
+        <kendo-sortable
+            [kendoSortableBinding]="products"
+            [navigable]="true"
+            [animation] = "true"
+            class="row"
+            itemClass="item col-xs-6 col-sm-3"
+            activeItemClass="item col-xs-6 col-sm-3 active"
+        >
+        </kendo-sortable>
+    </div>
+      <div class="row flow-offset-1" *ngFor="let prod of products">
+  
+          <div class="col-xs-6 col-md-4" >
+              <div class="product tumbnail thumbnail-3"><a href=""><img [src]="'data:image/jpeg;base64,' + prod.productImg" alt="data:image/jpeg;base64" height="80" width="80" /></a>
+                <div class="caption">
+                  <h6><a href="">{{prod.productname}}</a></h6><span class="price">
+                    <del>{{prod.price}}</del></span><span class="price sale">{{prod.price}}</span>
+                    <img  src="http://localhost:8091/api/qr-code/{{prod.product_id}}"   />
+                </div>
+              </div>
+            </div>
+  
+           
+      
+       
+       
+      </div>
+  
+      <div style="text-align:center">
+        <h4>
+          Basic Pagination
+        </h4>
+      
+        
+  <div class="search-bar">
+      
+    <!--search-input------->
+    <div class="search-input">
+    <input type="text" placeholder="Search For Product" [(ngModel)]="term" name="search" />
+    <!--cancel-btn--->
+    <a href="javascript:void(0);" class="search-cancel">
+        <i class="fas fa-times"></i>
+    </a>
+  
+  </div>
+  </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Item</th>
+              <th scope="col">
+                   name 
+              </th>
+              <th scope="col">image</th>
+              <th scope="col">brand</th>
+              <th scope="col">
+                   codebar 
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of products | paginate: config | filter:term">
+              <th scope="row">{{item.id}}</th>
+              <td>{{item.price}}</td>
+              <th scope="row">
+                {{item.id}}
+           </th>
+           <td>
+             <img  src="http://localhost:8091/api/qr-code/{{item.product_id}}"   />
+           </td>
+              <th scope="row">
+                   {{item.id}}
+              </th>
+              <td>
+               
+                <img [src]="'data:image/jpeg;base64,' + item.productImg" alt="data:image/jpeg;base64" class="rounded" height="80" width="80" />
+              </td>
+              <th scope="row">{{item.id}}</th>
+              <td>{{item.remise_price}}</td>
+              <th scope="row">{{item.id}}</th>
+              <td>{{item.productname}}</td>
+  
+              
+            </tr>
+          </tbody>
+        </table>
+      
+        <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+      
+      </div>
+      <div class="row flow-offset-1" *ngFor="let prod of products2">
+  
+        <div class="col-xs-6 col-md-4" >
+            <div class="product tumbnail thumbnail-3"><a href=""><img [src]="'data:image/jpeg;base64,' + prod.image" alt="data:image/jpeg;base64" height="80" width="80" /></a>
+              <div class="caption">
+                <h6><a href="">{{prod.name}}</a> {{prod.codebar}}</h6><span class="price">
+                  <del>{{prod.price}}</del></span><span class="price sale">{{prod.price_finale}}</span>
+                  <img  src="http://localhost:8091/api/qr-code/{{prod.id}}"   />
+              </div>
+              <details>
+                <div *ngFor="let comm of prod.comments">
+  
+                  <span>
+                    <p class="text text-success">
+                      by:   {{comm.user.username}}
+                    </p>
+  
+                    <p style="color: gold;">
+                      {{comm.user.coins}}  
+                      <i class="fas fa-coins">
+  
+                      </i>
+                    </p>
+  
+                    <div class="container">
+                      <h3>{{comm.user.tel}}</h3>
+                      <a href="#"  data-toggle="popover" data-img="http://placehold.it/400x200" title="{{comm.user.username}}" >Toggle this </a>
+                    </div>
+                   
+  
+                    <img  class="img-circle"  [src]="'data:image/jpeg;base64,'+ comm.user.lprofile.picprofile" height="85px" width="85px"/>
+               </span>
+                 
+                  <time>
+                      {{comm.createdAt  }}
+                  </time>
+                   
+                    <span class="badge badge-primary">
+                        {{comm.title}}
+                    </span>
+                    <span class="bade badge-success">
+                        {{comm.bodyComment}}
+                    </span>
+                </div>
+            </details>
+            </div>
+          </div>
+    </div>
+  
+  
+    

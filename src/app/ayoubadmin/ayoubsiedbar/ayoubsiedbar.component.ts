@@ -33,6 +33,8 @@ export class AyoubsiedbarComponent implements OnInit {
   }
 
   logout() {
+
+    alert("au revoir");
     this.authService.logout();
     this.authService.loginSubject.next(null);
     this.router.navigate(['login']);

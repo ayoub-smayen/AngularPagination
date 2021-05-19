@@ -1,0 +1,15 @@
+<div>
+    <div   >
+
+        <agm-map     [latitude]="lat" [longitude]="lng" >
+            
+            <agm-marker  *ngFor="let del of delivProche" [latitude]="del.lati"
+             [longitude]="del.lngi"
+             [label]="del.deliveryMan_Name"
+  
+           >
+        </agm-marker>
+        </agm-map>
+        
+    </div>
+</div>
