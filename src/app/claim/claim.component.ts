@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Address } from '../Address';
 import { Claim } from '../claim';
 import { ClaimService } from '../claim.service';
@@ -10,12 +11,13 @@ import { ClaimService } from '../claim.service';
 })
 export class ClaimComponent implements OnInit {
   name='';
-id: number;
+id: any;
 message: string;
   listClaim: Claim[];
   list:Claim;
   claim: Claim;
-  constructor(private service: ClaimService) { }
+  search: string;
+  constructor(private service: ClaimService, private router: Router) { }
 
   ngOnInit(): void { let resp=this.service.getAll();
     resp.subscribe((res)=>this.listClaim=res);
@@ -30,16 +32,12 @@ message: string;
     let resp=this.service.deleteClaim(id1);
     resp.subscribe((res)=>this.listClaim=res);
  }
- public searchClaimByid(){
-  //let resp=this.service.findClaimbyid(this.id);
-  //resp.subscribe((data)=>
-  this.listClaim.filter(el=>el.claim_id==this.id);
+ 
 
+
+public updateClaim(id){
+  this.router.navigateByUrl('updateClaim');
 }
-
-
-
-
 
   
   

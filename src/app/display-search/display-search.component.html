@@ -17,7 +17,7 @@
             <div class="row">
                        <div id="custom-search-input">
                                         <div class="input-group col-md-12" style="text-align: center">
-                                            <input type="text" class="search-query form-control" id="myInput" placeholder="Search With id"  name="id"/>
+                                            <input [(ngModel)]="name" type="text" class="search-query form-control"  placeholder="Search With id"  name="name"/>
                                             <span class="input-group-btn">
                                                 <button class="btn btn-danger" type="button">
                                                     <span class=" glyphicon glyphicon-search"></span>
@@ -36,8 +36,9 @@
     
 <div class="container">
     <div class="container">
-        <div class="row col-md-6 col-md-offset-2 custyle">
-        <table class="table table-striped custab">
+        <div class="row col-md-6 col-md-offset-2 custyle center">
+        <table class="table table-striped custab "
+      >
         <thead>
             <tr>
             
@@ -55,7 +56,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let deliveryMan of listDeliveryMan">
+            <tr *ngFor="let deliveryMan of listDeliveryMan | filter:name" >
               
                 <td>{{deliveryMan.deliveryMan_id}}</td>
                 <td>
@@ -71,11 +72,17 @@
                 <td>{{deliveryMan.dispoDeliv}}</td>
             
                 <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deletedeliv(deliveryMan.deliveryMan_id)"><span class="glyphicon glyphicon-remove"></span> delete</button></td>
-              </tr>
+                <td class="text-center"><button class="btn btn-succes btn-xs"
+                     [routerLink]="['/updatedeliv',deliveryMan.deliveryMan_id]">
+                    <span class="glyphicon glyphicon-edit"></span> update</button></td>  
+            </tr>
         </tbody>
         </table>
         <div class="form-group">
             <a routerLink="/adddeliv"><button class="btn btn-success " > Add a delivery man</button></a>
+
         </div>
+
+        
         </div>
     </div>

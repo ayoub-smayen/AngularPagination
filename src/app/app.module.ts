@@ -19,9 +19,15 @@ import { AgmCoreModule } from '@agm/core';
 import { AddClaimComponent } from './add-claim/add-claim.component';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { ProfileComponent } from './profile/profile.component';
-import { DeliveryutilComponent } from './deliveryutil/deliveryutil.component';
-//import { HaversineService } from "ng2-haversine";
- 
+import { CompteComponent } from './compte/compte.component';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { UpdateClaimComponent } from './update-claim/update-claim.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { getDistance } from 'geolib';
+import { OrderComponent } from './order/order.component';
+import { NotifComponent } from './notif/notif.component';
 
 @NgModule({
   declarations: [
@@ -37,18 +43,30 @@ import { DeliveryutilComponent } from './deliveryutil/deliveryutil.component';
     AddClaimComponent,
     FilterPipePipe,
     ProfileComponent,
-    DeliveryutilComponent,
+
+   CompteComponent,
+
+   AuthenticateComponent,
+
+   UpdateClaimComponent,
+
+   OrderComponent,
+
+   NotifComponent,
  
   ],
   imports: [
     BrowserModule,
+    
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ChartsModule,
+    BrowserAnimationsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAzg5wkctVR2STruMDMd-GgQqIz_UnVZMc'
-    })
+    }),
+    Ng2SearchPipeModule
   ],
   providers: [DeliveryManService],
   bootstrap: [AppComponent],

@@ -18,21 +18,23 @@
 
 
 
-
-<div class="container">
-    <div class="row">
-        <div class="container">
-            <div class="row">
-                       <div id="custom-search-input">
-                                        <div class="input-group col-md-12" style="text-align: center">
-                                            <input type="text" [(ngModel)]="name"/>
-                                            
-                                        </div>
+<div class="row">
+    <div class="container">
+        <div class="row">
+                   <div id="custom-search-input">
+                                    <div class="input-group col-md-12" style="text-align: center">
+                                        <input [(ngModel)]="search" type="text" class="search-query form-control"  placeholder="Search With id"  name="search"/>
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-danger" type="button">
+                                                <span class=" glyphicon glyphicon-search"></span>
+                                            </button>
+                                        </span>
                                     </div>
-            </div>
-            </div>
-    </div>
-    </div>
+                                </div>
+        </div>
+        </div>
+</div>
+</div>
 <div class="container">
     <div class="container">
         <div class="row col-md-6 col-md-offset-2 custyle">
@@ -43,23 +45,31 @@
 
                 <th>id</th>
                 <th>subject</th>
-                <th>desc</th>
+                <th>description</th>
+                <th>Updated at</th>
+                <th>Created at</th>
                 
             </tr>
         </thead>
         <tbody>
 
             
-            <tr *ngFor="let claim of listClaim | filterPipe: name">
+            <tr *ngFor="let claim of listClaim | filter:search">
               
                 
                     <td >{{claim.claim_id}}</td>
                 <td >{{claim.subject}}</td>
                 <td >{{claim.desc}}</td>
+                <td >{{claim.createdAt}}</td>
+                <td >{{claim.updatedAt}}</td>
                 
             
-                <td  class="text-center"><button class="btn btn-danger btn-xs" (click)=" deleteClaim(claim.claim_id)"><span class="glyphicon glyphicon-remove"></span> delete</button></td>
-                
+                <td  class="text-center">
+                    <button class="btn btn-danger btn-xs" (click)=" deleteClaim(claim.claim_id)">
+                        <span class="glyphicon glyphicon-remove"></span> delete</button></td>
+                        <td class="text-center"><button class="btn btn-succes btn-xs"
+                            [routerLink]="['/updateClaim',claim.claim_id]">
+                           <span class="glyphicon glyphicon-edit"></span> update</button></td> 
               </tr>
               
               

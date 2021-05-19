@@ -10,9 +10,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     
-    let lat1 = window["latitude"];
-    let long1 = window["longitude"];
     }
 
+
+    isLoginMode = false;
 
 }

@@ -10,6 +10,12 @@ import { MapsComponent } from './maps/maps.component';
 import { AddClaimComponent } from './add-claim/add-claim.component';
 import { ProfileComponent } from './profile/profile.component';
 
+import { CompteComponent } from './compte/compte.component';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
+import { UpdateClaimComponent } from './update-claim/update-claim.component';
+import { OrderComponent } from './order/order.component';
+import { NotifComponent } from './notif/notif.component';
+
 
 const routes: Routes = [
   { path: 'Statistics', component: ChartDelivComponent },
@@ -18,7 +24,17 @@ const routes: Routes = [
   { path: 'adddeliv', component: AddDelivComponent },
   { path: 'showmaps', component: MapsComponent },
   { path: 'addclaim', component: AddClaimComponent },
-  { path: 'profile', component: ProfileComponent }
+  { path: 'profile', component: ProfileComponent },
+  { path: 'authenticate', component: AuthenticateComponent },
+  { path: 'compte/:name', component: CompteComponent },
+  { path: 'updatedeliv/:id', component: UpdateDelivComponent },
+  { path: 'updateClaim/:id2', component: UpdateClaimComponent },
+  { path: 'maps/:id1', component: MapsComponent },
+  { path: 'order/:name1', component: OrderComponent },
+  { path: 'notif', component: NotifComponent }
+
+
+  
 ];
 
 @NgModule({

@@ -19,7 +19,7 @@ export class DeliveryManService {
 
  
 public updateDeliveryMan(delivId: number,deliv: DeliveryMan): Observable<DeliveryMan> {
-  return this.http.put<DeliveryMan>(`${this.apiServerUrl}/update/${delivId}`, deliv);
+  return this.http.put<DeliveryMan>(`${this.apiServerUrl}/api/update/${delivId}`, deliv);
 } 
 public deleteDeliveryMan(delivId: number): Observable<DeliveryMan> {
   return this.http.delete<DeliveryMan>(`${this.apiServerUrl}/api/delete/${delivId}`);
@@ -38,7 +38,9 @@ public searchbylastname(lastname: string) {
    return this.http.get(`${this.apiServerUrl}/api/findDeliveryManbyId/${id}`);
  }
 
-
+ public updatedispWorkload(id: number) {
+  return this.http.put(`${this.apiServerUrl}/api/updatedispWorkload/${id}`,{});
+} 
 
 
 

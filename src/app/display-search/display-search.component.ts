@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DeliveryMan } from '../deliverymanmodel';
 import { DeliveryManService } from '../delivery-man.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-display-search',
@@ -12,8 +13,10 @@ export class DisplaySearchComponent implements OnInit {
   message: any;
   listDeliveryMan: any;
   id: number;
+  name: string;
   lastname: string;
-    constructor(private _service:DeliveryManService) { }
+  idDeliv: any;
+    constructor(private _service:DeliveryManService,private router: Router) { }
   
     ngOnInit(): void {
       let resp=this._service.getListDeliveryMan();
@@ -42,7 +45,11 @@ export class DisplaySearchComponent implements OnInit {
         
              }
      
-     
+     public update (idDeliv){
+
+      
+      this.router.navigateByUrl('updatedeliv');
+     }
   
   
     }

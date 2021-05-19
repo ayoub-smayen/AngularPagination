@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { DeliveryManService } from '../delivery-man.service';
+import { DeliveryService } from '../delivery.service';
 import { DeliveryMan } from '../deliverymanmodel';
 
 @Component({
@@ -9,19 +11,18 @@ import { DeliveryMan } from '../deliverymanmodel';
   styleUrls: ['./maps.component.css']
 })
 export class MapsComponent   {
-
-
-
-constructor( private mdeliv : DeliveryManService){
-  this.deliv = [];
+  hide=true;
+  paramUrl: any;
+  id1: number;
+showMaps= false;
+constructor( private service: DeliveryService,private activatedRoute: ActivatedRoute,private router: Router){
+ // this.deliv =  DeliveryMan[];
 
   this.delivProche = [];
-
+  this.paramUrl=this.activatedRoute.snapshot.params.id1;
     }
-  
 
-
-    deliv  : DeliveryMan[];
+    deliv  :any;
     delivProche: DeliveryMan[];
     title = 'Angular Google Maps Example';
      /*public delivery:Delivery[];
@@ -33,13 +34,14 @@ constructor( private mdeliv : DeliveryManService){
     locationChosen = false;
   public ngOnInit():void {
   
-    this.getAllddiv();
+    
     if(navigator.geolocation) {
 
       navigator.geolocation.getCurrentPosition(position => {
           alert(position.coords.latitude);
         this.lat  =position.coords.latitude ;
-        this.lng = position.coords.longitude
+        this.lng = position.coords.longitude;
+        this.getAllddiv();
         
         
        
@@ -51,12 +53,15 @@ constructor( private mdeliv : DeliveryManService){
   }
   
   getAllddiv (){
+    //id: Number;
+   // id: any;
        const L=2.2222229;
-       this.mdeliv.getListDeliveryMan().subscribe(res=>{
+       this.service.affectDeliveryMan(this.paramUrl).subscribe(res=>{
              alert(res);
   
              this.deliv = res ;
 
+   
 
 
 
@@ -64,6 +69,7 @@ constructor( private mdeliv : DeliveryManService){
 if (Math.abs(this.lng-el.lngi)<=L && Math.abs(this.lat-el.lati)<=L){
 
   this.delivProche.push(el);
+  
 
 
 }
@@ -71,11 +77,18 @@ if (Math.abs(this.lng-el.lngi)<=L && Math.abs(this.lat-el.lati)<=L){
 
              })
              alert(this.delivProche);
+             
 
        })
   
-       
-  }
+         
+      }
 
 
-}
+
+      public translate(){
+
+        this.router.navigate(['order']);}
+      }
+
+

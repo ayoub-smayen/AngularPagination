@@ -14,8 +14,11 @@ export class DeliveryService {
     return this.http.get<number>(`${this.apiServerUrl}/frais/${delivId}/${prodId}`);
   }
 
-  public affectDeliveryMan(delivId: number): Observable<DeliveryMan> {
-    return this.http.get<DeliveryMan>(`${this.apiServerUrl}/api/findDelivery/${delivId}`);
+  public affectDeliveryMan(productID: number): Observable<any> {
+    return this.http.get<any>(`${this.apiServerUrl}/api/findDelivery/${productID}`);
+  }
+  public notify(name:string){
+    return this.http.get("http://localhost:8091/notify/"+name);
   }
 
 
