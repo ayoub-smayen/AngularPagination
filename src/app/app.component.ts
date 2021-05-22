@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
     private proser:ProductService,
     public router: Router) { this.fg=0;}
 
-
+hide =  false  ;
     isLoggedIn: boolean;
   username: string;
   roles: string[];

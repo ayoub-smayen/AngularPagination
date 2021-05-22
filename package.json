@@ -68,7 +68,7 @@
     "@angular/language-service": "~9.0.3",
     "@types/algoliasearch": "^4.0.0",
     "@types/chartjs": "^0.0.31",
-    "@types/googlemaps": "^3.43.3",
+    "@types/googlemaps": "3.39.12",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
