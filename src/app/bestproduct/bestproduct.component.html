@@ -50,6 +50,46 @@
 
                                 <br>
 
+
+                                <br>
+
+
+
+
+
+
+
+
+                                <br>
+
+
+
+                                <br>
+
+
+
+
+
+
+
+
+                                <br>
+
+
+                                <br>
+
+
+
+
+
+
+
+
+                                <br>
+
+                              
+
+
                                 
                                 
                             
@@ -66,20 +106,20 @@
             <th>Description</th>
             <th>Quantity</th>
             <th>Code a bar</th>
-            <!--<th>Image</th>-->
+      
             
         </tr>
     </thead>
     <tbody>
       
-          <tr  *ngfor="let p of products">
+          <tr *ngFor="let p of products">
 
             <td>{{p.product_id}}</td>
             <td>{{p.productname}}</td>
-            <td>{{p.productdescription}}</td>
+            <td>{{p.description}}</td>
             <td>{{p.quantity}}</td>
             <td>#{{p.codebar}}</td>
-            <!--<td>{{p.productimg}}</td>-->
+          
             
     
           </tr>

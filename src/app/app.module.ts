@@ -39,6 +39,7 @@ import { Chartpie1Component } from './chartpie1/chartpie1.component';
 
 @NgModule({
   declarations: [
+    
     AppComponent,
     EuserComponent,
     DashboardComponent,

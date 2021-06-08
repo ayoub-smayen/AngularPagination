@@ -29,7 +29,6 @@ export class UpdateUserComponent implements OnInit {
           const fg = data; 
           this.euser = data;
           console.log(data);
-          //alert(data);
         },
         error => {
           console.log(error);
@@ -44,7 +43,6 @@ export class UpdateUserComponent implements OnInit {
         response => {
           console.log(response);
           this.message = 'The form was updated successfully!';
-          //alert(this.message);
           this.router.navigate(['/euser']);
         },
         error => {
@@ -68,7 +66,7 @@ export class UpdateUserComponent implements OnInit {
           
           (profile) => {
             console.table(this.euser);
-            //this.bookAddedEvent.emit();
+         
         
   window.location.reload();
             this.router.navigate(['home']);

@@ -64,15 +64,15 @@
 
 
 
+
+<br>
+
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 
-<!--<div style="text-align: center">
-
-    <h1>{{message}}</h1>
-</div>-->
 
 
 <div class="container">
@@ -80,8 +80,9 @@
         <div class="col-md-6">
             <form  #f="ngForm" (ngSubmit)="Save(f)">
                 <div class="note">
-                    <p>Add User</p>
+                    <p>Register</p>
                 </div>
+                
             
                 <fieldset>
                     
@@ -91,14 +92,12 @@
                         <label for="Name"><span class="req">* </span> Name:  </label>
                         <input required type="text" [(ngModel)]="euser.membre_username" name="name" id="name" ngModel required  #l="ngModel"
                             class="form-control phone" maxlength="28" placeholder="Enter your fullname..." />
-                            <div *ngIf="l.invalid && l.touched">
-                                <div *ngIf="l.errors.required">required field</div>
-                            </div>
+                           
                       </div> 
                       
                     <div class="form-group">
                         <label for="exampleFormControlFile1">Your image</label>
-                       <!-- <input type="file" class="form-control-file" id="exampleFormControlFile1">-->
+                       
                        <input   type="file" class="form-control-file" (change)="onFileChanged2($event)">
                       <img [src]="imageUrl2" height="200" width="200" *ngIf="imageUrl2">
                       </div>
@@ -111,10 +110,7 @@
                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                         <div id="errFirst"></div>
                     
-                       <div *ngIf="e.invalid && e.touched">
-                        <div *ngIf="e.errors.required">Email obligatoire</div>
-                        <div *ngIf="e.errors.pattern">Email invalid</div>
-                        </div>
+                      
                     </div>
 
                     <div class="form-group">
@@ -213,15 +209,92 @@
 
 
 
-	      
 
+<!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+<!Doctype html>
+<html>
+<head>
+     <meta charset="UTF-8">
+     <title>Registration Form</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+ <div class="container">
+ 
+     <header class="heading"> Registration-Form</header>
+    
+    <div class="row">
+     
+     <div class="col-sm-12">
+        <div class="row">
+            <div class="col-xs-4">
+                  <label class="firstname">Name :</label> </div>
+            <div class="col-xs-8">
+                <input type="text" name="memnbre_name" id="memnbre_name"  required type="text" [(ngModel)]="euser.membre_username" class="form-control phone" maxlength="28" placeholder="Enter your fullname..."/>
+        </div>
+         </div>
+    </div>
+        
+        
 
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-xs-4">
+                    <label class="mail" >Email :</label></div>
+                <div class="col-xs-8"   >    
+                     <input type="email" name="email"  id="email"placeholder="Enter your email" class="form-control" />
+                </div>
+            </div>
+        </div>
+   
 
+         <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-xs-4">
+                          <label class="pass">Password :</label></div>
+                 <div class="col-xs-8">
+                    <input type="password" name="password" id="password" placeholder="Enter your Password" class="form-control"/>
+                </div>
+         </div>
+         </div>
+         
+    
+        <div class="col-sm-12">
+            <div class ="row">
+                <div class="col-xs-4 ">
+                  <label class="gender">Gender:</label>
+                </div>
+            
+               
+                <div class="col-xs-4 male">  
+                    <input type="radio" name="sexe"  id="sexe" value="boy"/>
+                    <label class="form-check-label" for="gridCheck1">
+                        Female
+                        </label>
+                </div>
+                
+               
+                <div class="col-xs-4 male">  
+                    <input type="radio" name="sexe"  id="sexe" value="boy"/>
+                    <label class="form-check-label" for="gridCheck1">
+                        Male
+                        </label>
+                </div>
+                
 
+               
 
+              </div>
+            <div class="col-sm-12">
+                <div class="btn btn-warning">Submit</div>
+          </div>
+        </div>
+    </div>   
+                 
+</div>
 
-
-
-
-
+</body>     
+</html>-->
