@@ -1,0 +1,1 @@
+export * from './deliveryman-page/deliveryman-page.component'

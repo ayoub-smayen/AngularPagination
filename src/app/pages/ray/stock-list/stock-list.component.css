@@ -1,0 +1,40 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  :host {
+    display: flex;
+    flex-direction: column;
+  }
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+  .example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://media.istockphoto.com/vectors/monogram-initial-p-letter-capital-creative-identity-emblem-mockup-for-vector-id1005545744?k=6&m=1005545744&s=612x612&w=0&h=bku4ErKCwxNjGJHuarGglKUms9UC59fT-9FtKjw7J9s=');
+    background-size: cover;
+  }
+  
+  .example-form {
+    text-align: center;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .buttons {
+    display: flex;
+    justify-content: center;
+  }
+  #percentage {
+    display: flex;
+    justify-content: center;
+  }
+  

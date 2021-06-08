@@ -1,0 +1,85 @@
+<mat-card class="employee-table-wrapper">
+  <mat-card-title class="employee-table-wrapper__header">
+    <p>Add</p>
+  </mat-card-title>
+  <form (ngSubmit)="onSubmit(myForm.value)" #myForm="ngForm">
+    <div class="form-container">
+      <div class="left">
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input
+            matInput
+            placeholder="Username"
+            ngModel
+            required
+            name="username"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            placeholder="pat@example.com"
+            required
+            name="email"
+            ngModel
+          />
+          <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            [type]="hide ? 'password' : 'text'"
+            required
+            name="password"
+            ngModel
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="right">
+        <mat-form-field appearance="outline">
+          <mat-label>First name</mat-label>
+          <input
+            matInput
+            placeholder="First name"
+            required
+            name="firstname"
+            ngModel
+          />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Last name</mat-label>
+          <input
+            matInput
+            placeholder="Last name"
+            required
+            name="lastname"
+            ngModel
+          />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Phone</mat-label>
+          <input matInput placeholder="Phone" required name="number" type="number" ngModel />
+        </mat-form-field>
+      </div>
+      <button
+        style="margin: 5px"
+        mat-raised-button
+        type="submit"
+        class="add-btn"
+      >
+        Add
+      </button>
+    </div>
+  </form>
+</mat-card>

@@ -1,0 +1,111 @@
+<mat-card class="employee-table-wrapper">
+  <mat-card-title class="employee-table-wrapper__header">
+    <p *ngIf="!isShowFilterInput" class="employee-table-wrapper__title">
+      Search
+    </p>
+    <div *ngIf="isShowFilterInput" class="employee-table-wrapper__search">
+      <div class="employee-table-wrapper__icon-wrapper">
+        <mat-icon class="employee-table-wrapper__icon">search</mat-icon>
+      </div>
+      <input
+        matInput
+        class="employee-table-wrapper__search-input"
+        (keyup)="applyFilter($event)"
+      />
+      <button
+        class="employee-table-wrapper__button"
+        mat-mini-fab
+        (click)="showFilterInput()"
+      >
+        <mat-icon class="employee-table-wrapper__icon">close</mat-icon>
+      </button>
+    </div>
+    <button
+      class="employee-table-wrapper__button"
+      mat-mini-fab
+      (click)="showFilterInput()"
+    >
+      <mat-icon class="employee-table-wrapper__icon">search</mat-icon>
+    </button>
+  </mat-card-title>
+  <mat-card-content class="mat-elevation-z8">
+    <table
+      mat-table
+      [dataSource]="dataSource"
+      matSort
+      cdkDropList
+      cdkDropListOrientation="horizontal"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <ng-container matColumnDef="select">
+        <th
+          class="employee-table__table-checkbox"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          <mat-checkbox
+            color="primary"
+            (change)="$event ? masterToggle() : null"
+            [checked]="selection.hasValue() && isAllSelected()"
+            [indeterminate]="selection.hasValue() && !isAllSelected()"
+            [aria-label]="checkboxLabel()"
+          >
+          </mat-checkbox>
+        </th>
+        <td
+          class="employee-table__table-checkbox"
+          mat-cell
+          *matCellDef="let row"
+        >
+          <mat-checkbox
+            color="primary"
+            (click)="$event.stopPropagation()"
+            (change)="$event ? selection.toggle(row) : null"
+            [checked]="selection.isSelected(row)"
+            [aria-label]="checkboxLabel(row)"
+          >
+          </mat-checkbox>
+        </td>
+      </ng-container>
+
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+        <td mat-cell *matCellDef="let row">{{ row.id }}</td>
+      </ng-container>
+
+      <!-- Progress Column -->
+      <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Username</th>
+        <td mat-cell *matCellDef="let row">{{ row.username }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+        <td mat-cell *matCellDef="let row">{{ row.email }}</td>
+      </ng-container>
+
+      <!-- Color Column -->
+      <ng-container matColumnDef="role">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>role</th>
+        <td mat-cell *matCellDef="let row">
+          {{ row.role }}
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter</td>
+      </tr>
+    </table>
+  </mat-card-content>
+  <div class="pagination">
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 25, 50]"
+      showFirstLastButtons
+    ></mat-paginator>
+  </div>
+</mat-card>

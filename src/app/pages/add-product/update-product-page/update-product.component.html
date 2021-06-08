@@ -1,0 +1,142 @@
+<br><br><br>
+<form #productput="ngForm" name="updateproductform">
+    <div class = "tables-wrapper">
+    <mat-form-field appearance="outline" floatLabel="always" >
+        <mat-label>Name</mat-label>
+        <input matInput required [(ngModel)]="product.name" name="name">
+      </mat-form-field>
+    </div>
+      <div class = "tables-wrapper">
+    
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Nature</mat-label>
+        <mat-select onchange=changeStatus() id ="naturel" [(value)]="selectedValue" [(ngModel)]="product.nature" name="nature">
+          <mat-option *ngFor="let nature of Natures" value="{{nature}}" >{{nature}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+      <div class = "tables-wrapper">
+    
+      <mat-form-field appearance="outline" floatLabel="always" >
+       
+        <mat-label>Category</mat-label>
+        <mat-select [(value)]="selectedid">
+          <mat-option *ngFor="let category of categories"  value="{{category.id}}" >{{category.categoryName}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+    </div>
+      <div class = "tables-wrapper" >
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Code</mat-label>
+        <input matInput required [(ngModel)]="product.code" name="code">
+      </mat-form-field>
+    </div>
+      <div class = "tables-wrapper">
+      
+      <mat-form-field appearance="outline" floatLabel="always" >
+        <mat-label>Price</mat-label>
+        <input matInput required [(ngModel)]="product.price" name="price">
+      </mat-form-field>
+    </div>
+      <div class = "tables-wrapper" >
+     <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Quantity</mat-label>
+        <input matInput required [(ngModel)]="product.quantity" name="quantity">
+      </mat-form-field>
+    </div>
+      <div class = "tables-wrapper" >
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Image Link</mat-label>
+        <input matInput required [(ngModel)]="product.image" name="image">
+      </mat-form-field>
+    </div>
+    
+      <div class = "tables-wrapper">
+      <mat-form-field class="example-full-width" appearance="outline" floatLabel="always" >
+        <mat-label>Expiration Date</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="product.expDate" name="expDate" >
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+      <div class = "tables-wrapper">
+        <mat-form-field appearance="outline" floatLabel="always" >
+        <mat-label>Packaging Material</mat-label>
+        <mat-select [(value)]="matiere" [(ngModel)]="product.matiere" name="matiere">
+          <mat-option *ngFor="let matiere of Matieres"  value="{{matiere}}">{{matiere}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+      <div class = "tables-wrapper" >
+      <mat-form-field appearance="outline" floatLabel="always" >
+        <mat-label>Description</mat-label>
+        <textarea matInput [(ngModel)]="product.description" name="description"> </textarea>
+      </mat-form-field>
+      </div>
+    
+    
+    <div *ngIf="selectedValue === 'Alimentaire'" class="NN">
+    
+    <div class="NP">
+      <h1>Nutrition Properties</h1>
+    </div>
+      <br>
+      <br>
+      <br>
+      <div>
+      <mat-form-field appearance="outline" floatLabel="always" >
+        <mat-label>Energy</mat-label>
+        <input matInput required [(ngModel)]="product.energie" name="energie" >
+      </mat-form-field>
+    </div>
+      <div class="N">
+      <mat-form-field appearance="outline" floatLabel="always" >
+        <mat-label>Fat</mat-label>
+        <input matInput required [(ngModel)]="product.matiere_grasse" name="matiere_grasse">
+      </mat-form-field>
+    </div>
+      <div class="N">
+      <mat-form-field appearance="outline" floatLabel="always" >
+        <mat-label>Acids</mat-label>
+        <input matInput required [(ngModel)]="product.acide_gras_sature" name="acide_gras_sature">
+      </mat-form-field>
+    </div>
+      <div class="N">
+      <mat-form-field appearance="outline" floatLabel="always" >
+        <mat-label>Sugar</mat-label>
+        <input matInput required [(ngModel)]="product.sucres" name="sucres">
+      </mat-form-field>
+    </div>
+      <div class="N">
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Fiber</mat-label>
+        <input matInput required [(ngModel)]="product.fibres" name="fibres">
+      </mat-form-field>
+    </div>
+      <div class="N">
+      <mat-form-field appearance="outline" floatLabel="always" >
+        <mat-label>Protein</mat-label>
+        <input matInput required [(ngModel)]="product.proteines" name="proteines">
+      </mat-form-field>
+    </div>
+      <div class="N">
+      <mat-form-field appearance="outline" floatLabel="always"  >
+        <mat-label>Salt</mat-label>
+        <input matInput required [(ngModel)]="product.sel" name="sel">
+      </mat-form-field>
+    </div>
+      <div class="N">
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Fruits</mat-label>
+        <input matInput required [(ngModel)]="product.fruits" name="fruits">
+      </mat-form-field>
+      </div>
+      </div>
+      <div class = "tables-wrapper">
+      <button style="margin:5px;" mat-raised-button type="submit" routerLink="{{routes.PRODUCTS}}" routerLinkActive="active" (click)="save(product);openSnackBar()">Update</button>
+      <button style="margin:5px;" mat-raised-button type="button" onclick="this.form.reset();">Reset</button>
+    </div>
+    </form>
+      
+    

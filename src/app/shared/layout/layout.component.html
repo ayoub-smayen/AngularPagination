@@ -1,0 +1,23 @@
+<app-header
+  (isShowSidebar)="sidenav.toggle($event)"
+  [isMenuOpened]="isShowSidebar"
+></app-header>
+
+<mat-sidenav-container class="layout">
+  <mat-sidenav
+    #sidenav
+    mode="side"
+    [(opened)]="isShowSidebar"
+    class="layout-sidebar"
+    [mode]="mobileQuery.matches ? 'over' : 'side'"
+    [fixedInViewport]="mobileQuery.matches"
+  >
+    <app-sidebar *ngIf="admin; else elseBlock"></app-sidebar>
+    <ng-template #elseBlock
+      ><app-sidebar-manager></app-sidebar-manager
+    ></ng-template>
+  </mat-sidenav>
+  <mat-sidenav-content class="layout-content">
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

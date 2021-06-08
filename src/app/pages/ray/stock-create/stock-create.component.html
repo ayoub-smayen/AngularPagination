@@ -1,0 +1,35 @@
+<app-layout>
+    <mat-toolbar class="page-header" role="heading">
+        <h1>Create Stock</h1>
+    </mat-toolbar>
+    <div class="px-4">
+        <div class="card">
+            <div class="card-header">
+                Create Ray
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <div class="row">
+                        <div class="col-8 mt-2">
+                            <label for="">Amount</label>
+                            <input type="number" placeholder="amount" name="amount" class="form-control"
+                                [(ngModel)]="model.amount">
+                        </div>
+                        <div class="col-8 mt-2">
+                            <label for="">Entry Date</label>
+                            <input type="date" placeholder="capacity" class="form-control" name="capacity"
+                                [(ngModel)]="model.entry_date">
+                        </div>
+                        <div class="col-8 mt-2">
+                            <label for="">Exit Date</label>
+                            <input type="date" placeholder="Total" class="form-control" name="totalproduct"
+                                [(ngModel)]="model.exit_date">
+                        </div>
+                    </div>
+                    <button class="btn btn-success mt-3" (click)="onSave()">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</app-layout>

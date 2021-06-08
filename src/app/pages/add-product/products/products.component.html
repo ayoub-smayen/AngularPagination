@@ -1,0 +1,86 @@
+<mat-form-field>
+
+    <mat-label>Search For Product</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Write product Name" #input>
+  
+</mat-form-field>
+
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+  
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nature">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Nature</th>
+        <td mat-cell *matCellDef="let row"> {{row.nature}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="categoryname">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Category Name</th>
+        <td mat-cell *matCellDef="let row"> {{row.categoryname}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Quantity</th>
+        <td mat-cell *matCellDef="let row"> {{row.quantity}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Price (1KG/1L)</th>
+        <td mat-cell *matCellDef="let row"> {{row.price}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="expDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Expiration date </th>
+        <td mat-cell *matCellDef="let row"> {{row.expDate |  date:"MM/dd/yy"}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="promotion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Promotion</th>
+        <td mat-cell *matCellDef="let row"> {{row.promotion}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="initial_price">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Initial Price</th>
+        <td mat-cell *matCellDef="let row"> {{row.initial_price}} </td>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="code">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Code</th>
+        <td mat-cell *matCellDef="let row"> {{row.code}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="matiere">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Packaging</th>
+        <td mat-cell *matCellDef="let row"> {{row.matiere}} </td>
+      </ng-container> 
+   
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+        <td mat-cell *matCellDef="let row">
+          <button mat-button (click)="openDialog(row.id,row.name,row.nature,row.categoryname,row.image,row.description)" >Details</button>
+      </ng-container>
+
+
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> 
+
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100,200,400,800]"></mat-paginator>
+  </div>
+
+

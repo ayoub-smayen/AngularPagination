@@ -1,0 +1,41 @@
+<mat-dialog-content  >
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{data.name}} #{{data.id}}</mat-card-title>
+      <mat-card-subtitle>Nature :{{data.nature}}</mat-card-subtitle>
+      <mat-card-subtitle> Category:{{data.categoryname}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{data.image}}" alt="Photo of product" >
+    <mat-card-content>
+      <p>
+{{data.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="buttons">
+      <button mat-button mat-dialog-close (click)="deleteproduct(data.id);openSnackBar()">Delete</button>
+      <button mat-button (click)="onSelect(data.id);onNoClick()">Update</button>
+      <button mat-button (click)="removepromotion(data.id);openSnackBar2()">Sale Cancel</button>
+    </div>         
+      <br><br>
+      <div>
+        
+    <form class="example-form">
+<mat-form-field id="percentage">
+  <mat-label>Write a percentage</mat-label>
+        <input type="text" matInput [(ngModel)]="promotion" name="promotion">
+      </mat-form-field>
+        <button mat-button (click)="addpromotion(data.id,promotion);openSnackBar1()">Add Sale</button>
+    </form>
+
+
+      </div>
+      
+    </mat-card-actions>
+  </mat-card>
+  </mat-dialog-content>
+  
+  <mat-dialog-actions>
+    <!--<button mat-button mat-dialog-close>Close</button>-->
+  </mat-dialog-actions>

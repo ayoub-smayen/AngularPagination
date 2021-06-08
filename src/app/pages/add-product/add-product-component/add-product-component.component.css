@@ -1,0 +1,22 @@
+.tables-wrapper {
+  display: flex;
+
+  position: relative;
+  left: 70px;
+}
+
+.lool {
+  left: 70px;
+}
+.tables-wrapper {
+  padding: 0 8px;
+}
+
+.NN {
+  position: absolute;
+  top: 68px;
+  left: 500px;
+}
+.NP {
+  color: #b9b9b9;
+}

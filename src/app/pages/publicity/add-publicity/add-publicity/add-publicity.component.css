@@ -1,0 +1,15 @@
+.tables-wrapper {
+  display: flex;
+
+  position: relative;
+  left: 70px;
+
+  padding: 0 8px;
+}
+
+.lool {
+  left: 70px;
+}
+#right {
+  text-align: right;
+}

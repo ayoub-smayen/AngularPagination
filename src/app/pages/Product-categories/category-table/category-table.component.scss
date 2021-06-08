@@ -1,0 +1,21 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+:host {
+  display: flex;
+  flex-direction: column;
+}
+.button {
+  width: 10%;
+  float: right;
+}
+input[type="text"] {
+  border: 2px solid #f16c69;
+  border-radius: 4px;
+  padding: 12px 20px;
+}

@@ -1,0 +1,25 @@
+.currency {
+  padding: 0;
+
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.one {
+  width: 50%;
+  height: 100%;
+}
+.two {
+  z-index: 100;
+  /* // background-image: linear-gradient(
+  //   to right,
+  //   rgba(#f16c69, 0.25),
+  //   rgba(#f16c69, 1)
+  // ); */
+  background-color: blueviolet;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  width: 70%;
+  height: 100%;
+  /* clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%); */
+}

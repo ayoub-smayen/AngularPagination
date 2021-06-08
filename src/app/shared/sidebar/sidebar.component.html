@@ -1,0 +1,59 @@
+<mat-list>
+  <mat-list-item routerLink="{{ routes.DASHBOARD }}" routerLinkActive="active">
+    <mat-icon>home</mat-icon> Dashboard
+  </mat-list-item>
+
+  <mat-list-item routerLink="{{ routes.CALENDER }}" routerLinkActive="active">
+    <mat-icon>calendar_today</mat-icon> Calender
+  </mat-list-item>
+  <mat-list-item routerLink="{{ routes.CLAIM }}" routerLinkActive="active">
+    <mat-icon>error</mat-icon> Claim
+  </mat-list-item>
+
+  <mat-list>
+    <mat-list-item><mat-icon>account_circle</mat-icon>Users</mat-list-item>
+
+    <div>
+      <mat-list-item
+        class="ui-element"
+        routerLink="{{ routes.ADMIN }}"
+        routerLinkActive="active"
+      >
+        <div class="circle"></div>
+        Admins
+      </mat-list-item>
+      <mat-list-item
+        class="ui-element"
+        routerLink="{{ routes.CLIENT }}"
+        routerLinkActive="active"
+      >
+        <div class="circle"></div>
+        Clients
+      </mat-list-item>
+      <mat-list-item
+        class="ui-element"
+        routerLink="{{ routes.MANAGER }}"
+        routerLinkActive="active"
+      >
+        <div class="circle"></div>
+        Managers
+      </mat-list-item>
+      <mat-list-item
+        class="ui-element"
+        routerLink="{{ routes.DELIVERYMAN }}"
+        routerLinkActive="active"
+      >
+        <div class="circle"></div>
+        DeliveryMans
+      </mat-list-item>
+      <mat-list-item
+        class="ui-element"
+        routerLink="{{ routes.ALL }}"
+        routerLinkActive="active"
+      >
+        <div class="circle"></div>
+        All
+      </mat-list-item>
+    </div>
+  </mat-list>
+</mat-list>

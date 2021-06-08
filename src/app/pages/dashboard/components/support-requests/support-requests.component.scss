@@ -1,0 +1,154 @@
+@import "src/app/styles/colors";
+@import "src/app/styles/font";
+@import "src/app/styles/variables";
+
+.support-requests {
+  margin: 0 24px;
+  padding: 0;
+  box-shadow: 0 3px 11px 0 $shadow-white, 0 3px 3px -2px $shadow-grey,
+    0 1px 8px 0 $shadow-dark-grey;
+
+  &__header {
+    color: $grey;
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 24px 8px;
+    margin-bottom: 0;
+  }
+
+  &__title {
+    font-size: $fs-medium;
+    font-weight: $fw-lighter;
+    margin: 0;
+    line-height: 40px;
+  }
+
+  &__content {
+    // height: 427px;
+    // overflow-y: hidden;
+    // overflow-x: scroll;
+
+    @media (max-width: $small) {
+      height: auto;
+    }
+  }
+
+  &__table {
+    width: 100%;
+  }
+
+  &__table-row {
+    height: 64px;
+  }
+
+  &__table-row-title {
+    color: $dark-grey;
+    font-size: $fs-small;
+    font-weight: $fw-lighter;
+    line-height: 24px;
+    text-transform: uppercase;
+    padding: 18.4px;
+  }
+
+  &__table-content {
+    color: $dark-grey;
+    font-size: $fs-small;
+    padding: 20px;
+  }
+
+  &__content-badge {
+    width: fit-content;
+    border-radius: 32px;
+    color: $white;
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 13px;
+    box-sizing: border-box;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: $fw-lighter;
+    line-height: 1.75;
+    letter-spacing: 0.45px;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
+
+mat-menu {
+  position: absolute;
+}
+
+.send {
+  background-color: $green;
+}
+
+.pending {
+  background-color: $yellow;
+}
+
+.declined {
+  background-color: $pink;
+}
+
+table {
+  width: 100%;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.example-element-diagram {
+  min-width: 100px;
+  border: 2px solid black;
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+  height: 104px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}
+.news {
+  height: fit-content;
+  width: fit-content;
+  &.news-menu-icon {
+    text-decoration: none;
+    color: #c0c0c0;
+  }
+}

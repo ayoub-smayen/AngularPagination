@@ -1,0 +1,14 @@
+<app-layout>
+  <mat-toolbar class="page-header" role="heading">
+    <h1>Admin</h1>
+  </mat-toolbar>
+
+  <div class="tables-wrapper">
+    <app-user-table></app-user-table>
+  </div>
+  <div class="tables-wrapper">
+    <app-add-admin [type]="type"></app-add-admin>
+  </div>
+
+  <app-footer></app-footer>
+</app-layout>

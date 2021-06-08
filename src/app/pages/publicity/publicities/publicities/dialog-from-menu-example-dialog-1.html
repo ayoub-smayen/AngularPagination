@@ -1,0 +1,25 @@
+<mat-dialog-content  >
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+       <mat-card-title>{{datas.publicitycategory}} #{{datas.id}}</mat-card-title>
+     <mat-card-subtitle>Current:{{datas.current | yesNo}}</mat-card-subtitle>
+      <mat-card-subtitle> Product:{{datas.product.name}} </mat-card-subtitle>
+      <mat-card-subtitle> Category : {{datas.product.categoryname}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{datas.image}}" alt="Photo of publicity" >
+    <mat-card-subtitle>Title : {{datas.title}}</mat-card-subtitle>
+    <mat-card-subtitle>Subtitle : {{datas.subtitle}}</mat-card-subtitle>
+    <mat-card-actions>
+      <div class="buttons">
+      <button mat-button (click)="deletepublicity(datas.id)">Delete</button>
+    </div>
+      <br><br>
+
+    </mat-card-actions>
+  </mat-card>
+  </mat-dialog-content>
+  
+  <mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>

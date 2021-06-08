@@ -1,0 +1,31 @@
+<app-layout>
+  <mat-toolbar class="page-header" role="heading">
+    <h1>Claims</h1>
+  </mat-toolbar>
+  <div class="charts-content">
+    <div class="charts-content__charts-wrapper">
+      <mat-card class="charts-content__chart-item">
+        <mat-card-title>
+          <p>Claim Numburs</p>
+        </mat-card-title>
+        <app-bar-chart
+          [dashedLineChartData]="dashedLineChartData$ | async"
+        ></app-bar-chart>
+      </mat-card>
+
+      <mat-card class="charts-content__chart-item">
+        <mat-card-title>
+          <p>Claim Subjects</p>
+        </mat-card-title>
+        <app-pie-chart ></app-pie-chart>
+      </mat-card>
+    </div>
+  </div>
+  <div class="tables-wrapper">
+    <app-claim-table
+     
+    ></app-claim-table>
+  </div>
+
+  <app-footer></app-footer>
+</app-layout>

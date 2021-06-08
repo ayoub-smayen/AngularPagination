@@ -1,0 +1,69 @@
+<div class="project-stat">
+  <mat-card class="project-stat__item">
+    <div class="container">
+      <div class="weather-side">
+        <div class="weather-gradient"></div>
+        <div class="date-container">
+          <h2 class="date-dayname">{{ weekday[n] }}</h2>
+          <span class="date-day">{{
+            weather.forecast.forecastday[0].date
+          }}</span
+          ><i class="location-icon" data-feather="map-pin"></i>
+        </div>
+        <div class="weather-container">
+          <h1 class="weather-temp">{{ weather.current.temp_c }} °C</h1>
+          <h3 class="weather-desc">{{ weather.current.condition.text }}</h3>
+        </div>
+      </div>
+      <div class="info-side">
+        <div class="today-info-container">
+          <div class="today-info">
+            <div class="precipitation">
+              <span class="title">PRECIPITATION</span
+              ><span class="value">{{ weather.current.precip_mm }} %</span>
+              <div class="clear"></div>
+            </div>
+            <div class="humidity">
+              <span class="title">HUMIDITY</span
+              ><span class="value">{{ weather.current.humidity }} %</span>
+              <div class="clear"></div>
+            </div>
+            <div class="wind">
+              <span class="title">WIND</span
+              ><span class="value">{{ weather.current.wind_mph }} m/h</span>
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+        <div class="week-container">
+          <ul class="week-list">
+            <li class="active">
+              <span class="day-name">{{ weekday[n]?.substr(0, 3) }}</span
+              ><span class="day-temp"
+                >{{ weather.forecast.forecastday[0].day.avgtemp_c }}°C</span
+              >
+            </li>
+            <li>
+              <span class="day-name">{{ weekday[n + 1]?.substr(0, 3) }}</span
+              ><span class="day-temp"
+                >{{ weather.forecast.forecastday[1].day.avgtemp_c }}°C</span
+              >
+            </li>
+            <li>
+              <span class="day-name">{{ weekday[n + 2]?.substr(0, 3) }}</span
+              ><span class="day-temp"
+                >{{ weather.forecast.forecastday[2].day.avgtemp_c }}°C</span
+              >
+            </li>
+
+            <div class="clear"></div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+
+  <mat-card class="project-stat__item">
+    <app-currency></app-currency>
+  </mat-card>
+</div>

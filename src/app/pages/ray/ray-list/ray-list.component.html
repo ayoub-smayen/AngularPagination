@@ -1,0 +1,124 @@
+<app-layout>
+    <mat-toolbar class="page-header" role="heading">
+        <div>
+            <h1>Rays List</h1>
+            <span class="badge badge-success" *ngIf="notification.includes('correctement')">
+                {{notification}}
+            </span>
+            <span class="badge badge-danger" *ngIf="!notification.includes('correctement')">
+                {{notification}}
+            </span>
+        </div>
+    </mat-toolbar>
+    <div class="tables-wrapper">
+
+        <div style="background-color: white; margin-left: 15px; width: 200px; padding: 0px 10px;">
+            <mat-form-field>
+                <mat-label>Search For Rays</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Search by Ray Keyword" #input>
+            </mat-form-field>
+        </div>
+
+
+        <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" matSort>
+
+                <ng-container matColumnDef="rayId">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                    <td mat-cell *matCellDef="let row"> {{row.rayId}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="rayName">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                    <td mat-cell *matCellDef="let row">
+                        <ng-container *ngIf="isEdit != row.rayId">
+                            {{row.rayName}}
+                        </ng-container>
+                        <ng-container *ngIf="isEdit == row.rayId">
+                            <input style="width: 100px;" type="text" [(ngModel)]="updateModel.rayName" class="form-control">
+                        </ng-container>
+                    </td>
+
+                </ng-container>
+
+                <ng-container matColumnDef="capacity">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Capacity</th>
+                    <td mat-cell *matCellDef="let row">
+                        <ng-container *ngIf="isEdit != row.rayId">
+                            {{row.capacity}}
+                        </ng-container>
+                        <ng-container *ngIf="isEdit == row.rayId">
+                            <input style="width: 100px;" type="text" [(ngModel)]="updateModel.capacity" class="form-control">
+                        </ng-container>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="totalproduct">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Total Products</th>
+                    <td mat-cell *matCellDef="let row"> {{row.totalproduct}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="categories">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Categories</th>
+                    <td mat-cell *matCellDef="let row">
+                        <ng-container *ngFor="let cat of row.categories">
+                            <span class="badge badge-info mr-2"> {{cat.categoryName}} </span>
+                        </ng-container>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="createdAt">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Created At </th>
+                    <td mat-cell *matCellDef="let row"> {{row.createdAt | date}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="updatedAt">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Updated At</th>
+                    <td mat-cell *matCellDef="let row"> {{row.updatedAt | date}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="rayDescription">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
+                    <td mat-cell *matCellDef="let row">
+                        <ng-container *ngIf="isEdit != row.rayId">
+                            {{row.rayDescription}}
+                        </ng-container>
+                        <ng-container *ngIf="isEdit == row.rayId">
+                            <input style="width: 100px;" type="text" [(ngModel)]="updateModel.rayDescription" class="form-control">
+                        </ng-container>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="rayonImg">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Image</th>
+                    <td mat-cell *matCellDef="let row">
+                        <img src="data:image/jpeg;base64,{{row.rayonImg}}" alt="" style="width: 80px;">
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
+                    <td mat-cell *matCellDef="let row">
+                        <button class="btn btn-dark mr-2" *ngIf="isEdit != row.rayId"
+                            (click)="onUpdate(row)">Edit</button>
+                        <ng-container *ngIf="isEdit == row.rayId">
+                            <button class="btn btn-success mr-2" (click)="onUpdateRay(updateModel)">Save</button>
+                            <button class="btn btn-dark mr-2" (click)="isEdit = -1">cancel</button>
+                        </ng-container>
+
+                        <button class="btn btn-danger" (click)="onDelete(row.rayId)">Delete</button>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100,200,400,800]"></mat-paginator>
+        </div>
+
+    </div>
+
+
+    <app-footer></app-footer>
+</app-layout>

@@ -1,0 +1,104 @@
+<mat-list>
+  <mat-list-item routerLink="{{ routes.DASHBOARD }}" routerLinkActive="active">
+    <mat-icon>home</mat-icon> Dashboard
+  </mat-list-item>
+
+  <mat-list-item routerLink="{{ routes.CALENDER }}" routerLinkActive="active">
+    <mat-icon>calendar_today</mat-icon> Calendar
+  </mat-list-item>
+
+  <mat-list-item routerLink="{{ routes.CATEGORY }}" routerLinkActive="active">
+    <mat-icon>apps</mat-icon> Products Categories
+  </mat-list-item>
+
+
+  <mat-list-item (click)="openUiElements()">
+    <mat-icon>filter_none</mat-icon> Product
+  </mat-list-item>
+  <div>
+    <mat-list-item class="ui-element" routerLink="{{routes.ADDPRODUCT}}" routerLinkActive="active">
+      <div class="circle"></div>Add Product
+    </mat-list-item>
+    <mat-list-item class="ui-element" routerLink="{{routes.PRODUCTS}}" routerLinkActive="active">
+      <div class="circle"></div>Products
+
+    </mat-list-item>
+  </div>
+
+
+  <mat-list-item (click)="openUiElements()">
+    <mat-icon>filter_none</mat-icon> Publicity
+  </mat-list-item>
+  <div>
+    <mat-list-item class="ui-element" routerLink="{{routes.ADDPUBLICITY}}" routerLinkActive="active">
+      <div class="circle"></div>Add Publicity
+    </mat-list-item>
+    <mat-list-item class="ui-element" routerLink="{{routes.PUBLICITIES}}" routerLinkActive="active">
+      <div class="circle"></div>Publicities
+    </mat-list-item>
+  </div>
+
+  <mat-list-item (click)="openUiElements()">
+    <mat-icon>filter_none</mat-icon> Rays
+  </mat-list-item>
+  <div>
+    <mat-list-item class="ui-element" routerLink="{{routes.RAYS_ADD}}" routerLinkActive="active">
+      <div class="circle"></div>Add Ray
+    </mat-list-item>
+    <mat-list-item class="ui-element" routerLink="{{routes.RAYS_LIST}}" routerLinkActive="active">
+      <div class="circle"></div>Rays List
+
+    </mat-list-item>
+    <mat-list-item class="ui-element" routerLink="{{routes.RAYS_PRODUCTS}}" routerLinkActive="active">
+      <div class="circle"></div>Best products
+    </mat-list-item>
+  </div>
+
+  <mat-list-item (click)="openUiElements()">
+    <mat-icon>filter_none</mat-icon> Stocks
+  </mat-list-item>
+  <div>
+    <mat-list-item class="ui-element" routerLink="{{routes.STOCKS_ADD}}" routerLinkActive="active">
+      <div class="circle"></div>Add Stock
+    </mat-list-item>
+    <mat-list-item class="ui-element" routerLink="{{routes.STOCKS_LIST}}" routerLinkActive="active">
+      <div class="circle"></div>Stocks List
+    </mat-list-item>
+  </div>
+
+
+</mat-list>
+
+
+
+<!--
+  <mat-list>
+    <mat-list-item><mat-icon>account_circle</mat-icon>Users</mat-list-item>
+
+    <div>
+      <mat-list-item
+        class="ui-element"
+        routerLink="{{ routes.UI_ELEMENTS_ICONS }}"
+        routerLinkActive="active"
+      >
+        <div class="circle"></div>
+        Clients
+      </mat-list-item>
+      <mat-list-item
+        class="ui-element"
+        routerLink="{{ routes.UI_ELEMENTS_CHARTS }}"
+        routerLinkActive="active"
+      >
+        <div class="circle"></div>
+        Delivery Man
+      </mat-list-item>
+      <mat-list-item
+        class="ui-element"
+        routerLink="{{ routes.UI_ELEMENTS_MAP }}"
+        routerLinkActive="active"
+      >
+        <div class="circle"></div>
+        Managers
+      </mat-list-item>
+    </div>
+  </mat-list>-->

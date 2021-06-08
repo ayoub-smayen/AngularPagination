@@ -1,0 +1,70 @@
+
+<br>
+<br>
+<form #publicitypost="ngForm" name="addpublicityform">
+
+  <div class = "tables-wrapper">
+            <mat-form-field class="example-full-width" appearance="outline" floatLabel="always" >
+              <mat-label>Start Date</mat-label>
+              <input matInput [matDatepicker]="picker1" [(ngModel)]="publicity.startDateP" name="startDateP" >
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker touchUi #picker1></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <div class = "tables-wrapper">
+            <mat-form-field class="example-full-width" appearance="outline" floatLabel="always" >
+              <mat-label>End Date</mat-label>
+              <input matInput [matDatepicker]="picker2" [(ngModel)]="publicity.endDateP" name="endDateP" >
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker touchUi #picker2></mat-datepicker>
+            </mat-form-field>
+          </div>  
+            <div class = "tables-wrapper">
+          <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label>Balise</mat-label>
+            <mat-select onchange=changeStatus() id ="publicitycategory" [(value)]="selectedValue" [(ngModel)]="publicity.publicitycategory" name="publicitycategory">
+              <mat-option *ngFor="let balise of Balises" value="{{balise}}" >{{balise}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+
+    <div class = "tables-wrapper">
+    <mat-form-field appearance="outline" floatLabel="always" >
+        <mat-label>Publicity Image</mat-label>
+        <input matInput required [(ngModel)]="publicity.image" name="image">
+      </mat-form-field>
+    </div>
+
+    <div class = "tables-wrapper">
+      <mat-form-field appearance="outline" floatLabel="always" >
+          <mat-label>Publicity Title</mat-label>
+          <input matInput required [(ngModel)]="publicity.title" name="title">
+        </mat-form-field>
+      </div>
+
+
+
+      <div class = "tables-wrapper">
+        <mat-form-field appearance="outline" floatLabel="always" >
+            <mat-label>Publicity subtitle</mat-label>
+            <input matInput required [(ngModel)]="publicity.subtitle" name="subtitle">
+          </mat-form-field>
+        </div>
+      <div class = "tables-wrapper">
+
+            
+    <mat-form-field appearance="outline" floatLabel="always" >
+        <mat-label>Product Id :</mat-label>
+        <input matInput required [(ngModel)]="id" name="id">
+      </mat-form-field>
+    </div>
+   
+      <div class = "tables-wrapper">
+      <button style="margin:5px;" mat-raised-button type="submit" (click)="onSubmit(id)">Add</button>
+      <button style="margin:5px;" mat-raised-button type="button" onclick="this.form.reset();">Reset</button>
+    </div>
+
+  
+    </form>

@@ -1,0 +1,26 @@
+<button class="user-button" mat-mini-fab [matMenuTriggerFor]="userMenu">
+  <mat-icon class="user-button__icon">person</mat-icon>
+</button>
+<mat-menu #userMenu="matMenu" xPosition="before" class="user-menu">
+  <div class="user-menu-title">
+    <h3 class="user-menu-title__name">
+      <mat-icon class="user-menu-icon">person</mat-icon>{{ user.username }}
+    </h3>
+    <h4 class="user-menu-title__name">
+      {{ user.firstname }} {{ user.lastname }}
+    </h4>
+
+    <a class="user-menu-title__link" [href]="flatlogicEmail">{{
+      user.email
+    }}</a>
+  </div>
+
+  <div class="sign-button-wrapper">
+    <button class="sign-button" mat-flat-button (click)="signOutEmit()">
+      <mat-icon>logout</mat-icon>
+    </button>
+    <button class="sign-button" mat-flat-button>
+      <mat-icon>manage_accounts</mat-icon>
+    </button>
+  </div>
+</mat-menu>
