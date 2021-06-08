@@ -21,7 +21,7 @@ export class NotificationComponent  {
             stompClient.subscribe('/topic/notification', notifications => {
               messageElement.classList.add('event-message');
 				// Update notifications attribute with the recent messsage sent from the server
-                this.notifications = JSON.stringify(notifications.body);
+                this.notifications = JSON.parse(notifications.body).count;
             })
         });
     }

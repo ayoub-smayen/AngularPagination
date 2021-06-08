@@ -45,7 +45,8 @@ import { HomeComponent } from './home/home.component';
       apiKey:''
     }),
     NgxPaginationModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

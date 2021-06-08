@@ -114,7 +114,7 @@
                             <line x1="12" y1="5" x2="12" y2="19"></line>
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                         </svg>
-                        NEW DISCUSSION
+                        NEW POST
                     </button>
                 </div>
                 <span class="input-icon input-icon-sm ml-auto w-auto">
@@ -190,7 +190,7 @@
     <div class="modal fade" id="threadModal" tabindex="-1" role="dialog" aria-labelledby="threadModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <form>
+                <form #f="ngForm">
                     <div class="modal-header d-flex align-items-center bg-primary text-white">
                         <h6 class="modal-title mb-0" id="threadModalLabel">New Post</h6>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -200,9 +200,20 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="threadTitle">Title</label>
-                            <input type="text" class="form-control" id="threadTitle" placeholder="Enter title" autofocus="" [(ngModel)]="title" name="title"/>
+                            <input type="text" class="form-control" id="threadTitle" placeholder="Enter title" autofocus="" #t="ngModel" [(ngModel)]="title" name="title" required minlength="3"/>
                         </div>
-                        <textarea class="form-control summernote" [(ngModel)]="text" name="text"></textarea>
+                        <div style="color: red;" *ngIf="t.invalid && t.touched">
+                            <div  *ngIf="t.errors.required">
+                                the title is a required field 
+                            </div>
+                            <div  *ngIf="t.errors.minlength">
+                                the title should be at least 3 character 
+                            </div>
+                        </div>
+                        <textarea class="form-control summernote" [(ngModel)]="text" name="text" #te="ngModel" required ></textarea>
+                        <div style="color: red;" *ngIf="te.invalid && te.touched">
+                            the text is a required field 
+                        </div>
 
                         <div class="custom-file form-control-sm mt-3" style="max-width: 300px;">
                             <input type="file" class="custom-file-input" id="customFile"[(ngModel)]="selectedFile" multiple="" (change)="onFileChanged($event)"/>
@@ -212,7 +223,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addpub()">Post</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addpub()" [disabled]="f.invalid">Post</button>
                     </div>
                 </form>
             </div>

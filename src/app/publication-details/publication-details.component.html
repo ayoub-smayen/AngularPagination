@@ -77,7 +77,7 @@
                                             </div>
                                             
                                             <p>{{c.comment_field}}</p>
-                                            <div >
+                                            <div>
                                                 <a  class="btn btn-default stat-item" (click)="addlikecomments(c.id)">
                                                     <i class="fa fa-thumbs-up icon"></i>{{c.like_count}}       
                                                 </a>
@@ -97,7 +97,7 @@
                                                   <button (click)="updatecomment(i,c.id)" id="comment"  class="btn btn-info"><i class="fa fa-edit"></i></button>
                                                   <emoji-mart darkMode={true} class="emoji-martcomment" set="{{set}}" *ngIf="showEmojiPickercomment" (emojiSelect)="addEmoji1($event)"
                                                        title="Pick your emoji…"></emoji-mart>
-                                            </div>
+                                            </div> 
                                             </div>
                                             
                                     </li>
